@@ -14,7 +14,7 @@ $quadrary  : cs-quadrary();
 $quinary : tint($secondary, 90%);
 $darkQuad : shade($quadrary, 76%);
 $online:saturate(#4cae4c,20);
-@include cs-test($primary $secondary $tertiary $quadrary $quinary $darkQuad);
+//@include cs-test($primary $secondary $tertiary $quadrary $quinary $darkQuad);
 ////////////////////////////////////////////
 @mixin marding($mg:null,$pd:null){
 	margin:$mg;

@@ -1,19 +1,6 @@
 /* title: sandy stone beach ocean diver https://color.adobe.com/themeID/15325 */
 /* title: Firenze https://color.adobe.com/themeID/24198 */
 /* group 2 */
-/* line 21, ../../../../../../Ruby22/lib/ruby/gems/2.2.0/gems/color-schemer-0.2.8/stylesheets/color-schemer/_mixins.scss */
-body:before {
-  content: "";
-  display: block;
-  height: 2em;
-  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuNSIgeDI9IjEuMCIgeTI9IjAuNSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2I2NDkyNiIvPjxzdG9wIG9mZnNldD0iMTYuNjY2NjclIiBzdG9wLWNvbG9yPSIjYjY0OTI2Ii8+PHN0b3Agb2Zmc2V0PSIxNi42NjY2NyUiIHN0b3AtY29sb3I9IiNlZGRlYzkiLz48c3RvcCBvZmZzZXQ9IjMzLjMzMzMzJSIgc3RvcC1jb2xvcj0iI2VkZGVjOSIvPjxzdG9wIG9mZnNldD0iMzMuMzMzMzMlIiBzdG9wLWNvbG9yPSIjYjYyNjMzIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiNiNjI2MzMiLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iIzI2OTNiNiIvPjxzdG9wIG9mZnNldD0iNjYuNjY2NjclIiBzdG9wLWNvbG9yPSIjMjY5M2I2Ii8+PHN0b3Agb2Zmc2V0PSI2Ni42NjY2NyUiIHN0b3AtY29sb3I9IiNmZGZjZmEiLz48c3RvcCBvZmZzZXQ9IjgzLjMzMzMzJSIgc3RvcC1jb2xvcj0iI2ZkZmNmYSIvPjxzdG9wIG9mZnNldD0iODMuMzMzMzMlIiBzdG9wLWNvbG9yPSIjMDkyMzJjIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDkyMzJjIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
-  background: -webkit-gradient(linear, 0% 50%, 100% 50%, color-stop(0%, #b64926), color-stop(16.66667%, #b64926), color-stop(16.66667%, #eddec9), color-stop(33.33333%, #eddec9), color-stop(33.33333%, #b62633), color-stop(50%, #b62633), color-stop(50%, #2693b6), color-stop(66.66667%, #2693b6), color-stop(66.66667%, #fdfcfa), color-stop(83.33333%, #fdfcfa), color-stop(83.33333%, #09232c), color-stop(100%, #09232c));
-  background: -moz-linear-gradient(left, #b64926 0%, #b64926 16.66667%, #eddec9 16.66667%, #eddec9 33.33333%, #b62633 33.33333%, #b62633 50%, #2693b6 50%, #2693b6 66.66667%, #fdfcfa 66.66667%, #fdfcfa 83.33333%, #09232c 83.33333%, #09232c 100%);
-  background: -webkit-linear-gradient(left, #b64926 0%, #b64926 16.66667%, #eddec9 16.66667%, #eddec9 33.33333%, #b62633 33.33333%, #b62633 50%, #2693b6 50%, #2693b6 66.66667%, #fdfcfa 66.66667%, #fdfcfa 83.33333%, #09232c 83.33333%, #09232c 100%);
-  background: linear-gradient(to right, #b64926 0%, #b64926 16.66667%, #eddec9 16.66667%, #eddec9 33.33333%, #b62633 33.33333%, #b62633 50%, #2693b6 50%, #2693b6 66.66667%, #fdfcfa 66.66667%, #fdfcfa 83.33333%, #09232c 83.33333%, #09232c 100%);
-  position: relative;
-  z-index: 999999999999; }
-
 /* line 30, ../scss/style.scss */
 .center, .connect i, .content-section-4 {
   display: flex;
