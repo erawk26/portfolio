@@ -46,3 +46,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.scssc
+
+# Webstorm project files
+.idea
+
+# Sass Transpiler
+.sass-cache
+config.rb
