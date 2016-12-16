@@ -1,73 +1,163 @@
+/* line 35, ../scss/_variables.scss */
+.center, .connect i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 39, ../scss/_variables.scss */
+.flexsb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* line 43, ../scss/_variables.scss */
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 49, ../scss/_variables.scss */
+.ds1, .grey {
+  -moz-box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.8);
+  -webkit-box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.8);
+  box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.8);
+}
+
+/* line 54, ../scss/_variables.scss */
+.br1 {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* line 58, ../scss/_variables.scss */
+.br2 {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+/* line 62, ../scss/_variables.scss */
+.br3 {
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+}
+
+/* line 66, ../scss/_variables.scss */
+.bdr {
+  border: 2px dotted yellow;
+}
+
+/* line 71, ../scss/_variables.scss */
+.ul {
+  border-bottom: 2px solid #fff;
+}
+
+/* line 76, ../scss/_variables.scss */
+.r45 {
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+/* line 80, ../scss/_variables.scss */
+.grey {
+  background: #d4d8d9;
+  padding: 20px;
+}
+
+/* line 85, ../scss/_variables.scss */
+.uc, form label {
+  text-transform: uppercase;
+}
+
+/* line 87, ../scss/_variables.scss */
+* {
+  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+}
+
 /* title: sandy stone beach ocean diver https://color.adobe.com/themeID/15325 */
 /* title: Firenze https://color.adobe.com/themeID/24198 */
 /* group 2 */
-/* line 30, ../scss/style.scss */
-.center, .connect i, .content-section-4 {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-/* line 31, ../scss/style.scss */
+/* Social Media Colors */
+/* line 15, ../scss/_base.scss */
 *,
 *:before,
 *:after {
-  box-sizing: border-box !important; }
+  box-sizing: border-box !important;
+}
 
-/* line 36, ../scss/style.scss */
+/* line 21, ../scss/_base.scss */
 * {
-  transition: all 1s ease; }
+  transition: all 1s ease;
+}
 
-/* line 37, ../scss/style.scss */
-body,
+/* line 25, ../scss/_base.scss */
 html {
-  width: 100%;
-  height: 100%;
-  font-family: "Source Sans Pro", sans-serif; }
+  font-family: "Source Sans Pro", sans-serif;
+}
 
-/* line 43, ../scss/style.scss */
+/* line 29, ../scss/_base.scss */
 body {
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 12pt;
   -webkit-font-smoothing: antialiased;
   background: #444;
-  color: #000; }
+  color: #000;
+}
 
-/* line 48, ../scss/style.scss */
+/* line 37, ../scss/_base.scss */
 a {
-  color: #003f75; }
+  color: #003f75;
+}
 
-/* line 49, ../scss/style.scss */
+/* line 41, ../scss/_base.scss */
 a:hover {
-  color: #666; }
+  color: #666;
+}
 
-/* line 53, ../scss/style.scss */
+/* line 45, ../scss/_base.scss */
 h1, h2, h3, h4 {
-  font-family: "Cagliostro", cursive; }
+  font-family: "Cagliostro", cursive;
+}
 
-/* line 57, ../scss/style.scss */
+/* line 49, ../scss/_base.scss */
 .topnav ul.navbar-nav li a:hover,
 .topnav ul.navbar-nav li a:focus,
 .topnav .navbar-brand:hover {
   transition: all .75s linear;
   color: white;
-  background-color: #333; }
+  background-color: #333;
+}
 
-/* line 64, ../scss/style.scss */
+/* line 57, ../scss/_base.scss */
 .navbar-default {
-  color: #333; }
+  color: #333;
+}
 
-/* line 68, ../scss/style.scss */
+/* line 61, ../scss/_base.scss */
 .banner-message > h1 {
   font-size: 5em;
   text-shadow: 3px 3px 3px #333;
-  color: white; }
-
-/* line 74, ../scss/style.scss */
-.banner-message > h3,
-.content-section-4 > h1 {
   color: white;
-  text-shadow: 1px 2px 3px #333; }
+}
 
-/* line 83, ../scss/style.scss */
+/* line 67, ../scss/_base.scss */
+.banner-message h3,
+.panel-4 h1 {
+  color: white;
+  text-shadow: 1px 2px 3px #333;
+}
+
+/* line 76, ../scss/_base.scss */
 .img {
   -moz-border-radius: 50% / 50%;
   -webkit-border-radius: 50% 50%;
@@ -80,9 +170,10 @@ h1, h2, h3, h4 {
   -webkit-transform: translateY(30px);
   transform: translateY(30px);
   border: 0.45em solid #fff;
-  z-index: 9; }
+  z-index: 9;
+}
 
-/* line 92, ../scss/style.scss */
+/* line 85, ../scss/_base.scss */
 #about-card {
   max-width: 700px;
   padding: 3em;
@@ -90,20 +181,24 @@ h1, h2, h3, h4 {
   background-color: rgba(255, 255, 255, 0.75);
   -moz-border-radius: 10px / 10px;
   -webkit-border-radius: 10px 10px;
-  border-radius: 10px / 10px; }
-  /* line 92, ../scss/style.scss */
-  #about-card p {
-    text-align: justify; }
+  border-radius: 10px / 10px;
+}
+/* line 86, ../scss/_base.scss */
+#about-card p {
+  text-align: justify;
+}
 
-/* line 101, ../scss/style.scss */
+/* line 97, ../scss/_base.scss */
 #lang-frame {
-  width: auto; }
+  width: auto;
+}
 
-/* line 104, ../scss/style.scss */
+/* line 101, ../scss/_base.scss */
 .dl-horizontal {
-  margin-top: .65em; }
+  margin-top: .65em;
+}
 
-/* line 105, ../scss/style.scss */
+/* line 105, ../scss/_base.scss */
 .a-cont {
   display: flex;
   align-items: baseline;
@@ -114,70 +209,84 @@ h1, h2, h3, h4 {
   margin: 0;
   min-height: 75vh;
   background: #000;
-  background: rgba(0, 0, 0, 0.5); }
-  /* line 106, ../scss/style.scss */
-  .a-cont i {
-    background: none;
-    -moz-box-shadow: #333 0 0 0 0;
-    -webkit-box-shadow: #333 0 0 0 0;
-    box-shadow: #333 0 0 0 0;
-    text-shadow: #111 3px 3px 12px;
-    text-shadow: #111 3px 3px 0 12px; }
-  /* line 117, ../scss/style.scss */
-  .a-cont h1 {
-    text-align: center; }
-  /* line 120, ../scss/style.scss */
-  .a-cont p {
-    border-top: 2.5px solid white;
-    border-top: 2.5px solid rgba(255, 255, 255, 0.5);
-    padding: 3% 0;
-    text-align: justify; }
+  background: rgba(0, 0, 0, 0.5);
+}
+/* line 106, ../scss/_base.scss */
+.a-cont i {
+  background: none;
+  -moz-box-shadow: #333 0 0 0 0;
+  -webkit-box-shadow: #333 0 0 0 0;
+  box-shadow: #333 0 0 0 0;
+  text-shadow: #111 3px 3px 12px;
+  text-shadow: #111 3px 3px 0 12px;
+}
+/* line 119, ../scss/_base.scss */
+.a-cont h1 {
+  text-align: center;
+}
+/* line 123, ../scss/_base.scss */
+.a-cont p {
+  border-top: 2.5px solid white;
+  border-top: 2.5px solid rgba(255, 255, 255, 0.5);
+  padding: 3% 0;
+  text-align: justify;
+}
 
-/* line 129, ../scss/style.scss */
+/* line 132, ../scss/_base.scss */
 .p1 {
   order: 2;
-  background: url("//baristasbeans.com/portfolio/img/port1.jpg") center top no-repeat; }
+  background: url("//baristasbeans.com/portfolio/img/port1.jpg") center top no-repeat;
+}
 
-/* line 131, ../scss/style.scss */
+/* line 137, ../scss/_base.scss */
 .p2 {
-  background: url("//baristasbeans.com/portfolio/img/quotes.gif") center top no-repeat; }
+  background: url("//baristasbeans.com/portfolio/img/quotes.gif") center top no-repeat;
+}
 
-/* line 132, ../scss/style.scss */
+/* line 141, ../scss/_base.scss */
 .p3 {
-  background: url("//baristasbeans.com/portfolio/img/port3.gif") center top no-repeat; }
+  background: url("//baristasbeans.com/portfolio/img/port3.gif") center top no-repeat;
+}
 
-/* line 133, ../scss/style.scss */
+/* line 145, ../scss/_base.scss */
 .p4 {
-  background: url("//baristasbeans.com/portfolio/img/pomodoro.gif") center top no-repeat; }
+  background: url("//baristasbeans.com/portfolio/img/pomodoro.gif") center top no-repeat;
+}
 
-/* line 134, ../scss/style.scss */
+/* line 149, ../scss/_base.scss */
 .p5 {
-  background: url("//baristasbeans.com/portfolio/img/weather.jpg") center top no-repeat; }
+  background: url("//baristasbeans.com/portfolio/img/weather.jpg") center top no-repeat;
+}
 
-/* line 135, ../scss/style.scss */
+/* line 153, ../scss/_base.scss */
 .p6 {
-  background: url("//baristasbeans.com/portfolio/img/twitch.gif") center top no-repeat; }
+  background: url("//baristasbeans.com/portfolio/img/twitch.gif") center top no-repeat;
+}
 
-/* line 136, ../scss/style.scss */
+/* line 157, ../scss/_base.scss */
 .p7 {
-  background: url("//baristasbeans.com/portfolio/img/wiki.gif") center top no-repeat; }
+  background: url("//baristasbeans.com/portfolio/img/wiki.gif") center top no-repeat;
+}
 
-/* line 137, ../scss/style.scss */
+/* line 161, ../scss/_base.scss */
 .p8 {
-  background: url("//baristasbeans.com/portfolio/img/tictactoe.gif") center top no-repeat; }
+  background: url("//baristasbeans.com/portfolio/img/tictactoe.gif") center top no-repeat;
+}
 
-/* line 138, ../scss/style.scss */
+/* line 165, ../scss/_base.scss */
 .p9 {
-  background: url("//baristasbeans.com/portfolio/img/simon.gif") center top no-repeat; }
+  background: url("//baristasbeans.com/portfolio/img/simon.gif") center top no-repeat;
+}
 
-/* line 139, ../scss/style.scss */
+/* line 169, ../scss/_base.scss */
 .p-cont {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+}
 
-/* line 140, ../scss/style.scss */
+/* line 173, ../scss/_base.scss */
 .portfolio-img {
   -moz-box-shadow: 0.35em 0.35em 0.55em 0 rgba(0, 0, 0, 0.4);
   -webkit-box-shadow: 0.35em 0.35em 0.55em 0 rgba(0, 0, 0, 0.4);
@@ -189,133 +298,156 @@ h1, h2, h3, h4 {
   margin: 20px 0 5px 0;
   height: 35vw;
   width: 100%;
-  overflow: hidden; }
-  /* line 141, ../scss/style.scss */
-  .portfolio-img h4:active {
-    text-decoration: none !important; }
-  @media (min-width: 760px) {
-    /* line 140, ../scss/style.scss */
-    .portfolio-img {
-      height: 22vw; } }
-  /* line 149, ../scss/style.scss */
-  .portfolio-img a:hover, .portfolio-img a:active {
-    text-decoration: none !important; }
-    /* line 151, ../scss/style.scss */
-    .portfolio-img a:hover .caption, .portfolio-img a:active .caption {
-      background: rgba(0, 0, 0, 0.65);
-      -moz-transform: translateY(0);
-      -ms-transform: translateY(0);
-      -webkit-transform: translateY(0);
-      transform: translateY(0); }
-      /* line 154, ../scss/style.scss */
-      .portfolio-img a:hover .caption span, .portfolio-img a:active .caption span {
-        display: flex; }
-  /* line 157, ../scss/style.scss */
-  .portfolio-img .caption {
-    background: black;
-    height: 100%;
-    width: 100%;
-    -moz-transform: translateY(82%);
-    -ms-transform: translateY(82%);
-    -webkit-transform: translateY(82%);
-    transform: translateY(82%);
-    color: #fff;
-    font-size: calc(0.5em + .65vw); }
-    /* line 164, ../scss/style.scss */
-    .portfolio-img .caption .job-name {
-      font-size: calc(0.75em + .65vw);
-      height: 10%;
-      margin: 0 10px 3px 6px;
-      padding: 10px 0 0 5px; }
-    /* line 170, ../scss/style.scss */
-    .portfolio-img .caption ul {
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      /* @extend .center;
-       justify-content:space-around;
-       flex-wrap:wrap;*/
-      list-style-type: none;
-      margin: 0;
-      padding: 3px 0; }
-      /* line 177, ../scss/style.scss */
-      .portfolio-img .caption ul li {
-        margin: 0;
-        padding: 0;
-        display: inline; }
-    /* line 182, ../scss/style.scss */
-    .portfolio-img .caption .oauth img {
-      height: calc(0.7em + 1.2vw);
-      margin-bottom: 2px;
-      padding: 0; }
-    /* line 183, ../scss/style.scss */
-    .portfolio-img .caption .devicons {
-      font-size: calc(0.7em + 1.2vw); }
-    /* line 184, ../scss/style.scss */
-    .portfolio-img .caption .devicons-javascript {
-      font-size: calc(0.53em + 1.2vw); }
-    /* line 185, ../scss/style.scss */
-    .portfolio-img .caption span {
-      overflow: hidden;
-      flex-direction: column;
-      justify-content: space-between;
-      height: 90%;
-      display: none; }
-      /* line 191, ../scss/style.scss */
-      .portfolio-img .caption span p {
-        padding: 6% 6% 0 6%;
-        max-height: 73%;
-        overflow: hidden; }
-      /* line 192, ../scss/style.scss */
-      .portfolio-img .caption span .tags {
-        z-index: 10;
-        color: #000; }
+  overflow: hidden;
+}
+/* line 174, ../scss/_base.scss */
+.portfolio-img h4:active {
+  text-decoration: none !important;
+}
+@media (min-width: 760px) {
+  /* line 173, ../scss/_base.scss */
+  .portfolio-img {
+    height: 22vw;
+  }
+}
+/* line 186, ../scss/_base.scss */
+.portfolio-img a:hover, .portfolio-img a:active {
+  text-decoration: none !important;
+}
+/* line 188, ../scss/_base.scss */
+.portfolio-img a:hover .caption, .portfolio-img a:active .caption {
+  background: rgba(0, 0, 0, 0.65);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+/* line 191, ../scss/_base.scss */
+.portfolio-img a:hover .caption span, .portfolio-img a:active .caption span {
+  display: flex;
+}
+/* line 196, ../scss/_base.scss */
+.portfolio-img .caption {
+  background: black;
+  height: 100%;
+  width: 100%;
+  -moz-transform: translateY(82%);
+  -ms-transform: translateY(82%);
+  -webkit-transform: translateY(82%);
+  transform: translateY(82%);
+  color: #fff;
+  font-size: calc(0.5em + .65vw);
+}
+/* line 203, ../scss/_base.scss */
+.portfolio-img .caption .job-name {
+  font-size: calc(0.75em + .65vw);
+  height: 10%;
+  margin: 0 10px 3px 6px;
+  padding: 10px 0 0 5px;
+}
+/* line 209, ../scss/_base.scss */
+.portfolio-img .caption ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* @extend .center;
+   justify-content:space-around;
+   flex-wrap:wrap;*/
+  list-style-type: none;
+  margin: 0;
+  padding: 3px 0;
+}
+/* line 217, ../scss/_base.scss */
+.portfolio-img .caption ul li {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+/* line 223, ../scss/_base.scss */
+.portfolio-img .caption .oauth img {
+  height: calc(0.7em + 1.2vw);
+  margin-bottom: 2px;
+  padding: 0;
+}
+/* line 228, ../scss/_base.scss */
+.portfolio-img .caption .devicons {
+  font-size: calc(0.7em + 1.2vw);
+}
+/* line 231, ../scss/_base.scss */
+.portfolio-img .caption .devicons-javascript {
+  font-size: calc(0.53em + 1.2vw);
+}
+/* line 234, ../scss/_base.scss */
+.portfolio-img .caption span {
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
+  display: none;
+}
+/* line 241, ../scss/_base.scss */
+.portfolio-img .caption span p {
+  padding: 6% 6% 0 6%;
+  max-height: 73%;
+  overflow: hidden;
+}
+/* line 246, ../scss/_base.scss */
+.portfolio-img .caption span .tags {
+  z-index: 10;
+  color: #000;
+}
 
-/* line 202, ../scss/style.scss */
+/* line 257, ../scss/_base.scss */
 .screen-reader-text {
   position: absolute;
   top: -9999px;
-  left: -9999px; }
+  left: -9999px;
+}
 
-/* line 207, ../scss/style.scss */
+/* line 263, ../scss/_base.scss */
 .connect {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 30px; }
-  /* line 209, ../scss/style.scss */
-  .connect .tooltip.bottom > .tooltip-arrow {
-    border-bottom-color: #fff;
-    border-bottom-color: rgba(255, 255, 255, 0.75); }
-  /* line 212, ../scss/style.scss */
-  .connect .tooltip > .tooltip-inner {
-    background: #fff;
-    background: rgba(255, 255, 255, 0.75);
-    color: #000;
-    font-size: 1.25em;
-    padding: 5px; }
-  /* line 220, ../scss/style.scss */
-  .connect a {
-    text-decoration: none; }
-  /* line 221, ../scss/style.scss */
-  .connect i {
-    -moz-border-radius: 50%;
-    -webkit-border-radius: 50%;
-    border-radius: 50%;
-    -moz-box-shadow: 0.15em 0.15em 0.35em 0 rgba(0, 0, 0, 0.4);
-    -webkit-box-shadow: 0.15em 0.15em 0.35em 0 rgba(0, 0, 0, 0.4);
-    box-shadow: 0.15em 0.15em 0.35em 0 rgba(0, 0, 0, 0.4);
-    font-size: calc(1.2em + 1.3vw);
-    height: calc(1.2em + 2.5vw);
-    width: calc(1.2em + 2.5vw);
-    background: #fff;
-    background: rgba(255, 255, 255, 0.75);
-    margin: 1em .5em 0 .5em;
-    padding: .5em; }
+  padding: 30px;
+}
+/* line 265, ../scss/_base.scss */
+.connect .tooltip.bottom > .tooltip-arrow {
+  border-bottom-color: #fff;
+  border-bottom-color: rgba(255, 255, 255, 0.75);
+}
+/* line 269, ../scss/_base.scss */
+.connect .tooltip > .tooltip-inner {
+  background: #fff;
+  background: rgba(255, 255, 255, 0.75);
+  color: #000;
+  font-size: 1.25em;
+  padding: 5px;
+}
+/* line 277, ../scss/_base.scss */
+.connect a {
+  text-decoration: none;
+}
+/* line 280, ../scss/_base.scss */
+.connect i {
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -moz-box-shadow: 0.15em 0.15em 0.35em 0 rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 0.15em 0.15em 0.35em 0 rgba(0, 0, 0, 0.4);
+  box-shadow: 0.15em 0.15em 0.35em 0 rgba(0, 0, 0, 0.4);
+  font-size: calc(1.2em + 1.3vw);
+  height: calc(1.2em + 2.5vw);
+  width: calc(1.2em + 2.5vw);
+  background: #fff;
+  background: rgba(255, 255, 255, 0.75);
+  margin: 1em .5em 0 .5em;
+  padding: .5em;
+}
 
-/* line 234, ../scss/style.scss */
+/* line 294, ../scss/_base.scss */
 .back-to-top {
   font-size: 0.75em;
   position: fixed;
@@ -328,64 +460,66 @@ h1, h2, h3, h4 {
   border: 1px solid rgba(0, 0, 0, 0.4);
   transition: all .25s linear;
   border-radius: 4px;
-  z-index: 3; }
+  z-index: 3;
+}
 
-/* line 248, ../scss/style.scss */
+/* line 309, ../scss/_base.scss */
 .back-to-top:hover {
   border-radius: 4px;
   background: white;
   border: 1px solid black;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
-/* line 255, ../scss/style.scss */
+/* line 316, ../scss/_base.scss */
 footer {
-  padding-left: 8%;
-  background-color: #333;
-  color: #666; }
+  color: #333;
+  background-color: white;
+}
 
 /* content backgrounds */
-/* line 263, ../scss/style.scss */
-.content-section-1 {
+/* line 322, ../scss/_base.scss */
+section {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  width: 100%;
+}
+
+/* line 328, ../scss/_base.scss */
+.panel-1 {
+  min-height: 100vh;
   padding: 10%;
-  width: 100%;
-  min-height: 100vh;
+  background: url("//baristasbeans.com/portfolio/img/0.jpg") repeat-y center center fixed;
+}
+
+/* line 334, ../scss/_base.scss */
+.panel-2 {
   height: auto;
-  background: url("//baristasbeans.com/portfolio/img/0.jpg") repeat-y center center fixed;
-  background-size: cover; }
-
-/* line 272, ../scss/style.scss */
-.content-section-2 {
   background: url("//baristasbeans.com/portfolio/img/3.jpg") no-repeat center center fixed;
-  background-size: cover;
-  width: 100%;
-  height: auto; }
+}
 
-/* line 279, ../scss/style.scss */
-.content-section-3 {
+/* line 339, ../scss/_base.scss */
+.panel-3 {
+  min-height: 100vh;
   padding: 7% 1%;
-  min-height: 100vh;
   background: url("//baristasbeans.com/portfolio/img/3.jpg") repeat-y center center fixed;
-  background-size: cover;
-  width: 100%;
-  min-height: 100vh;
-  height: auto; }
+}
 
-/* line 289, ../scss/style.scss */
-.content-section-4 {
-  flex-direction: column;
+/* line 345, ../scss/_base.scss */
+.panel-4 {
+  min-height: 100vh;
   padding: 10% 1%;
-  min-height: 100vh;
   background: url("//baristasbeans.com/portfolio/img/0.jpg") repeat-y center center fixed;
-  background-size: cover;
-  width: 100%;
-  min-height: 100vh;
-  height: auto; }
+}
 
-/* line 300, ../scss/style.scss */
+/* line 351, ../scss/_base.scss */
+section[class^="panel-"] {
+  background-size: cover;
+}
+
+/* line 355, ../scss/_base.scss */
 .white-gloss, .portfolio-img .caption span .tags {
   background-color: white;
   *zoom: 1;
@@ -395,4 +529,102 @@ footer {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ffffff), color-stop(50%, #f3f3f3), color-stop(51%, #ededed), color-stop(100%, #ffffff));
   background-image: -moz-linear-gradient(top, #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%);
   background-image: -webkit-linear-gradient(top, #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%);
-  background-image: linear-gradient(to bottom, #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%); }
+  background-image: linear-gradient(to bottom, #ffffff 0%, #f3f3f3 50%, #ededed 51%, #ffffff 100%);
+}
+
+/* line 2, ../scss/_forms.scss */
+.form-group {
+  padding: 5px;
+  min-width: 100%;
+  margin-bottom: 5px;
+}
+
+@media (min-width: 500px) {
+  /* line 9, ../scss/_forms.scss */
+  .form-group.short {
+    max-width: 50%;
+    width: 50%;
+    min-width: 50%;
+  }
+}
+
+/* line 17, ../scss/_forms.scss */
+form {
+  color: #2c3e50;
+  font-weight: 700;
+}
+/* line 20, ../scss/_forms.scss */
+form label {
+  font-size: 16px;
+  text-indent: 5px;
+}
+@media (min-width: 768px) {
+  /* line 20, ../scss/_forms.scss */
+  form label {
+    font-size: 20px;
+  }
+}
+/* line 28, ../scss/_forms.scss */
+form input,
+form select,
+form textarea,
+form .form-control {
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  -moz-box-shadow: inset 1px 1px 4px 0 #444;
+  -webkit-box-shadow: inset 1px 1px 4px 0 #444;
+  box-shadow: inset 1px 1px 4px 0 #444;
+  font-size: 14px;
+  color: #000;
+  background: #b4b8b8;
+  font-weight: 400;
+  padding: 2px 8px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  /* line 28, ../scss/_forms.scss */
+  form input,
+  form select,
+  form textarea,
+  form .form-control {
+    font-size: 18px;
+  }
+}
+/* line 46, ../scss/_forms.scss */
+form input[disabled],
+form select[disabled],
+form textarea[disabled],
+form .form-control[disabled] {
+  background: #aaadae;
+}
+/* line 51, ../scss/_forms.scss */
+form input[type=checkbox], form input[type=radio] {
+  -moz-box-shadow: 0 0 0 0 #b4b8b8;
+  -webkit-box-shadow: 0 0 0 0 #b4b8b8;
+  box-shadow: 0 0 0 0 #b4b8b8;
+}
+/* line 55, ../scss/_forms.scss */
+form .file-btn {
+  cursor: pointer;
+  display: inline-block;
+}
+/* line 56, ../scss/_forms.scss */
+form .file-btn input[type='file'] {
+  position: fixed;
+  top: -1000px;
+}
+/* line 63, ../scss/_forms.scss */
+form .btn-block {
+  font-size: 15px;
+}
+@media (min-width: 500px) {
+  /* line 63, ../scss/_forms.scss */
+  form .btn-block {
+    font-size: 20px;
+  }
+}
+/* line 69, ../scss/_forms.scss */
+form .btn-block:last-child {
+  margin: 10px 5px 0;
+}

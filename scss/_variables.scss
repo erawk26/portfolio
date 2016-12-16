@@ -1,0 +1,91 @@
+@import 'compass';
+@import 'color-schemer';
+@import 'mixins';
+//------// Variables and Mixins //------//
+$bp1: 768px; //breakpoints
+$bp2: 992px;
+$bp3: 1200px;
+$oSans: 'Open Sans', sans-serif;
+$red: #e74c3c;
+$grey: shade(#ecf0f1, 10);
+$blue: rgba(44, 62, 80, 1);
+$blueA: rgba(44, 62, 80, .8);
+$white: #fff;
+$bdr: 2px dotted yellow; //layout debugging (dev only)
+$br1: 10px;
+$br2: 4px;
+$br3: 6px;
+// Font weights
+$light: 100;
+$regular: 400;
+$bold: 700;
+// Base Font
+$base-font-family: sans-serif;
+$base-font-weight: $regular;
+$base-font-size: 13px;
+$base-line-height: 1.4;
+// Fixed Font
+$fixed-font-family: monospace;
+$fixed-font-size: 85%;
+$fixed-line-height: $base-line-height;
+// Headings
+$header-font-weight: $bold;
+
+//------// Global Styles //------//
+.center {
+  @include flex();
+}
+
+.flexsb {
+  @include flex(space-between, $wrap: wrap);
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.ds1 {
+  @include box-shadow(3px 3px 10px 0 rgba(black,0.8));
+}
+
+
+.br1 {
+  @include border-radius($br1);
+}
+
+.br2 {
+  @include border-radius($br2);
+}
+
+.br3 {
+  @include border-radius($br3);
+}
+
+.bdr {
+  border: $bdr;
+}
+
+//layout debugging (dev only)
+.ul {
+  @include marding();
+  border-bottom: 2px solid $white;
+}
+
+.r45 {
+  @include rotate(-45deg);
+}
+
+.grey {
+  background: $grey;
+  padding: 20px;
+  @extend .ds1;
+}
+.uc {
+  text-transform: uppercase;}
+* {
+  font-family: $base-font-family;
+  font-family: $oSans;
+  font-weight: $regular;
+}

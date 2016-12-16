@@ -1,12 +1,11 @@
 require 'compass/import-once/activate'
 # Require any additional compass plugins here.
 require 'color-schemer'
-
 # Set this to the root of your project when deployed:
 http_path = "/"
 css_dir = "css"
 sass_dir = "scss"
-images_dir = "img"
+images_dir = "imgs"
 javascripts_dir = "js"
 
 # You can select your preferred output style here (can be overridden via the command line):
