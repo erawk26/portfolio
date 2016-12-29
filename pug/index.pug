@@ -8,8 +8,7 @@ html
 		link(rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
 		link(rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css')
 		link(rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css')
-		link(rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/devicons/1.8.0/css/devicons.min.css')
-		link(rel='stylesheet prefetch' href='css/colors.css')
+		link(rel='stylesheet' href='css/devicons.css')
 		link(rel='stylesheet' href='css/style.css')
 		link(rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Advent+Pro|Source+Sans+Pro|Cagliostro')
 	body
@@ -33,7 +32,7 @@ html
 						li
 							a(href='#contact') Contact
 		a(name='home')
-		section.panel-1
+		section.intro
 			.banner-message.text-center
 				h1 Erik Olsen
 					br
@@ -54,7 +53,7 @@ html
 						dt Tools & expertise:
 						dd Adobe Photoshop & Illustrator, Git, Responsive Web Design, CMS & Drupal, SSH.
 		a(name='portfolio')
-		section.panel-3.clearfix
+		section.portfolio.clearfix
 			.p-cont
 				.col-sm-4.col-xs-6
 					.portfolio-img.p1
@@ -171,11 +170,11 @@ html
 												span.screen-reader-text Responsive Web Design
 				.col-sm-4.col-xs-6
 					.portfolio-img.p3
-						a(href='//codepen.io/erawk26/pen/BKmjLE' target='_blank' rel='noreferrer' role='button' title='Javascript Calculator')
+						a(href='//codepen.io/erawk26/pen/ObeJNK' target='_blank' rel='noreferrer' role='button' title='Javascript Calculator')
 							.caption
 								h4.job-name Javascript Calculator
 								span.cap-hov
-									p This is a calculator that built in javascript
+									p This is a calculator that I built in javascript.
 									ul.tags
 										li
 											i.devicons.devicons-html5(title='HTML5')
@@ -306,7 +305,7 @@ html
 											i.devicons.devicons-jquery(title='jQuery')
 												span.screen-reader-text jQuery
 		a(name='about')
-		section.panel-2
+		section.about
 			.a-cont
 				.col-sm-4.col-xs-12
 					h1
@@ -324,9 +323,9 @@ html
 					h4.text-center What inspires me
 					p Higher order functions, recursion, and functional programming. I love finding dynamic, cleaner, more efficient, ways to write code as I delevop a deeper understanding of these concepts.
 		a(name='contact')
-		section.panel-4.text-center
+		section.connect.text-center
 			h1 Let's Connect
-			.connect
+			div
 				a(href='mailto:erik@baristasbeans.com' target='_blank' data-toggle='tooltip' data-placement='bottom' title='erik@baristasbeans.com')
 					i.fa.fa-envelope-o
 						span.screen-reader-text E-Mail
