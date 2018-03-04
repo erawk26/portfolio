@@ -86,19 +86,27 @@ h1, h2, h3, h4 {
 }
 
 .a-cont {
-	i {
-		background: none;
-		@include box-shadow (#333 0 0 0 0);
-		@include text-shadow (#111 3px 3px 0 12px);
-	}
-	@include flex($align: baseline, $wrap: wrap);
 	@include marding();
+	@include flex($wrap: wrap);
+	width:100%;
 	color: white;
 	padding: 7%;
 	margin: 0;
 	min-height: 75vh;
 	background: #000; //opaque fallback
 	background: rgba(black, 0.5);
+	.flex-wrapper{
+		@include flex(center,flex-start,$wrap: wrap);}
+	.a-item {
+		@include flexchild(1, 1, auto);
+		max-width: 350px;
+		margin:10px 20px;
+	}
+	i {
+		background: none;
+		@include box-shadow (#333 0 0 0 0);
+		@include text-shadow (#111 3px 3px 0 12px);
+	}
 	h1 {
 		text-align: center;
 		//@include marding();
@@ -112,10 +120,12 @@ h1, h2, h3, h4 {
 }
 
 ///////Portfolio
-.portfolio-img {
+.portfolio-img,.p-cont >ul>li .img {
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	border:none;
+	border-radius: 0;
 	&.labrea {
 		background-image: url('/img/labrea.jpg');
 	}
@@ -151,10 +161,10 @@ h1, h2, h3, h4 {
 	.flex-wrapper {
 		@include flex(flex-start, stretch, $wrap: wrap);
 		@include flex-grid(3, 20px);
-		@media (max-width:$desktop-breakpoint) {
+		@media (max-width: $desktop-breakpoint) {
 			@include flex-grid(2, 20px);
 		}
-		@media (max-width:$tablet-breakpoint) {
+		@media (max-width: $tablet-breakpoint) {
 			@include flex-grid(1, 20px);
 		}
 		width: 100%;
@@ -260,20 +270,20 @@ h1, h2, h3, h4 {
 	@include marding(0, 3px);
 	background: white;
 	@include flex($wrap: wrap);
-	.devicons {
-		font-size: 40px;
-		margin: 0 .25em;
-	}
-	.devicons-illustrator, .devicons-photoshop {
-		font-size: 30px;
-	}
-	.devicons-nodejs {
-		font-size: 55px;
-	}
-	.devicons-php {
-		height: 30px;
-		line-height: 30px;
-	}
+	//.devicons {
+	//	font-size: 40px;
+	//	margin: 0 .25em;
+	//}
+	//.devicons-illustrator, .devicons-photoshop {
+	//	font-size: 30px;
+	//}
+	//.devicons-nodejs {
+	//	font-size: 55px;
+	//}
+	//.devicons-php {
+	//	height: 30px;
+	//	line-height: 30px;
+	//}
 }
 
 /////////////
