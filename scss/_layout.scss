@@ -8,24 +8,22 @@ section {
   background-position-x: center;
   background-position-y: center;
   background-attachment: fixed;
-}
-
-section:nth-of-type(1) {
-  min-height: 100vh;
-  padding: 10%;
-  background-image: url('//baristasbeans.com/portfolio/img/0.jpg');
-}
-section:nth-of-type(2)  {
-  width: 100%;
-  padding: 0;
-  background-image: url('//baristasbeans.com/portfolio/img/3.jpg');
-}
-section:nth-of-type(3)  {
-  height:auto;
-  background-image: url('//baristasbeans.com/portfolio/img/3.jpg');
-}
-section:nth-of-type(4)  {
-  min-height: 100vh;
-  padding: 10% 1%;
-  background-image: url('//baristasbeans.com/portfolio/img/0.jpg');
-}
+  &:nth-of-type(1) {
+    min-height: 100vh;
+    padding: 10%;
+    background-image: url('//baristasbeans.com/portfolio/img/0.jpg');
+  }
+  &:nth-of-type(2)  {
+    width: 100%;
+    padding: 0;
+    background-image: url('//baristasbeans.com/portfolio/img/3.jpg');
+  }
+  &:nth-of-type(3)  {
+    height:auto;
+    background-image: url('//baristasbeans.com/portfolio/img/3.jpg');
+  }
+  &:nth-of-type(4)  {
+    min-height: 100vh;
+    padding: 10% 1%;
+    background-image: url('//baristasbeans.com/portfolio/img/0.jpg');
+  }}
