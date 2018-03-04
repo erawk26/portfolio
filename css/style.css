@@ -373,19 +373,18 @@ section:nth-of-type(1) {
 
 /* line 18, ../scss/_layout.scss */
 section:nth-of-type(2) {
-  min-height: 100vh;
   width: 100%;
   padding: 0;
   background-image: url("//baristasbeans.com/portfolio/img/3.jpg");
 }
 
-/* line 24, ../scss/_layout.scss */
+/* line 23, ../scss/_layout.scss */
 section:nth-of-type(3) {
   height: auto;
   background-image: url("//baristasbeans.com/portfolio/img/3.jpg");
 }
 
-/* line 28, ../scss/_layout.scss */
+/* line 27, ../scss/_layout.scss */
 section:nth-of-type(4) {
   min-height: 100vh;
   padding: 10% 1%;
