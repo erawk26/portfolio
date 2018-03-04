@@ -1,7 +1,42 @@
 //------// Global Styles //------//
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box !important;
+}
+
 * {
-	box-sizing: border-box;
+	transition: all 1s ease,color .25s ease-in-out;
 	font-family: $base-font-family;
+}
+
+body,html {
+	font-family: $fontBody;
+	font-size: $base-font-size;
+	-webkit-font-smoothing: antialiased;
+	background: #444;
+	color: #000;
+}
+
+a {
+	color: shade($medBlue, 46);
+}
+
+a:hover {
+	color: $medGrey;
+}
+
+h1, h2, h3, h4 {
+	font-family: $fontHead;
+}
+
+ul {
+	list-style: none;
+	@include marding;
+	li {
+		@include marding;
+	}
 }
 
 .center {
@@ -110,8 +145,8 @@ a.dir-wrapper {
 	> .img {
 		display: block;
 		width: 100%;
-		height: 0;
-		padding: 0 0 56.25% 0;
+		height:0;margin:0;
+		padding: 0 0 63% 0;
 	}
 	.hover {
 		background-color: rgba(grey, 0.5);
