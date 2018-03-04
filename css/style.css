@@ -528,62 +528,76 @@ section:nth-of-type(4) {
   text-align: justify;
 }
 
+/* line 92, ../scss/_base.scss */
+.tooltip * {
+  border: none !important;
+}
+
 /* line 94, ../scss/_base.scss */
 a[name="portfolio"] {
   -webkit-transform: translateY(-50px);
           transform: translateY(-50px);
   display: block;
   width: 100%;
+  height: 0;
 }
 
-/* line 100, ../scss/_base.scss */
+/* line 101, ../scss/_base.scss */
 .portfolio-item .img {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
-/* line 105, ../scss/_base.scss */
+/* line 106, ../scss/_base.scss */
 .portfolio-item.labrea .img {
   background-image: url("/img/labrea.jpg");
 }
-/* line 108, ../scss/_base.scss */
+/* line 109, ../scss/_base.scss */
 .portfolio-item.otis .img {
   background-image: url("/img/otis.jpg");
 }
-/* line 111, ../scss/_base.scss */
+/* line 112, ../scss/_base.scss */
 .portfolio-item.mbf .img {
   background-image: url("/img/mbf.jpg");
 }
-/* line 114, ../scss/_base.scss */
+/* line 115, ../scss/_base.scss */
 .portfolio-item.nsb .img {
   background-image: url("/img/nsb.jpg");
 }
-/* line 117, ../scss/_base.scss */
+/* line 118, ../scss/_base.scss */
 .portfolio-item.cbv .img {
   background-image: url("/img/cbv.png");
 }
-/* line 120, ../scss/_base.scss */
+/* line 121, ../scss/_base.scss */
 .portfolio-item.zevia .img {
   background-image: url("/img/zevia.jpg");
 }
-/* line 123, ../scss/_base.scss */
+/* line 124, ../scss/_base.scss */
 .portfolio-item.healthnet .img {
   background-image: url("/img/healthnet.jpg");
 }
-/* line 126, ../scss/_base.scss */
+/* line 127, ../scss/_base.scss */
 .portfolio-item.foursight .img {
   background-image: url("/img/4sight.jpg");
 }
-/* line 129, ../scss/_base.scss */
+/* line 130, ../scss/_base.scss */
 .portfolio-item.aryzta .img {
   background-image: url("/img/aryzta.jpg");
 }
+/* line 133, ../scss/_base.scss */
+.portfolio-item.baristas .img {
+  background-image: url("/img/port1.jpg");
+}
+/* line 136, ../scss/_base.scss */
+.portfolio-item.hark .img {
+  background-image: url("/img/hark.png");
+}
 
-/* line 134, ../scss/_base.scss */
+/* line 141, ../scss/_base.scss */
 .p-cont {
   width: 100%;
 }
-/* line 137, ../scss/_base.scss */
+/* line 144, ../scss/_base.scss */
 .p-cont > .flex-wrapper {
   display: -ms-flexbox;
   display: -moz-flex;
@@ -618,7 +632,7 @@ a[name="portfolio"] {
   max-width: calc((100% / 3) - 0px);
 }
 @media (max-width: 960px) {
-  /* line 137, ../scss/_base.scss */
+  /* line 144, ../scss/_base.scss */
   .p-cont > .flex-wrapper {
     margin-top: 0;
     margin-left: 0;
@@ -639,7 +653,7 @@ a[name="portfolio"] {
   }
 }
 @media (max-width: 768px) {
-  /* line 137, ../scss/_base.scss */
+  /* line 144, ../scss/_base.scss */
   .p-cont > .flex-wrapper {
     margin-top: 0;
     margin-left: 0;
@@ -660,11 +674,11 @@ a[name="portfolio"] {
   }
 }
 
-/* line 150, ../scss/_base.scss */
+/* line 157, ../scss/_base.scss */
 .portfolio-item {
   position: relative;
 }
-/* line 154, ../scss/_base.scss */
+/* line 161, ../scss/_base.scss */
 .portfolio-item .hover-wrapper {
   display: -ms-flexbox;
   display: -moz-flex;
@@ -688,7 +702,7 @@ a[name="portfolio"] {
   padding: 5%;
   position: relative;
 }
-/* line 161, ../scss/_base.scss */
+/* line 168, ../scss/_base.scss */
 .portfolio-item .hover {
   background: black;
   height: 100%;
@@ -696,18 +710,18 @@ a[name="portfolio"] {
   color: #fff;
   font-size: calc(0.5em + .65vw);
 }
-/* line 167, ../scss/_base.scss */
+/* line 174, ../scss/_base.scss */
 .portfolio-item .hover .job-name {
   font-size: calc(0.75em + .65vw);
   margin: 0;
   padding: 0 0 15px;
 }
-/* line 171, ../scss/_base.scss */
+/* line 178, ../scss/_base.scss */
 .portfolio-item .hover p {
   margin: 0;
   padding: 0 0 15px;
 }
-/* line 174, ../scss/_base.scss */
+/* line 181, ../scss/_base.scss */
 .portfolio-item .hover ul {
   display: -ms-flexbox;
   display: -moz-flex;
@@ -729,13 +743,13 @@ a[name="portfolio"] {
   margin: 0;
   padding: 3px 0;
 }
-/* line 182, ../scss/_base.scss */
+/* line 189, ../scss/_base.scss */
 .portfolio-item .hover ul li {
   margin: 0;
   padding: 0;
   display: inline;
 }
-/* line 188, ../scss/_base.scss */
+/* line 195, ../scss/_base.scss */
 .portfolio-item .hover .tags {
   width: 100%;
   z-index: 10;
@@ -748,7 +762,7 @@ a[name="portfolio"] {
           transform: translateY(-100%);
 }
 
-/* line 203, ../scss/_base.scss */
+/* line 210, ../scss/_base.scss */
 .portfolio-img {
   -webkit-box-shadow: 0.35em 0.35em 0.55em 0 rgba(0, 0, 0, 0.4);
   box-shadow: 0.35em 0.35em 0.55em 0 rgba(0, 0, 0, 0.4);
@@ -761,27 +775,27 @@ a[name="portfolio"] {
   left: 0;
   overflow: hidden;
 }
-/* line 204, ../scss/_base.scss */
+/* line 211, ../scss/_base.scss */
 .portfolio-img h4:active {
   text-decoration: none !important;
 }
-/* line 216, ../scss/_base.scss */
+/* line 223, ../scss/_base.scss */
 .portfolio-img a:hover, .portfolio-img a:active {
   text-decoration: none !important;
 }
-/* line 218, ../scss/_base.scss */
+/* line 225, ../scss/_base.scss */
 .portfolio-img a:hover .caption, .portfolio-img a:active .caption {
   background: rgba(0, 0, 0, 0.65);
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 221, ../scss/_base.scss */
+/* line 228, ../scss/_base.scss */
 .portfolio-img a:hover .caption span, .portfolio-img a:active .caption span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-/* line 226, ../scss/_base.scss */
+/* line 233, ../scss/_base.scss */
 .portfolio-img .caption {
   background: black;
   height: 100%;
@@ -791,14 +805,14 @@ a[name="portfolio"] {
   color: #fff;
   font-size: calc(0.5em + .65vw);
 }
-/* line 233, ../scss/_base.scss */
+/* line 240, ../scss/_base.scss */
 .portfolio-img .caption .job-name {
   font-size: calc(0.75em + .65vw);
   height: 10%;
   margin: 0 10px 3px 6px;
   padding: 10px 0 0 5px;
 }
-/* line 239, ../scss/_base.scss */
+/* line 246, ../scss/_base.scss */
 .portfolio-img .caption ul {
   display: -ms-flexbox;
   display: -moz-flex;
@@ -820,27 +834,27 @@ a[name="portfolio"] {
   margin: 0;
   padding: 3px 0;
 }
-/* line 247, ../scss/_base.scss */
+/* line 254, ../scss/_base.scss */
 .portfolio-img .caption ul li {
   margin: 0;
   padding: 0;
   display: inline;
 }
-/* line 253, ../scss/_base.scss */
+/* line 260, ../scss/_base.scss */
 .portfolio-img .caption .oauth img {
   height: calc(0.7em + 1.2vw);
   margin-bottom: 2px;
   padding: 0;
 }
-/* line 258, ../scss/_base.scss */
+/* line 265, ../scss/_base.scss */
 .portfolio-img .caption .devicons {
   font-size: calc(0.7em + 1.2vw);
 }
-/* line 261, ../scss/_base.scss */
+/* line 268, ../scss/_base.scss */
 .portfolio-img .caption .devicons-javascript {
   font-size: calc(0.53em + 1.2vw);
 }
-/* line 264, ../scss/_base.scss */
+/* line 271, ../scss/_base.scss */
 .portfolio-img .caption span {
   overflow: hidden;
   -webkit-box-orient: vertical;
@@ -853,19 +867,19 @@ a[name="portfolio"] {
   height: 90%;
   display: none;
 }
-/* line 271, ../scss/_base.scss */
+/* line 278, ../scss/_base.scss */
 .portfolio-img .caption span p {
   padding: 6% 6% 0 6%;
   max-height: 73%;
   overflow: hidden;
 }
-/* line 276, ../scss/_base.scss */
+/* line 283, ../scss/_base.scss */
 .portfolio-img .caption span .tags {
   z-index: 10;
   color: #000;
 }
 
-/* line 287, ../scss/_base.scss */
+/* line 294, ../scss/_base.scss */
 .devI-container {
   margin: 0;
   padding: 3px;
@@ -886,14 +900,14 @@ a[name="portfolio"] {
           align-items: center;
 }
 
-/* line 294, ../scss/_base.scss */
+/* line 301, ../scss/_base.scss */
 .screen-reader-text {
   position: absolute;
   top: -9999px;
   left: -9999px;
 }
 
-/* line 301, ../scss/_base.scss */
+/* line 308, ../scss/_base.scss */
 .connect div {
   display: -ms-flexbox;
   display: -moz-flex;
@@ -911,12 +925,12 @@ a[name="portfolio"] {
           align-items: center;
   padding: 30px;
 }
-/* line 303, ../scss/_base.scss */
+/* line 310, ../scss/_base.scss */
 .connect div .tooltip.bottom > .tooltip-arrow {
   border-bottom-color: #fff;
   border-bottom-color: rgba(255, 255, 255, 0.75);
 }
-/* line 307, ../scss/_base.scss */
+/* line 314, ../scss/_base.scss */
 .connect div .tooltip > .tooltip-inner {
   background: #fff;
   background: rgba(255, 255, 255, 0.75);
@@ -924,11 +938,11 @@ a[name="portfolio"] {
   font-size: 1.25em;
   padding: 5px;
 }
-/* line 315, ../scss/_base.scss */
+/* line 322, ../scss/_base.scss */
 .connect div a {
   text-decoration: none;
 }
-/* line 318, ../scss/_base.scss */
+/* line 325, ../scss/_base.scss */
 .connect div i {
   border-radius: 50%;
   -webkit-box-shadow: 0.15em 0.15em 0.35em 0 rgba(0, 0, 0, 0.4);
@@ -942,7 +956,7 @@ a[name="portfolio"] {
   padding: .5em;
 }
 
-/* line 333, ../scss/_base.scss */
+/* line 340, ../scss/_base.scss */
 .back-to-top {
   font-size: 0.75em;
   position: fixed;
@@ -958,7 +972,7 @@ a[name="portfolio"] {
   border-radius: 4px;
   z-index: 3;
 }
-/* line 346, ../scss/_base.scss */
+/* line 353, ../scss/_base.scss */
 .back-to-top :hover {
   border-radius: 4px;
   background: white;
@@ -966,7 +980,7 @@ a[name="portfolio"] {
   cursor: pointer;
 }
 
-/* line 354, ../scss/_base.scss */
+/* line 361, ../scss/_base.scss */
 footer {
   color: #333;
   background-color: white;

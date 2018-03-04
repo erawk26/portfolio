@@ -89,7 +89,7 @@
 		text-align: justify;
 	}
 }
-
+.tooltip *{border: none !important;}
 ///////Portfolio
 a[name="portfolio"] {
 	transform: translateY(-50px);
@@ -129,6 +129,12 @@ a[name="portfolio"] {
 	}
 	&.aryzta .img {
 		background-image: url('/img/aryzta.jpg');
+	}
+	&.baristas .img {
+		background-image: url('/img/port1.jpg');
+	}
+	&.hark .img {
+		background-image: url('/img/hark.png');
 	}
 }
 
