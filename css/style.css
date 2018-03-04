@@ -596,8 +596,9 @@ a[name="portfolio"] {
 /* line 141, ../scss/_base.scss */
 .p-cont {
   width: 100%;
+  padding: 25px 0 25px 25px;
 }
-/* line 144, ../scss/_base.scss */
+/* line 146, ../scss/_base.scss */
 .p-cont > .flex-wrapper {
   display: -ms-flexbox;
   display: -moz-flex;
@@ -613,72 +614,72 @@ a[name="portfolio"] {
   -ms-flex-align: stretch;
   -webkit-box-align: stretch;
           align-items: stretch;
-  margin-top: 0px;
-  margin-left: 0px;
+  margin-top: -25px;
+  margin-left: -25px;
   width: auto;
   width: 100%;
 }
 /* line 143, ../scss/_mixins.scss */
 .p-cont > .flex-wrapper > * {
-  margin-top: 0px;
-  margin-left: 0px;
+  margin-top: 25px;
+  margin-left: 25px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  -moz-flex: 1 0 calc((99.5% / 3) - 0px);
-  -ms-flex: 1 0 calc((99.5% / 3) - 0px);
+  -moz-flex: 1 0 calc((99.5% / 3) - 25px);
+  -ms-flex: 1 0 calc((99.5% / 3) - 25px);
   -webkit-box-flex: 1;
-          flex: 1 0 calc((99.5% / 3) - 0px);
-  min-width: calc((99.5% / 3) - 0px);
-  max-width: calc((100% / 3) - 0px);
+          flex: 1 0 calc((99.5% / 3) - 25px);
+  min-width: calc((99.5% / 3) - 25px);
+  max-width: calc((100% / 3) - 25px);
 }
 @media (max-width: 960px) {
-  /* line 144, ../scss/_base.scss */
+  /* line 146, ../scss/_base.scss */
   .p-cont > .flex-wrapper {
-    margin-top: 0;
-    margin-left: 0;
+    margin-top: -25px;
+    margin-left: -25px;
     width: auto;
   }
   /* line 143, ../scss/_mixins.scss */
   .p-cont > .flex-wrapper > * {
-    margin-top: 0;
-    margin-left: 0;
+    margin-top: 25px;
+    margin-left: 25px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    -moz-flex: 1 0 calc((99.5% / 2) - 0);
-    -ms-flex: 1 0 calc((99.5% / 2) - 0);
+    -moz-flex: 1 0 calc((99.5% / 2) - 25px);
+    -ms-flex: 1 0 calc((99.5% / 2) - 25px);
     -webkit-box-flex: 1;
-            flex: 1 0 calc((99.5% / 2) - 0);
-    min-width: calc((99.5% / 2) - 0);
-    max-width: calc((100% / 2) - 0);
+            flex: 1 0 calc((99.5% / 2) - 25px);
+    min-width: calc((99.5% / 2) - 25px);
+    max-width: calc((100% / 2) - 25px);
   }
 }
 @media (max-width: 768px) {
-  /* line 144, ../scss/_base.scss */
+  /* line 146, ../scss/_base.scss */
   .p-cont > .flex-wrapper {
     margin-top: 0;
-    margin-left: 0;
+    margin-left: -25px;
     width: auto;
   }
   /* line 143, ../scss/_mixins.scss */
   .p-cont > .flex-wrapper > * {
     margin-top: 0;
-    margin-left: 0;
+    margin-left: 25px;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
-    -moz-flex: 1 0 calc((99.5% / 1) - 0);
-    -ms-flex: 1 0 calc((99.5% / 1) - 0);
+    -moz-flex: 1 0 calc((99.5% / 1) - 25px);
+    -ms-flex: 1 0 calc((99.5% / 1) - 25px);
     -webkit-box-flex: 1;
-            flex: 1 0 calc((99.5% / 1) - 0);
-    min-width: calc((99.5% / 1) - 0);
-    max-width: calc((100% / 1) - 0);
+            flex: 1 0 calc((99.5% / 1) - 25px);
+    min-width: calc((99.5% / 1) - 25px);
+    max-width: calc((100% / 1) - 25px);
   }
 }
 
-/* line 157, ../scss/_base.scss */
+/* line 159, ../scss/_base.scss */
 .portfolio-item {
   position: relative;
 }
-/* line 161, ../scss/_base.scss */
+/* line 163, ../scss/_base.scss */
 .portfolio-item .hover-wrapper {
   display: -ms-flexbox;
   display: -moz-flex;
@@ -702,7 +703,7 @@ a[name="portfolio"] {
   padding: 5%;
   position: relative;
 }
-/* line 168, ../scss/_base.scss */
+/* line 170, ../scss/_base.scss */
 .portfolio-item .hover {
   background: black;
   height: 100%;
@@ -710,18 +711,18 @@ a[name="portfolio"] {
   color: #fff;
   font-size: calc(0.5em + .65vw);
 }
-/* line 174, ../scss/_base.scss */
+/* line 176, ../scss/_base.scss */
 .portfolio-item .hover .job-name {
   font-size: calc(0.75em + .65vw);
   margin: 0;
   padding: 0 0 15px;
 }
-/* line 178, ../scss/_base.scss */
+/* line 180, ../scss/_base.scss */
 .portfolio-item .hover p {
   margin: 0;
   padding: 0 0 15px;
 }
-/* line 181, ../scss/_base.scss */
+/* line 183, ../scss/_base.scss */
 .portfolio-item .hover ul {
   display: -ms-flexbox;
   display: -moz-flex;
@@ -743,13 +744,13 @@ a[name="portfolio"] {
   margin: 0;
   padding: 3px 0;
 }
-/* line 189, ../scss/_base.scss */
+/* line 191, ../scss/_base.scss */
 .portfolio-item .hover ul li {
   margin: 0;
   padding: 0;
   display: inline;
 }
-/* line 195, ../scss/_base.scss */
+/* line 197, ../scss/_base.scss */
 .portfolio-item .hover .tags {
   width: 100%;
   z-index: 10;
@@ -762,7 +763,7 @@ a[name="portfolio"] {
           transform: translateY(-100%);
 }
 
-/* line 210, ../scss/_base.scss */
+/* line 212, ../scss/_base.scss */
 .portfolio-img {
   -webkit-box-shadow: 0.35em 0.35em 0.55em 0 rgba(0, 0, 0, 0.4);
   box-shadow: 0.35em 0.35em 0.55em 0 rgba(0, 0, 0, 0.4);
@@ -775,27 +776,27 @@ a[name="portfolio"] {
   left: 0;
   overflow: hidden;
 }
-/* line 211, ../scss/_base.scss */
+/* line 213, ../scss/_base.scss */
 .portfolio-img h4:active {
   text-decoration: none !important;
 }
-/* line 223, ../scss/_base.scss */
+/* line 225, ../scss/_base.scss */
 .portfolio-img a:hover, .portfolio-img a:active {
   text-decoration: none !important;
 }
-/* line 225, ../scss/_base.scss */
+/* line 227, ../scss/_base.scss */
 .portfolio-img a:hover .caption, .portfolio-img a:active .caption {
   background: rgba(0, 0, 0, 0.65);
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 228, ../scss/_base.scss */
+/* line 230, ../scss/_base.scss */
 .portfolio-img a:hover .caption span, .portfolio-img a:active .caption span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-/* line 233, ../scss/_base.scss */
+/* line 235, ../scss/_base.scss */
 .portfolio-img .caption {
   background: black;
   height: 100%;
@@ -805,14 +806,14 @@ a[name="portfolio"] {
   color: #fff;
   font-size: calc(0.5em + .65vw);
 }
-/* line 240, ../scss/_base.scss */
+/* line 242, ../scss/_base.scss */
 .portfolio-img .caption .job-name {
   font-size: calc(0.75em + .65vw);
   height: 10%;
   margin: 0 10px 3px 6px;
   padding: 10px 0 0 5px;
 }
-/* line 246, ../scss/_base.scss */
+/* line 248, ../scss/_base.scss */
 .portfolio-img .caption ul {
   display: -ms-flexbox;
   display: -moz-flex;
@@ -834,27 +835,27 @@ a[name="portfolio"] {
   margin: 0;
   padding: 3px 0;
 }
-/* line 254, ../scss/_base.scss */
+/* line 256, ../scss/_base.scss */
 .portfolio-img .caption ul li {
   margin: 0;
   padding: 0;
   display: inline;
 }
-/* line 260, ../scss/_base.scss */
+/* line 262, ../scss/_base.scss */
 .portfolio-img .caption .oauth img {
   height: calc(0.7em + 1.2vw);
   margin-bottom: 2px;
   padding: 0;
 }
-/* line 265, ../scss/_base.scss */
+/* line 267, ../scss/_base.scss */
 .portfolio-img .caption .devicons {
   font-size: calc(0.7em + 1.2vw);
 }
-/* line 268, ../scss/_base.scss */
+/* line 270, ../scss/_base.scss */
 .portfolio-img .caption .devicons-javascript {
   font-size: calc(0.53em + 1.2vw);
 }
-/* line 271, ../scss/_base.scss */
+/* line 273, ../scss/_base.scss */
 .portfolio-img .caption span {
   overflow: hidden;
   -webkit-box-orient: vertical;
@@ -867,19 +868,19 @@ a[name="portfolio"] {
   height: 90%;
   display: none;
 }
-/* line 278, ../scss/_base.scss */
+/* line 280, ../scss/_base.scss */
 .portfolio-img .caption span p {
   padding: 6% 6% 0 6%;
   max-height: 73%;
   overflow: hidden;
 }
-/* line 283, ../scss/_base.scss */
+/* line 285, ../scss/_base.scss */
 .portfolio-img .caption span .tags {
   z-index: 10;
   color: #000;
 }
 
-/* line 294, ../scss/_base.scss */
+/* line 296, ../scss/_base.scss */
 .devI-container {
   margin: 0;
   padding: 3px;
@@ -900,14 +901,14 @@ a[name="portfolio"] {
           align-items: center;
 }
 
-/* line 301, ../scss/_base.scss */
+/* line 303, ../scss/_base.scss */
 .screen-reader-text {
   position: absolute;
   top: -9999px;
   left: -9999px;
 }
 
-/* line 308, ../scss/_base.scss */
+/* line 310, ../scss/_base.scss */
 .connect div {
   display: -ms-flexbox;
   display: -moz-flex;
@@ -925,12 +926,12 @@ a[name="portfolio"] {
           align-items: center;
   padding: 30px;
 }
-/* line 310, ../scss/_base.scss */
+/* line 312, ../scss/_base.scss */
 .connect div .tooltip.bottom > .tooltip-arrow {
   border-bottom-color: #fff;
   border-bottom-color: rgba(255, 255, 255, 0.75);
 }
-/* line 314, ../scss/_base.scss */
+/* line 316, ../scss/_base.scss */
 .connect div .tooltip > .tooltip-inner {
   background: #fff;
   background: rgba(255, 255, 255, 0.75);
@@ -938,11 +939,11 @@ a[name="portfolio"] {
   font-size: 1.25em;
   padding: 5px;
 }
-/* line 322, ../scss/_base.scss */
+/* line 324, ../scss/_base.scss */
 .connect div a {
   text-decoration: none;
 }
-/* line 325, ../scss/_base.scss */
+/* line 327, ../scss/_base.scss */
 .connect div i {
   border-radius: 50%;
   -webkit-box-shadow: 0.15em 0.15em 0.35em 0 rgba(0, 0, 0, 0.4);
@@ -956,7 +957,7 @@ a[name="portfolio"] {
   padding: .5em;
 }
 
-/* line 340, ../scss/_base.scss */
+/* line 342, ../scss/_base.scss */
 .back-to-top {
   font-size: 0.75em;
   position: fixed;
@@ -972,7 +973,7 @@ a[name="portfolio"] {
   border-radius: 4px;
   z-index: 3;
 }
-/* line 353, ../scss/_base.scss */
+/* line 355, ../scss/_base.scss */
 .back-to-top :hover {
   border-radius: 4px;
   background: white;
@@ -980,7 +981,7 @@ a[name="portfolio"] {
   cursor: pointer;
 }
 
-/* line 361, ../scss/_base.scss */
+/* line 363, ../scss/_base.scss */
 footer {
   color: #333;
   background-color: white;

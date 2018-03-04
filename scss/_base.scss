@@ -141,14 +141,16 @@ a[name="portfolio"] {
 .p-cont {
 	@extend %boxw;
 	width: 100%;
+	$gutter:25px;
+	padding:$gutter 0 $gutter $gutter;
 	> .flex-wrapper {
 		@include flex(flex-start, stretch, $wrap: wrap);
-		@include flex-grid(3, 0px, 0px);
+		@include flex-grid(3, $gutter, $gutter);
 		@media (max-width: $desktop-breakpoint) {
-			@include flex-grid(2, 0, 0);
+			@include flex-grid(2, $gutter, $gutter);
 		}
 		@media (max-width: $tablet-breakpoint) {
-			@include flex-grid(1, 0, 0);
+			@include flex-grid(1, $gutter, 0);
 		}
 		width: 100%;
 	}
