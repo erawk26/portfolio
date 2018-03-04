@@ -131,12 +131,12 @@
 	width: 100%;
 	> .flex-wrapper {
 		@include flex(flex-start, stretch, $wrap: wrap);
-		@include flex-grid(3, 20px);
+		@include flex-grid(3, 0px, 0px);
 		@media (max-width: $desktop-breakpoint) {
-			@include flex-grid(2, 20px);
+			@include flex-grid(2, 0, 0);
 		}
 		@media (max-width: $tablet-breakpoint) {
-			@include flex-grid(1, 20px);
+			@include flex-grid(1, 0, 0);
 		}
 		width: 100%;
 	}
