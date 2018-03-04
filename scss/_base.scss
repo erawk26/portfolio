@@ -5,6 +5,7 @@
 	color: white;
 	background-color: $darkGrey;
 }
+.topnav a{font-size:1.15em;text-transform: uppercase;}
 
 .navbar-default {
 	color: $darkGrey;
@@ -97,7 +98,7 @@
 		background-repeat: no-repeat;
 	}
 	&.labrea .img {
-		background-image: url('./img/labrea.jpg');
+		background-image: url('/img/labrea.jpg');
 	}
 	&.otis .img {
 		background-image: url('/img/otis.jpg');
