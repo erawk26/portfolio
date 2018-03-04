@@ -112,45 +112,64 @@ h1, h2, h3, h4 {
 }
 
 ///////Portfolio
-.p1 {
-	order: 2;
-	background: url('//baristasbeans.com/portfolio/img/port1.jpg') center top no-repeat;
-}
-
-.p2 {
-	background: url('//baristasbeans.com/portfolio/img/quotes.gif') center top no-repeat;
-}
-
-.p3 {
-	background: url('//baristasbeans.com/portfolio/img/port3.gif') center top no-repeat;
-}
-
-.p4 {
-	background: url('//baristasbeans.com/portfolio/img/pomodoro.gif') center top no-repeat;
-}
-
-.p5 {
-	background: url('//baristasbeans.com/portfolio/img/weather.jpg') center top no-repeat;
-}
-
-.p6 {
-	background: url('//baristasbeans.com/portfolio/img/twitch.gif') center top no-repeat;
-}
-
-.p7 {
-	background: url('//baristasbeans.com/portfolio/img/wiki.gif') center top no-repeat;
-}
-
-.p8 {
-	background: url('//baristasbeans.com/portfolio/img/tictactoe.gif') center top no-repeat;
-}
-
-.p9 {
-	background: url('//baristasbeans.com/portfolio/img/simon.gif') center top no-repeat;
+.portfolio-img {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	&.labrea {
+		background-image: url('/img/labrea.jpg');
+	}
+	&.otis {
+		background-image: url('/img/otis.jpg');
+	}
+	&.mbf {
+		background-image: url('/img/mbf.jpg');
+	}
+	&.nsb {
+		background-image: url('/img/nsb.jpg');
+	}
+	&.cbv {
+		background-image: url('/img/cbv.png');
+	}
+	&.zevia {
+		background-image: url('/img/zevia.jpg');
+	}
+	&.healthnet {
+		background-image: url('/img/healthnet.jpg');
+	}
+	&.foursight {
+		background-image: url('/img/4sight.jpg');
+	}
+	&.aryzta {
+		background-image: url('/img/aryzta.jpg');
+	}
 }
 
 .p-cont {
-	@include flex($wrap: wrap);
+	@extend %boxw;
+	width: 100%;
+	.flex-wrapper {
+		@include flex(flex-start, stretch, $wrap: wrap);
+		@include flex-grid(3, 20px);
+		@include tablet {
+			@include flex-grid(2, 20px);
+		}
+		@include mobile {
+			@include flex-grid(1, 20px);
+		}
+		width: 100%;
+	}
+}
+
+.portfolio-item {
+	position: relative;
+	&:after {
+		content: '';
+		width: 100%;
+		height: 0;
+		padding-bottom: 80%;
+		display: block;
+	}
 }
 
 .portfolio-img { //
@@ -160,11 +179,11 @@ h1, h2, h3, h4 {
 	@include single-box-shadow(.35em, .35em, .55em, 0, rgba(black, 0.4));
 	@include background-size(cover);
 	margin: 20px 0 5px 0;
-	height: 35vw;
+	height: 100%;
 	width: 100%;
-	@media (min-width: 760px) {
-		height: 22vw;
-	}
+	position: absolute;
+	top: 0;
+	left: 0;
 	overflow: hidden;
 	a:hover, a:active {
 		text-decoration: none !important;
@@ -245,15 +264,15 @@ h1, h2, h3, h4 {
 		font-size: 40px;
 		margin: 0 .25em;
 	}
-	.devicons-illustrator,.devicons-photoshop{
-		font-size:30px;
+	.devicons-illustrator, .devicons-photoshop {
+		font-size: 30px;
 	}
 	.devicons-nodejs {
 		font-size: 55px;
 	}
-	.devicons-php{
-		height:30px;
-		line-height:30px;
+	.devicons-php {
+		height: 30px;
+		line-height: 30px;
 	}
 }
 

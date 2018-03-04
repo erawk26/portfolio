@@ -1,8 +1,22 @@
-@import 'mixins';
-//------// Variables and Mixins //------//
-$bp1: 768px; //breakpoints
-$bp2: 992px;
-$bp3: 1200px;
+//------// Variables //------//
+
+// Responsive breakpoints
+$mobile-breakpoint: 480px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 960px;
+$page-max-width: 980px;
+$bp-mw: $page-max-width;
+$bp-xs: $mobile-breakpoint;
+$bp-sm: $tablet-breakpoint;
+$bp-md: $desktop-breakpoint;
+$bp-lg: 1200px;
+$bp-xs-max: ($bp-xs - 1);
+$bp-sm-max: ($bp-sm - 1);
+$bp-md-max: ($bp-md - 1);
+$bp-lg-max: ($bp-lg - 1);
+$bp1: $tablet-breakpoint;
+$bp2: $desktop-breakpoint;
+$bp3: $bp-lg;
 $oSans: 'Open Sans', sans-serif;
 
 $bdr: 2px dotted yellow; //layout debugging (dev only)
@@ -29,64 +43,7 @@ $fontSrcSans: "Source Sans Pro", sans-serif;
 $fontCagli: "Cagliostro", cursive;
 $fontBody: $fontSrcSans;
 $fontHead: $fontCagli;
-
-//------// Global Styles //------//
-.center {
-	@include flex();
-}
-
-.flexsb {
-	@include flex(space-between, $wrap: wrap);
-}
-
-.clearfix:after {
-	content: "";
-	display: table;
-	clear: both;
-}
-
-.ds1 {
-	@include box-shadow(3px 3px 10px 0 rgba(black, 0.8));
-}
-
-.br1 {
-	@include border-radius($br1);
-}
-
-.br2 {
-	@include border-radius($br2);
-}
-
-.br3 {
-	@include border-radius($br3);
-}
-
-.bdr {
-	border: $bdr;
-}
-
-//layout debugging (dev only)
-.ul {
-	@include marding();
-	border-bottom: 2px solid white;
-}
-
-.r45 {
-	@include rotate(-45deg);
-}
-
-.grey {
-	background: $grey;
-	padding: 20px;
-	@extend .ds1;
-}
-
-.uc {
-	text-transform: uppercase;
-}
-
-* {
-	font-family: $base-font-family;
-	font-family: $oSans;
-	font-weight: $regular;
-}
+$fontIcon: "FontAwesome";
+//transitions
+$base-timing: .25s;
+$base-transition: ease-in-out;
