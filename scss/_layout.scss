@@ -2,7 +2,9 @@
 section {
   @include marding();
   @include flex($direction: column, $wrap:wrap);
-  width: 100vw;
+  width: 100%;
+  overflow: hidden;
+  max-width:100%;
   background-size: cover;
   background-repeat: repeat-y;
   background-position-x: center;

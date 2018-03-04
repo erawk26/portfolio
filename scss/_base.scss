@@ -364,4 +364,11 @@ footer {
 	color: $darkGrey;
 	background-color: rgba(white, 20);
 }
-
+.copyright {
+	color: $darkGrey;
+	padding: 5px 15px;
+	background: rgba(white, .2);
+	p {@include marding;
+		text-align: center
+	}
+}
