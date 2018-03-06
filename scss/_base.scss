@@ -43,7 +43,7 @@ section {
 		}
 		.profile {
 			//@include flexchild(1, 0, 0);
-			padding: 0 20px;
+			padding: 0 25px;
 			h1, h2, h3, h4 {
 				@include marding(0 0 10px, 0);
 				text-transform: uppercase
@@ -78,7 +78,7 @@ section {
 				}
 			}
 		}
-		.more-content{margin:15px 0;}
+		.more-content{margin:25px 0 0;}
 	}
 }
 

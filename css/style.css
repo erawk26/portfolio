@@ -419,7 +419,7 @@ section.intro > .container p {
 }
 /* line 44, ../scss/_base.scss */
 section.intro .profile {
-  padding: 0 20px;
+  padding: 0 25px;
 }
 /* line 47, ../scss/_base.scss */
 section.intro .profile h1, section.intro .profile h2, section.intro .profile h3, section.intro .profile h4 {
@@ -488,7 +488,7 @@ section.intro .contact i:before {
 }
 /* line 81, ../scss/_base.scss */
 section.intro .more-content {
-  margin: 15px 0;
+  margin: 25px 0 0;
 }
 
 /* line 85, ../scss/_base.scss */
