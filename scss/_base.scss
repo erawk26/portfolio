@@ -38,7 +38,7 @@ section {
 			padding: 3em;
 			background-color: white;
 			background-color: rgba(white, 0.75);
-			@include border-radius(10px, 10px);
+			//@include border-radius(10px, 10px);
 			//@media (max-width:745px) {margin: 10px;}
 		}
 		.profile {

@@ -10,59 +10,60 @@
 /* Obnoxious styling for icon fonts */
 /* line 51, ../scss/_colors.scss */
 .contact .fa {
-  -webkit-transition: all 1.5s ease;
-  transition: all 1.5s ease;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
   color: #333;
+  border: none;
 }
-/* line 56, ../scss/_colors.scss */
+/* line 58, ../scss/_colors.scss */
 .contact .fa.fa-envelope-o:hover {
-  color: white;
-  background: #c92c19;
+  color: #c92c19;
+  border-color: #c92c19;
 }
-/* line 64, ../scss/_colors.scss */
+/* line 67, ../scss/_colors.scss */
 .contact .fa.fa-phone:hover {
-  color: #fff;
-  background: green;
+  color: green;
+  border-color: green;
 }
-/* line 72, ../scss/_colors.scss */
+/* line 75, ../scss/_colors.scss */
 .contact .fa.fa-twitter:hover {
-  color: white;
-  background: #4099FF;
+  color: #4099FF;
+  border-color: #4099FF;
 }
-/* line 80, ../scss/_colors.scss */
+/* line 84, ../scss/_colors.scss */
 .contact .fa.fa-linkedin:hover {
-  color: white;
-  background: #0077b5;
+  color: #0077b5;
+  border-color: #0077b5;
 }
-/* line 88, ../scss/_colors.scss */
+/* line 93, ../scss/_colors.scss */
 .contact .fa.fa-drupal:hover {
-  color: white;
-  background: #0678bf;
+  color: #0678bf;
+  border-color: #0678bf;
 }
-/* line 96, ../scss/_colors.scss */
+/* line 102, ../scss/_colors.scss */
 .contact .fa.fa-github:hover {
-  color: white;
-  background: #333;
+  color: #333;
+  border-color: #333;
 }
-/* line 104, ../scss/_colors.scss */
+/* line 111, ../scss/_colors.scss */
 .contact .fa.fa-codepen:hover {
-  color: white;
-  background: black;
-}
-/* line 112, ../scss/_colors.scss */
-.contact .fa.fa-stack-overflow:hover {
-  color: white;
-  background: #07c;
+  color: black;
+  border-color: black;
 }
 /* line 120, ../scss/_colors.scss */
-.contact .fa.fa-dribbble:hover {
-  color: white;
-  background: #ea4c89;
+.contact .fa.fa-stack-overflow:hover {
+  color: #07c;
+  border-color: #07c;
 }
-/* line 128, ../scss/_colors.scss */
+/* line 129, ../scss/_colors.scss */
+.contact .fa.fa-dribbble:hover {
+  color: #ea4c89;
+  border-color: #ea4c89;
+}
+/* line 138, ../scss/_colors.scss */
 .contact .fa.fa-fire:hover {
-  color: white;
-  background: #4b2a10;
+  color: #4b2a10;
+  border-color: #4b2a10;
 }
 
 /* line 3, ../scss/_global.scss */
@@ -411,7 +412,6 @@ section.intro > .container {
   padding: 3em;
   background-color: white;
   background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 10px / 10px;
 }
 /* line 34, ../scss/_base.scss */
 section.intro > .container p {
