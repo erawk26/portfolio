@@ -29,6 +29,7 @@ a:hover {
 
 h1, h2, h3, h4 {
 	font-family: $fontHead;
+	font-weight: $header-font-weight;
 }
 
 ul {
@@ -37,6 +38,9 @@ ul {
 	li {
 		@include marding;
 	}
+}
+.tooltip * {
+	border: none !important;
 }
 
 .center {

@@ -48,11 +48,11 @@ $trans-down: linear-gradient(0deg, rgba($lt-grey, 1) 10%, rgba($lt-grey, .75) 30
 }
 
 /* Obnoxious styling for icon fonts */
-.connect .fa {
+.contact .fa {
 	transition: all 1.5s ease;
-
+color:$dk-grey;
 	&.fa-envelope-o {
-		color: rgb(201, 44, 25);
+		//color: rgb(201, 44, 25);
 		&:hover {
 			color: white;
 			background: rgb(201, 44, 25);
@@ -60,7 +60,7 @@ $trans-down: linear-gradient(0deg, rgba($lt-grey, 1) 10%, rgba($lt-grey, .75) 30
 	}
 
 	&.fa-phone {
-		color: green;
+		//color: green;
 		&:hover {
 			color: #fff;
 			background: green;
@@ -68,7 +68,7 @@ $trans-down: linear-gradient(0deg, rgba($lt-grey, 1) 10%, rgba($lt-grey, .75) 30
 	}
 
 	&.fa-twitter {
-		color: #4099FF;
+		//color: #4099FF;
 		&:hover {
 			color: white;
 			background: #4099FF;
@@ -76,7 +76,7 @@ $trans-down: linear-gradient(0deg, rgba($lt-grey, 1) 10%, rgba($lt-grey, .75) 30
 	}
 
 	&.fa-linkedin {
-		color: #0077b5;
+		//color: #0077b5;
 		&:hover {
 			color: white;
 			background: #0077b5;
@@ -84,7 +84,7 @@ $trans-down: linear-gradient(0deg, rgba($lt-grey, 1) 10%, rgba($lt-grey, .75) 30
 	}
 
 	&.fa-drupal {
-		color: #0678bf;
+		//color: #0678bf;
 		&:hover {
 			color: white;
 			background: #0678bf;
@@ -92,7 +92,7 @@ $trans-down: linear-gradient(0deg, rgba($lt-grey, 1) 10%, rgba($lt-grey, .75) 30
 	}
 
 	&.fa-github {
-		color: #333;
+		//color: #333;
 		&:hover {
 			color: white;
 			background: #333;
@@ -100,7 +100,7 @@ $trans-down: linear-gradient(0deg, rgba($lt-grey, 1) 10%, rgba($lt-grey, .75) 30
 	}
 
 	&.fa-codepen {
-		color: black;
+		//color: black;
 		&:hover {
 			color: white;
 			background: black;
@@ -108,7 +108,7 @@ $trans-down: linear-gradient(0deg, rgba($lt-grey, 1) 10%, rgba($lt-grey, .75) 30
 	}
 
 	&.fa-stack-overflow {
-		color: #07c;
+		//color: #07c;
 		&:hover {
 			color: white;
 			background: #07c;
@@ -116,7 +116,7 @@ $trans-down: linear-gradient(0deg, rgba($lt-grey, 1) 10%, rgba($lt-grey, .75) 30
 	}
 
 	&.fa-dribbble {
-		color: #ea4c89;
+		//color: #ea4c89;
 		&:hover {
 			color: white;
 			background: #ea4c89;
@@ -124,7 +124,7 @@ $trans-down: linear-gradient(0deg, rgba($lt-grey, 1) 10%, rgba($lt-grey, .75) 30
 	}
 
 	&.fa-fire {
-		color: #4b2a10;
+		//color: #4b2a10;
 		&:hover {
 			color: white;
 			background: #4b2a10;
