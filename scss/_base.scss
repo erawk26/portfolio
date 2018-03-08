@@ -27,8 +27,7 @@
 	z-index: 9;
 }
 
-section {
-	&.intro {
+section.intro {
 		> .container {
 			@include flex($wrap: wrap);
 			p {
@@ -80,15 +79,7 @@ section {
 		}
 		.more-content{margin:25px 0 0;}
 	}
-}
 
-#lang-frame {
-	width: auto;
-}
-
-.dl-horizontal {
-	margin-top: .65em;
-}
 
 .a-cont {
 	@include marding();
@@ -134,7 +125,7 @@ a[name="portfolio"] {
 	height: 0;
 }
 
-.portfolio-item {
+%work-bgs {//this is going to get deprecated with vue
 	.img {
 		background-size: cover;
 		background-position: center;
@@ -192,9 +183,43 @@ a[name="portfolio"] {
 		width: 100%;
 	}
 }
-
+.vue-portfolio {
+	a {
+		@extend %boxw;
+		text-decoration: none;
+		color: black;
+	}
+}
+.portfolio-list {
+	@extend %ul-nostyle;
+	@include set-max-width;
+	@include flex($wrap:wrap);
+	li.inline {
+		cursor: pointer;
+		display: inline-block;
+		border: 1px solid black;
+		border-radius: 5px;
+		@include marding(5px,5px 10px);
+	}
+}
+.portfolio-card {
+	@include set-max-width;
+	width:100%;
+	.img {
+		background-position: center;
+		background-size: cover;
+		overflow: hidden;
+		.ar {
+			display: block;
+			@include marding(0,0 0 50%);
+			width: 100%;
+			height: 0;
+		}
+	}
+}
 .portfolio-item {
 	position: relative;
+	@extend %work-bgs;
 	.ar {
 	}
 	.hover-wrapper {
