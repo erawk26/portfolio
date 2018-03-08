@@ -825,14 +825,19 @@ a[name="portfolio"] {
           align-items: center;
 }
 
-/* line 257, ../scss/_base.scss */
+/* line 256, ../scss/_base.scss */
+ul.tags {
+  display: none !important;
+}
+
+/* line 258, ../scss/_base.scss */
 .screen-reader-text {
   position: absolute;
   top: -9999px;
   left: -9999px;
 }
 
-/* line 296, ../scss/_base.scss */
+/* line 297, ../scss/_base.scss */
 .back-to-top {
   font-size: 0.75em;
   position: fixed;
@@ -848,7 +853,7 @@ a[name="portfolio"] {
   border-radius: 4px;
   z-index: 3;
 }
-/* line 309, ../scss/_base.scss */
+/* line 310, ../scss/_base.scss */
 .back-to-top :hover {
   border-radius: 4px;
   background: white;
@@ -856,19 +861,19 @@ a[name="portfolio"] {
   cursor: pointer;
 }
 
-/* line 317, ../scss/_base.scss */
+/* line 318, ../scss/_base.scss */
 footer {
   color: #333;
   background-color: white;
 }
 
-/* line 322, ../scss/_base.scss */
+/* line 323, ../scss/_base.scss */
 .copyright {
   color: #333;
   padding: 5px 15px;
   background: rgba(255, 255, 255, 0.2);
 }
-/* line 326, ../scss/_base.scss */
+/* line 327, ../scss/_base.scss */
 .copyright p {
   margin: 0;
   padding: 0;

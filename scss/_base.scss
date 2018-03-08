@@ -252,7 +252,8 @@ a[name="portfolio"] {
 	background: white;
 	@include flex($wrap: wrap);
 }
-
+///hide tags for now//
+ul.tags{display:none!important}
 /////////////
 .screen-reader-text {
 	position: absolute;
