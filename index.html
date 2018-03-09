@@ -111,7 +111,7 @@
 				</a>
 			</li>
 		</ul>
-	<a v-if="card" :href="card.href" target="_blank" class="portfolio-card">
+	<a v-if="card" :href="card.href" :title="'Visit ' + card.title" target="_blank" class="portfolio-card">
 		<div class="img" v-if="card.img" :style="{ 'background-image': 'url(/img/' + card.img + ')' }">
 		<div class="ar"></div>
 		</div>
@@ -139,9 +139,8 @@
 		<div class="a-item">
 			<h1><i class="fa fa-send"></i></h1>
 			<h4 class="text-center">Where I'm Going</h4>
-			<p>I'm aspiring to learn full stack JS development. I have my sights set on React and Redux at the moment,
-			   as
-			   well as Angular 2/3/4 in the near future.</p>
+			<p>I'm aspiring to learn full stack JS development. I have my sights set on Vue.js at the moment,
+			   as well as React and Redux in the near future.</p>
 		</div>
 		<div class="a-item">
 			<h1><i class="fa fa-tree"></i></h1>
