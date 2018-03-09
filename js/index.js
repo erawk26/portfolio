@@ -183,6 +183,6 @@ $('a[href*="#"]:not([href="#"])').click(function() {
 		return instance;
 	};
 })($, window);
-$(".p-cont .dir-wrapper").each(function() {
+$(".portfolio-list .dir-wrapper").each(function() {
 	$(this).hoverdir({ hoverDelay: 10, inverse: false });
 });

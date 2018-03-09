@@ -28,58 +28,59 @@
 }
 
 section.intro {
-		> .container {
-			@include flex($wrap: wrap);
-			p {
-				text-align: justify;
-			}
-			max-width: 700px;
-			padding: 3em;
-			background-color: white;
-			background-color: rgba(white, 0.75);
-			//@include border-radius(10px, 10px);
-			//@media (max-width:745px) {margin: 10px;}
+	> .container {
+		@include flex($wrap: wrap);
+		p {
+			text-align: justify;
 		}
-		.profile {
-			//@include flexchild(1, 0, 0);
-			padding: 0 25px;
-			h1, h2, h3, h4 {
-				@include marding(0 0 10px, 0);
-				text-transform: uppercase
-			}
-			h1 {
-				font-size: 68px;
-				line-height: .8;
-				letter-spacing: .04em;
-				span {
-					margin: 0;
-					font-size: .7em;
-					line-height: .5;
-					font-family: $fontHead;
-				}
-			}
-		}
-		.contact {//width:100%;
-			@include flex(center, flex-start, $wrap: wrap, $display:inline-flex);
-			margin:-5px 0 0 -5px;
-			a {
-				text-decoration: none;
-				margin:5px;
-			}
-			i {
-				@include flex;
-				width: 27px;
-				height: 27px;
-				@include border-radius(5px);
-				&:before {
-					font-size: 22px;
-					line-height: 27px;
-				}
-			}
-		}
-		.more-content{margin:25px 0 0;}
+		max-width: 700px;
+		padding: 3em;
+		background-color: white;
+		background-color: rgba(white, 0.75);
+		//@include border-radius(10px, 10px);
+		//@media (max-width:745px) {margin: 10px;}
 	}
-
+	.profile {
+		//@include flexchild(1, 0, 0);
+		padding: 0 25px;
+		h1, h2, h3, h4 {
+			@include marding(0 0 10px, 0);
+			text-transform: uppercase
+		}
+		h1 {
+			font-size: 68px;
+			line-height: .8;
+			letter-spacing: .04em;
+			span {
+				margin: 0;
+				font-size: .7em;
+				line-height: .5;
+				font-family: $fontHead;
+			}
+		}
+	}
+	.contact { //width:100%;
+		@include flex(center, flex-start, $wrap: wrap, $display: inline-flex);
+		margin: -5px 0 0 -5px;
+		a {
+			text-decoration: none;
+			margin: 5px;
+		}
+		i {
+			@include flex;
+			width: 27px;
+			height: 27px;
+			@include border-radius(5px);
+			&:before {
+				font-size: 22px;
+				line-height: 27px;
+			}
+		}
+	}
+	.more-content {
+		margin: 25px 0 0;
+	}
+}
 
 .a-cont {
 	@include marding();
@@ -125,7 +126,7 @@ a[name="portfolio"] {
 	height: 0;
 }
 
-%work-bgs {//this is going to get deprecated with vue
+%work-bgs { //this is going to get deprecated with vue
 	.img {
 		background-size: cover;
 		background-position: center;
@@ -183,40 +184,70 @@ a[name="portfolio"] {
 		width: 100%;
 	}
 }
+
 .vue-portfolio {
+	padding: 5%;
 	a {
-		@extend %boxw;
+		display: block;
+		box-sizing: border-box;
 		text-decoration: none;
 		color: black;
 	}
 }
+
 .portfolio-list {
 	@extend %ul-nostyle;
-	@include set-max-width;
-	@include flex($wrap:wrap);
+	@include set-max-width;margin-bottom:15px;
+	@include flex($wrap: wrap);
 	li.inline {
 		cursor: pointer;
 		display: inline-block;
-		border: 1px solid black;
-		border-radius: 5px;
-		@include marding(5px,5px 10px);
+		@include marding(5px, 0);
+		.mobile-wrapper {
+			display: none;
+		}
+		@include mobile {
+			.dir-wrapper {
+				display: none;
+			}
+			.mobile-wrapper {
+				display: block;padding:5px;
+				border: 1px solid black;
+				border-radius: 5px;
+			}
+		}
+		img.logo {
+			display: block;
+			position: relative;
+			z-index: 1;
+			height: 75px;
+			width: auto;
+			margin: auto;
+			padding: 15px;
+		}
+		.hover {
+			background: white;
+		}
 	}
 }
+
 .portfolio-card {
 	@include set-max-width;
-	width:100%;
+	width: 100%;
 	.img {
-		background-position: center;
+		background-position: top center;
 		background-size: cover;
 		overflow: hidden;
+		transition: all 0s linear;
 		.ar {
 			display: block;
-			@include marding(0,0 0 50%);
+			@include marding(0, 0 0 42%);
 			width: 100%;
 			height: 0;
 		}
 	}
 }
+
 .portfolio-item {
 	position: relative;
 	@extend %work-bgs;
@@ -277,8 +308,12 @@ a[name="portfolio"] {
 	background: white;
 	@include flex($wrap: wrap);
 }
+
 ///hide tags for now//
-ul.tags{display:none!important}
+ul.tags {
+	display: none !important
+}
+
 /////////////
 .screen-reader-text {
 	position: absolute;

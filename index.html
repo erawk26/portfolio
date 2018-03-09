@@ -101,10 +101,18 @@
 <!--TODO: change dev icons -->
 <section class="vue-portfolio clearfix" id="portApp">
 		<ul class="portfolio-list">
-			<li class="inline" v-for="job in jobs" v-bind:class="job.machine_name"> <a @click="active = job.machine_name">{{job.title}}</a></li>
+			<li class="inline" v-for="job in jobs" :class="job.machine_name">
+				<a class="dir-wrapper" @click="active = job.machine_name">
+					<img class="logo" :src="'/img/logos/' + job.logo" :alt="job.title">
+					<div class="hover"></div>
+				</a>
+				<a class="mobile-wrapper" @click="active = job.machine_name">
+					{{job.title}}
+				</a>
+			</li>
 		</ul>
-	<div v-if="card" class="portfolio-card">
-		<div class="img" v-if="card.img" :style="{ 'background-image': 'url(' + card.img + ')' }">
+	<a v-if="card" :href="card.href" target="_blank" class="portfolio-card">
+		<div class="img" v-if="card.img" :style="{ 'background-image': 'url(/img/' + card.img + ')' }">
 		<div class="ar"></div>
 		</div>
 		<h3>{{ card.title }}</h3>
@@ -115,7 +123,7 @@
 			<p id="skills" v-html="card.skills"></p>
 		</template>
 		<p v-else v-html="card.desc"></p>
-	</div>
+	</a>
 </section>
 <a name="about"></a>
 <section class="about">
@@ -151,7 +159,7 @@
 </footer>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="js/index.js"></script>
 <script src="js/work.controller.js"></script>
+<script src="js/index.js"></script>
 </body>
 </html>

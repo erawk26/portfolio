@@ -134,13 +134,13 @@ hr {
 	}
 }
 
-a.dir-wrapper {
+.dir-wrapper {
 	display: block;
 	width: 100%;
 	height: 100%;
 	position: relative;
 	overflow: hidden;
-	img {
+	img:not(.logo) {
 		display: block;
 		width: 100%;
 		max-width: 100%;
