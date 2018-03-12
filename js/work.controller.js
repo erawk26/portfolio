@@ -106,5 +106,11 @@ var app = new Vue({
 			var vm_data = this;
 			return this.jobs.filter(function(job){return job.machine_name==vm_data.active})[0];
 		}
+	},
+	watch: {
+		active: function(newValue,oldValue) {
+			// TweenLite.to(this.$data, 0.5, { tweenedNumber: newValue });
+			//console.log('fired!',newValue);
+		}
 	}
 });

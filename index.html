@@ -96,13 +96,15 @@
 <section class="vue-portfolio clearfix" id="portApp">
 		<ul class="portfolio-list">
 			<li class="inline" v-for="job in jobs" :class="job.machine_name">
-				<a class="dir-wrapper" @click="active = job.machine_name">
-					<img class="logo" :src="'/img/logos/' + job.logo" :alt="job.title">
+				<span class="dir-wrapper">
+					<label :for="job.machine_name"><img class="logo" :src="'/img/logos/' + job.logo" :alt="job.title"><span class="screen-reader">{{job.title}}</span></label>
+					<input type="radio" :id="job.machine_name" :value="job.machine_name" v-model='active'>
 					<div class="hover"></div>
-				</a>
-				<a class="mobile-wrapper" @click="active = job.machine_name">
-					{{job.title}}
-				</a>
+				</span>
+				<span class="mobile-wrapper">
+					<label :for="job.machine_name">{{job.title}}</label>
+					<input type="radio" :id="job.machine_name" :value="job.machine_name" v-model='active'>
+				</span>
 			</li>
 		</ul>
 	<a v-if="card" :href="card.href" :title="'Visit ' + card.title" target="_blank" class="portfolio-card">
