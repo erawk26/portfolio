@@ -142,3 +142,4 @@ var app = new Vue({
 		}
 	}
 });
+console.log('Vue Rocks!');
