@@ -782,22 +782,23 @@ a[name="portfolio"] {
   z-index: 1;
   height: 75px;
   width: auto;
+  max-width: 100%;
   margin: auto;
   padding: 15px;
 }
-/* line 247, ../scss/_base.scss */
+/* line 248, ../scss/_base.scss */
 .portfolio-list li.inline .hover {
   background: white;
 }
 
-/* line 253, ../scss/_base.scss */
+/* line 254, ../scss/_base.scss */
 .portfolio-card {
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
 }
-/* line 256, ../scss/_base.scss */
+/* line 257, ../scss/_base.scss */
 .portfolio-card .img {
   background-position: top center;
   background-size: cover;
@@ -805,7 +806,7 @@ a[name="portfolio"] {
   -webkit-transition: all 0s linear;
   transition: all 0s linear;
 }
-/* line 261, ../scss/_base.scss */
+/* line 262, ../scss/_base.scss */
 .portfolio-card .img .ar {
   display: block;
   margin: 0;
@@ -814,17 +815,17 @@ a[name="portfolio"] {
   height: 0;
 }
 @media (min-width: 480px) {
-  /* line 269, ../scss/_base.scss */
+  /* line 270, ../scss/_base.scss */
   .portfolio-card p {
     font-size: 18px;
   }
 }
 
-/* line 275, ../scss/_base.scss */
+/* line 276, ../scss/_base.scss */
 .portfolio-item {
   position: relative;
 }
-/* line 280, ../scss/_base.scss */
+/* line 281, ../scss/_base.scss */
 .portfolio-item .hover-wrapper {
   display: -ms-flexbox;
   display: -moz-flex;
@@ -848,7 +849,7 @@ a[name="portfolio"] {
   padding: 5%;
   position: relative;
 }
-/* line 287, ../scss/_base.scss */
+/* line 288, ../scss/_base.scss */
 .portfolio-item .hover {
   background: black;
   height: 100%;
@@ -856,18 +857,18 @@ a[name="portfolio"] {
   color: #fff;
   font-size: calc(0.5em + .65vw);
 }
-/* line 293, ../scss/_base.scss */
+/* line 294, ../scss/_base.scss */
 .portfolio-item .hover .job-name {
   font-size: calc(0.75em + .65vw);
   margin: 0;
   padding: 0 0 15px;
 }
-/* line 297, ../scss/_base.scss */
+/* line 298, ../scss/_base.scss */
 .portfolio-item .hover p {
   margin: 0;
   padding: 0 0 15px;
 }
-/* line 300, ../scss/_base.scss */
+/* line 301, ../scss/_base.scss */
 .portfolio-item .hover ul {
   display: -ms-flexbox;
   display: -moz-flex;
@@ -889,13 +890,13 @@ a[name="portfolio"] {
   margin: 0;
   padding: 3px 0;
 }
-/* line 308, ../scss/_base.scss */
+/* line 309, ../scss/_base.scss */
 .portfolio-item .hover ul li {
   margin: 0;
   padding: 0;
   display: inline;
 }
-/* line 314, ../scss/_base.scss */
+/* line 315, ../scss/_base.scss */
 .portfolio-item .hover .tags {
   width: 100%;
   z-index: 10;
@@ -908,7 +909,7 @@ a[name="portfolio"] {
           transform: translateY(-100%);
 }
 
-/* line 330, ../scss/_base.scss */
+/* line 331, ../scss/_base.scss */
 .devI-container {
   margin: 0;
   padding: 3px;
@@ -929,19 +930,19 @@ a[name="portfolio"] {
           align-items: center;
 }
 
-/* line 337, ../scss/_base.scss */
+/* line 338, ../scss/_base.scss */
 ul.tags {
   display: none !important;
 }
 
-/* line 342, ../scss/_base.scss */
+/* line 343, ../scss/_base.scss */
 .screen-reader-text {
   position: absolute;
   top: -9999px;
   left: -9999px;
 }
 
-/* line 381, ../scss/_base.scss */
+/* line 382, ../scss/_base.scss */
 .back-to-top {
   font-size: 0.75em;
   position: fixed;
@@ -957,7 +958,7 @@ ul.tags {
   border-radius: 4px;
   z-index: 3;
 }
-/* line 394, ../scss/_base.scss */
+/* line 395, ../scss/_base.scss */
 .back-to-top :hover {
   border-radius: 4px;
   background: white;
@@ -965,19 +966,19 @@ ul.tags {
   cursor: pointer;
 }
 
-/* line 402, ../scss/_base.scss */
+/* line 403, ../scss/_base.scss */
 footer {
   color: #333;
   background-color: white;
 }
 
-/* line 407, ../scss/_base.scss */
+/* line 408, ../scss/_base.scss */
 .copyright {
   color: #333;
   padding: 5px 15px;
   background: rgba(255, 255, 255, 0.2);
 }
-/* line 411, ../scss/_base.scss */
+/* line 412, ../scss/_base.scss */
 .copyright p {
   margin: 0;
   padding: 0;
@@ -1017,13 +1018,13 @@ footer {
             transform: scale(1);
   }
 }
-/* line 20, ../scss/_animations.scss */
+/* line 14, ../scss/_animations.scss */
 .bounce-enter-active {
   -webkit-animation: bounce-in .5s;
           animation: bounce-in .5s;
 }
 
-/* line 26, ../scss/_animations.scss */
+/* line 20, ../scss/_animations.scss */
 .bounce-enter-active,
 .bounce-leave-active {
   -webkit-transition: all 750ms ease-in-out;
