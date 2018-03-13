@@ -987,7 +987,6 @@ footer {
 
 @-webkit-keyframes bounce-in {
   0% {
-    opacity: 0;
     -webkit-transform: scale(0);
             transform: scale(0);
   }
@@ -996,7 +995,6 @@ footer {
             transform: scale(1.35);
   }
   100% {
-    opacity: 1;
     -webkit-transform: scale(1);
             transform: scale(1);
   }
@@ -1004,7 +1002,6 @@ footer {
 
 @keyframes bounce-in {
   0% {
-    opacity: 0;
     -webkit-transform: scale(0);
             transform: scale(0);
   }
@@ -1013,20 +1010,30 @@ footer {
             transform: scale(1.35);
   }
   100% {
-    opacity: 1;
     -webkit-transform: scale(1);
             transform: scale(1);
   }
 }
-/* line 14, ../scss/_animations.scss */
+/* line 13, ../scss/_animations.scss */
+.bounce-enter {
+  opacity: 0;
+}
+
+/* line 17, ../scss/_animations.scss */
+.bounce-enter-to {
+  opacity: 1;
+}
+
+/* line 21, ../scss/_animations.scss */
 .bounce-enter-active {
   -webkit-animation: bounce-in .5s;
           animation: bounce-in .5s;
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 
-/* line 20, ../scss/_animations.scss */
-.bounce-enter-active,
+/* line 32, ../scss/_animations.scss */
 .bounce-leave-active {
-  -webkit-transition: all 750ms ease-in-out;
-  transition: all 750ms ease-in-out;
+  -webkit-transition: all 0ms ease-in-out;
+  transition: all 0ms ease-in-out;
 }

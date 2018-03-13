@@ -6,7 +6,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet prefetch" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet prefetch" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
 	<link rel="stylesheet prefetch" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="//cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -96,11 +95,11 @@
 <section class="vue-portfolio" id="portApp">
 		<ul class="portfolio-list">
 			<li class="inline" v-for="job in jobs" :class="job.machine_name">
-				<a class="dir-wrapper" @click="cardFade(job.machine_name)">
+				<a class="dir-wrapper" @click="active = job.machine_name">
 					<img class="logo" :src="'/img/logos/' + job.logo" :alt="job.title">
 					<div class="hover"></div>
 				</a>
-				<a class="mobile-wrapper"  @click="cardFade(job.machine_name)">
+				<a class="mobile-wrapper"  @click="active = job.machine_name">
 					{{job.title}}
 				</a>
 			</li>
