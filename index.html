@@ -93,33 +93,22 @@
 	</div>
 </section>
 <a name="portfolio"></a>
-<section class="vue-portfolio clearfix" id="portApp">
+<section class="vue-portfolio" id="portApp">
 		<ul class="portfolio-list">
 			<li class="inline" v-for="job in jobs" :class="job.machine_name">
-				<span class="dir-wrapper">
-					<label :for="job.machine_name"><img class="logo" :src="'/img/logos/' + job.logo" :alt="job.title"><span class="screen-reader">{{job.title}}</span></label>
-					<input type="radio" :id="job.machine_name" :value="job.machine_name" v-model='active'>
+				<a class="dir-wrapper" @click="cardFade(job.machine_name)">
+					<img class="logo" :src="'/img/logos/' + job.logo" :alt="job.title">
 					<div class="hover"></div>
-				</span>
-				<span class="mobile-wrapper">
-					<label :for="job.machine_name">{{job.title}}</label>
-					<input type="radio" :id="job.machine_name" :value="job.machine_name" v-model='active'>
-				</span>
+				</a>
+				<a class="mobile-wrapper"  @click="cardFade(job.machine_name)">
+					{{job.title}}
+				</a>
 			</li>
 		</ul>
-	<a v-if="card" :href="card.href" :title="'Visit ' + card.title" target="_blank" class="portfolio-card">
-		<div class="img" v-if="card.img" :style="{ 'background-image': 'url(/img/' + card.img + ')' }">
-		<div class="ar"></div>
-		</div>
-		<h3>{{ card.title }}</h3>
-		<template v-if="card.skills">
-			<label for="scope">Scope of Work:</label>
-			<p id="scope" v-html="card.scope"></p>
-			<label for="skills">Skill Improvement:</label>
-			<p id="skills" v-html="card.skills"></p>
-		</template>
-		<p v-else v-html="card.desc"></p>
-	</a>
+	<transition name="bounce" mode="out-in">
+	<portfolio-card :key="active">
+	</portfolio-card>
+	</transition>
 </section>
 <a name="about"></a>
 <section class="about">
