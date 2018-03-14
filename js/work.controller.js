@@ -148,6 +148,6 @@ var app = new Vue({
 vm_data.jobs.forEach(function(job){//preload the images so they look normal during the transitions
 	"use strict";
 	var image = new Image();
-	image.src = job.img;
+	image.src = '/img/'+job.img;
 });
 console.log('Vue Rocks!');
