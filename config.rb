@@ -1,6 +1,6 @@
 css_dir         = "css"
 sass_dir        = "scss"
-images_dir      = "images"
+images_dir      = "img"
 relative_assets = true
 # Uncomment this when the site goes live
 #output_style = :compressed

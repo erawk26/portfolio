@@ -1,7 +1,7 @@
 var vm_data= {
 	message: 'You loaded this page on ' + new Date().toLocaleString(),
-		active: 'otis',
-		jobs: [
+	active: 'otis',
+	jobs: [
 		{
 			// -----------JOB-otis-----------
 			machine_name: "otis",
@@ -9,9 +9,9 @@ var vm_data= {
 			img: "otis.jpg",
 			logo: "otis-logo.png",
 			title: "Otis Spunkmeyer",
-			//scope: "foo",
-			//skills: "bar",
-			// tags: ["foo", "bar"],
+			scope: "I replatformed the entire site from their old custom CMS into Drupal 8 in May 2017. They needed an easier way to manage their SEO and content and Drupal fit the bill. In November of 2017, I built off the same backend but rethemed the site. This was a massive undertaking. The PSD mockup was 37 pages for mobile/desktop.",
+			skills: "CMS Structuring, Custom PHP, TWIG Templating, CSS Positioning, Flex Layout",
+			//tags: ["Drupal 8"],
 			// imgs: [],
 			desc:
 				"I replatformed the entire site from their old custom CMS into Drupal 8 in May 2017. They needed an easier way to manage their SEO and content and Drupal fit the bill. In November of 2017, I built off the same backend but rethemed the site. This was a massive undertaking. The PSD mockup was 37 pages for mobile/desktop."
@@ -100,17 +100,21 @@ var vm_data= {
 };
 Vue.component('portfolio-card', {
 	template:   '<a :href="card.href" :title="\'Visit \' + card.title" target="_blank" class="portfolio-card">\n' +
-				'<div class="img" v-if="card.img" :style="{ \'background-image\': \'url(/img/\' + card.img + \')\' }">\n' +
-				'<div class="ar"></div>\n' +
-				'</div>\n' +
-				'<h3>{{ card.title }}</h3>\n' +
-				'<template v-if="card.skills">\n' +
-				'<label for="scope">Scope of Work:</label>\n' +
-				'<p id="scope" v-html="card.scope"></p>\n' +
-				'<label for="skills">Skill Improvement:</label>\n' +
-				'<p id="skills" v-html="card.skills"></p>\n' +
-				'</template>\n' +
-				'<p v-else v-html="card.desc"></p>\n' +
+					'<div class="img" v-if="card.img" :style="{ \'background-image\': \'url(/img/\' + card.img + \')\' }">\n' +
+						'<div class="ar"></div>\n' +
+					'</div>\n' +
+					'<h3>{{ card.title }}</h3>\n' +
+					'<template v-if="card.skills">\n' +
+						'<span class="item" >\n'+
+							'<label class="scope" for="scope">Scope of Work:</label>\n' +
+							'<p id="scope"  class="scope" v-html="card.scope"></p>\n' +
+						'</span>\n'+
+						'<span class="item" >\n'+
+							'<label for="skills">Skill Improvement:</label>\n' +
+							'<p id="skills" v-html="card.skills"></p>\n' +
+						'</span>\n'+
+					'</template>\n' +
+					'<p v-else v-html="card.desc"></p>\n' +
 				'</a>',
 	name: 'portfolio-card',
 	data: function () {
@@ -121,7 +125,7 @@ Vue.component('portfolio-card', {
 		card: function () {
 			var data = this;
 			return this.jobs.filter(function (job) {
-				return job.machine_name == data.active
+				return job.machine_name == data.active;
 			})[0];
 		}
 	},
@@ -131,14 +135,13 @@ var app = new Vue({
 	data:vm_data,
 	methods: {
 		cardFade: function (job) {
-			this.$set(this, 'active', job);
-			//console.log(this);
-		}
+			// this.$set(this, 'active', job);
+		},
 	},
 	watch: {
 		active: function(newValue,oldValue) {
 			// TweenLite.to(this.$data, 0.5, { tweenedNumber: newValue });
-			//console.log('fired!',newValue);
+			// console.log('fired!',newValue);
 		}
 	}
 });

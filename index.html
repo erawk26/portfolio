@@ -43,7 +43,7 @@
 <a name="home"></a>
 <section class="intro">
 	<div class="container" id="about-card">
-		<img class="headshot" src="/img/headshot.png" alt="Erik Olsen">
+		<img class="headshot" src="/img/headshot2.jpg" alt="Erik Olsen">
 		<!--<div class="bg-img headshot"></div>-->
 		<div class="profile">
 			<h1>Erik<br><span>Olsen</span></h1>
@@ -93,21 +93,22 @@
 </section>
 <a name="portfolio"></a>
 <section class="vue-portfolio" id="portApp">
-		<ul class="portfolio-list">
-			<li class="inline" v-for="job in jobs" :class="job.machine_name">
-				<a class="dir-wrapper" @click="active = job.machine_name">
-					<img class="logo" :src="'/img/logos/' + job.logo" :alt="job.title">
-					<div class="hover"></div>
-				</a>
-				<a class="mobile-wrapper"  @click="active = job.machine_name">
-					{{job.title}}
-				</a>
-			</li>
-		</ul>
+<div class="flex-wrapper">
+	<ul class="portfolio-list" >
+		<h4>Projects</h4>
+		<li class="inline" v-for="job in jobs" :class="job.machine_name">
+			<a class="dir-wrapper" :class="{active: job.machine_name == active}" @click="active = job.machine_name">
+				<!--<img class="logo" :src="'/img/logos/' + job.logo" :alt="job.title">-->
+				<span class="title">{{job.title}}</span>
+				<div class="hover"></div>
+			</a>
+		</li>
+	</ul>
 	<transition name="bounce" mode="out-in">
-	<portfolio-card :key="active">
-	</portfolio-card>
+		<portfolio-card :key="active">
+		</portfolio-card>
 	</transition>
+</div>
 </section>
 <a name="about"></a>
 <section class="about">
@@ -141,6 +142,7 @@
 </footer>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script src="js/work.controller.js"></script>
 <script src="js/index.js"></script>
 </body>

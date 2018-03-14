@@ -1,6 +1,5 @@
 $(document).ready(function() {
-  $("h1").addClass("animated bounce");
-  $('[data-toggle="tooltip"]').tooltip(); 
+  $('[data-toggle="tooltip"]').tooltip();
 });
   ///// collapse menu /////
 $(document).on('click', function() {
