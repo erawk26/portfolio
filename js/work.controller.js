@@ -9,8 +9,8 @@ var vm_data= {
 			img: "otis.jpg",
 			logo: "otis-logo.png",
 			title: "Otis Spunkmeyer",
-			scope: "I replatformed the entire site from their old custom CMS into Drupal 8 in May 2017. They needed an easier way to manage their SEO and content and Drupal fit the bill. In November of 2017, I built off the same backend but rethemed the site. This was a massive undertaking. The PSD mockup was 37 pages for mobile/desktop.",
-			skills: "CMS Structuring, Custom PHP, TWIG Templating, CSS Positioning, Flex Layout",
+			// scope: "I replatformed the entire site from their old custom CMS into Drupal 8 in May 2017. They needed an easier way to manage their SEO and content and Drupal fit the bill. In November of 2017, I built off the same backend but rethemed the site. This was a massive undertaking. The PSD mockup was 37 pages for mobile/desktop.",
+			// skills: "CMS Structuring, Custom PHP, TWIG Templating, CSS Positioning, Flex Layout",
 			//tags: ["Drupal 8"],
 			// imgs: [],
 			desc:
