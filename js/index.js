@@ -1,11 +1,4 @@
-$(document).ready(function() {
-  $('[data-toggle="tooltip"]').tooltip();
-});
-  ///// collapse menu /////
-$(document).on('click', function() {
-  $('.collapse').collapse('hide');
-});
-  ///// Back to Top /////
+///// Back to Top /////
 $(".back-to-top").hide();
 $(window).on('scroll', function() {
   if ($(this).scrollTop() > 100) {
@@ -23,7 +16,6 @@ $('a[href*="#"]:not([href="#"])').click(function() {
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
       if (target.length) {
-        $('.collapse').collapse('hide');
         $('html, body').animate({
           scrollTop: target.offset().top
         }, 1000);

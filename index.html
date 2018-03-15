@@ -5,11 +5,9 @@
 	<title>Erik's Portfolio</title>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet prefetch" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<link rel="stylesheet prefetch" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="//cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+	<link rel="stylesheet prefetch" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet prefetch" href="//fonts.googleapis.com/css?family=Advent+Pro|Source+Sans+Pro|Raleway">
+	<link rel="stylesheet prefetch" href="//fonts.googleapis.com/css?family=Work+Sans:400,700,600,500,300,200">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115116018-1"></script>
@@ -22,127 +20,71 @@
 	</script>
 </head>
 <body>
-<nav class="navbar navbar-default navbar-fixed-top topnav white-gloss">
-	<div class="container topnav">
-		<div class="navbar-header">
-			<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbar"
-			        aria-expanded="false" aria-controls="navbar"><span class="sr-only">Toggle navigation</span><span
-				class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
-			<a class="navbar-brand" href="#home" target="_blank">EO</a>
-		</div>
-		<div class="navbar-collapse collapse" id="navbar">
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#home">Intro</a></li>
-				<li><a href="#portfolio">Portfolio</a></li>
-				<li><a href="#about">About</a></li>
-				<!--<li><a href="#contact">Contact</a></li>-->
-			</ul>
-		</div>
-	</div>
-</nav>
-<a name="home"></a>
+<header>
+	<nav class="main-nav"><a class="home" href="#intro">Erik</a><span class="mid-links"><a class="projects" href="#portfolio">Projects</a><a class="about" href="#about">About</a></span><a class="resume" target="blank" href="/ErikOlsen_Resume.pdf">Resume</a></nav>
+</header>
+<a name="intro"></a>
 <section class="intro">
-	<div class="container" id="about-card">
-		<img class="headshot" src="/img/headshot2.jpg" alt="Erik Olsen">
-		<!--<div class="bg-img headshot"></div>-->
-		<div class="profile">
-			<h1>Erik<br><span>Olsen</span></h1>
-			<h2>Developer</h2>
-			<div class="contact">
-				<a href="mailto:me@erikthedeveloper.com" target="_blank" data-toggle="tooltip" data-placement="bottom"
-				   title="me@erikthedeveloper.com">
-					<i class="fa fa-envelope-o">
-			<span
-				class="screen-reader-text">E-Mail</span>
-					</i></a>
-				<a href="tel:+1-802-851-5512" target="_blank" data-toggle="tooltip" data-placement="bottom"
-				   title="+1-802-851-5512">
-					<i class="fa fa-phone">
-						<span class="screen-reader-text">Phone</span>
-					</i>
-				</a>
-				<!--<a href="//twitter.com/RoastingBarista" target="_blank" data-toggle="tooltip" data-placement="bottom"-->
-				   <!--title="Twitter">-->
-					<!--<i class="fa fa-twitter">-->
-						<!--<span class="screen-reader-text">Twitter</span>-->
-					<!--</i>-->
-				<!--</a>-->
-				<a href="//www.linkedin.com/in/erikthedeveloper" target="_blank" data-toggle="tooltip" data-placement="bottom"
-				   title="LinkedIn"><i class="fa fa-linkedin"><span class="screen-reader-text">LinkedIn</span></i></a>
-				<a
-					href="//github.com/erawk26" target="_blank" data-toggle="tooltip" data-placement="bottom" title="GitHub"><i
-					class="fa fa-github"><span class="screen-reader-text">Github</span></i></a>
-				<!--<a-->
-					<!--href="//www.freecodecamp.com/erawk26" target="_blank" data-toggle="tooltip" data-placement="bottom"-->
-					<!--title="freeCodeCamp"><i class="fa fa-fire"><span class="screen-reader-text">freeCodeCamp</span></i></a>-->
-				<a
-					href="//codepen.io/erawk26" target="_blank" data-toggle="tooltip" data-placement="bottom" title="CodePen"><i
-					class="fa fa-codepen"><span class="screen-reader-text">Codepen</span></i></a></div>
-		</div>
-		<div class="more-content">
-			<!--TODO: rewrite this section-->
-			<p>I am a highly motivated and driven individual looking to consistently advance my career in web and
-			   software development. Ive worked in the Industry for a little over 2 years now; Before that, I obtained a
-				<a class="link" target="_blank" href="//www.freecodecamp.com/erawk26/front-end-certification"
-				   title="My Front End Developement Certification">Front End Development Certificate</a> from <a
-					class="link" title="About FreeCodeCamp" target="_blank" href="//www.freecodecamp.com/about">FreeCodeCamp.com</a>,
-			   and I'm continuing on towards a Full Stack Development Certificate. I am also willing and able to learn
-			   new technologies fast, and I work great with others.</p>
-		</div>
-	</div>
+	<p class="animated fadeIn">I'm Erik Olsen, a Web Developer based currently out of Burlington, VT. I build fast responsive websites and applications.</p><a class="fa fa-chevron-down" href="#portfolio"></a>
 </section>
 <a name="portfolio"></a>
 <section class="vue-portfolio" id="portApp">
-<div class="flex-wrapper">
-	<ul class="portfolio-list" >
-		<h4>Projects</h4>
-		<li class="inline" v-for="job in jobs" :class="job.machine_name">
-			<a class="dir-wrapper" :class="{active: job.machine_name == active}" @click="active = job.machine_name">
-				<!--<img class="logo" :src="'/img/logos/' + job.logo" :alt="job.title">-->
-				<span class="title">{{job.title}}</span>
-				<div class="hover"></div>
-			</a>
-		</li>
-	</ul>
-	<transition name="bounce" mode="out-in">
-		<portfolio-card :key="active">
-		</portfolio-card>
-	</transition>
-</div>
+	<div class="flex-wrapper">
+		<div class="port-head">
+			<h4>Portfolio</h4>
+			<hr/>
+			<h2>Recent Projects</h2>
+		</div>
+		<ul class="portfolio-list">
+			<li class="inline" v-for="job in jobs" :class="job.machine_name"><a class="dir-wrapper" :class="{active: job.machine_name == active}" @click="active = job.machine_name">
+				<!-- <img class="logo" :src="'/img/logos/' + job.logo" :alt="job.title">--><span class="title">{{job.title}}</span>
+				<div class="hover"></div></a></li>
+		</ul>
+		<transition name="bounce" mode="out-in">
+			<portfolio-card :key="active"></portfolio-card>
+		</transition>
+	</div>
 </section>
-<a name="about"></a>
 <section class="about">
-	<div class="a-cont center">
-		<div class="flex-wrapper">
-		<div class="a-item">
-			<h1><i class="fa fa-code"></i></h1>
-			<h4 class="text-center">Where I'm at</h4>
-			<p>For a little over a year, I've worked at Hark building fast, responsive websites that work across all
-			   browsers and devices. I have developed a highly efficient workflow while maintaining a high attention to
-			   detail.</p>
+	<div class="section-wrapper">
+		<a name="about"></a>
+		<div class="col about">
+			<h3 id="about">About</h3>
+			<p class="about-text">I'm Erik, a Developer in Burlington, VT. Ive worked in the Industry for a little over 2 years now; Before that, I obtained a <a class="link" target="_blank" href="//www.freecodecamp.com/erawk26/front-end-certification" title="My Front End Developement Certification">Front End Development Certificate</a> from <a class="link" title="About FreeCodeCamp" target="_blank" href="//www.freecodecamp.com/about">FreeCodeCamp.com</a>, and I'm continuing on towards a Full Stack Development Certificate. I am also willing and able to learn new technologies fast, and I work great with others.</p>
 		</div>
-		<div class="a-item">
-			<h1><i class="fa fa-send"></i></h1>
-			<h4 class="text-center">Where I'm Going</h4>
-			<p>I've really been enjoying Vue.js at the moment. But, I'm aspiring to learn full stack JS development. Which means more backend learning like writing API's and express.js.</p>
-		</div>
-		<div class="a-item">
-			<h1><i class="fa fa-tree"></i></h1>
-			<h4 class="text-center">What inspires me</h4>
-			<p>Higher order functions, recursion, and functional programming. I love finding cleaner, more
-			   efficient, or more abstract, ways to write code as I delevop a deeper understanding of these
-			   concepts.</p>
-		</div>
+		<div class="col contact">
+			<h3>Contact</h3>
+			<p><a href="mailto:me@erikthedeveloper.com">me@erikthedeveloper.com</a></p>
+			<p><a href="tel:+18028515512">802.851.5512</a></p>
 		</div>
 	</div>
 </section>
 <div class="back-to-top">Back to Top</div>
-<footer class="center">
-
+<footer>
+	<div class="mw-wrapper">
+	<div class="col copy">
+		<small>&copy; 2015
+			<script>
+				new Date().getFullYear() > 2015 && document.write("- " + new Date().getFullYear());
+			</script>. Made by Erik Olsen</small></div>
+	<div class="col"><div class="contact">
+		<a href="mailto:me@erikthedeveloper.com" target="_blank" title="me@erikthedeveloper.com">
+			<i class="fa fa-envelope-o">
+				<span class="screen-reader">E-Mail</span>
+			</i></a>
+		<a href="tel:+1-802-851-5512" target="_blank" title="+1-802-851-5512">
+			<i class="fa fa-phone">
+				<span class="screen-reader">Phone</span>
+			</i>
+		</a>
+		<a href="//www.linkedin.com/in/erikthedeveloper" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"><span class="screen-reader">LinkedIn</span></i></a>
+		<a href="//github.com/erawk26" target="_blank" title="GitHub"><i class="fa fa-github"><span class="screen-reader">Github</span></i></a>
+		<a href="//codepen.io/erawk26" target="_blank" title="CodePen"><i class="fa fa-codepen"><span class="screen-reader">Codepen</span></i></a></div></div>
+	<div class="col"></div>
+	</div>
 </footer>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>-->
 <script src="js/work.controller.js"></script>
 <script src="js/index.js"></script>
 </body>
