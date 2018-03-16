@@ -456,11 +456,14 @@ a[name="intro"], a[name="portfolio"], a[name="about"] {
   height: 0;
 }
 
-/* line 8, ../scss/_main.scss */
+/* line 9, ../scss/_main.scss */
 section.intro {
   margin-top: 100px;
   min-height: calc(100vh - 100px);
   padding: 0 5%;
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 25px;
   display: -ms-flexbox;
   display: -moz-flex;
   display: -webkit-box;
@@ -479,39 +482,55 @@ section.intro {
   -webkit-box-align: center;
           align-items: center;
   line-height: 2;
-  letter-spacing: 2px;
-  text-align: center;
-  font-size: 25px;
 }
 @media (max-width: 767px) {
-  /* line 8, ../scss/_main.scss */
+  /* line 9, ../scss/_main.scss */
   section.intro {
     line-height: 1.5;
   }
 }
-/* line 20, ../scss/_main.scss */
+/* line 22, ../scss/_main.scss */
+section.intro .headshot {
+  border-radius: 50% / 50%;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  -webkit-filter: FlipH;
+          filter: FlipH;
+  -ms-filter: "FlipH";
+  width: 250px;
+  height: 250px;
+  display: block;
+  z-index: 9;
+}
+@media (max-width: 767px) {
+  /* line 22, ../scss/_main.scss */
+  section.intro .headshot {
+    margin-bottom: 25px;
+  }
+}
+/* line 42, ../scss/_main.scss */
 section.intro p {
   max-width: 675px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 25, ../scss/_main.scss */
+/* line 47, ../scss/_main.scss */
 section.intro .fa.fa-chevron-down {
   color: rgba(0, 0, 0, 0.75);
   font-size: 1em;
   font-weight: 400;
 }
-/* line 28, ../scss/_main.scss */
+/* line 51, ../scss/_main.scss */
 section.intro .fa.fa-chevron-down:hover {
   text-decoration: none;
 }
 
-/* line 33, ../scss/_main.scss */
+/* line 59, ../scss/_main.scss */
 .vue-portfolio {
   min-height: 100vh;
   padding: 5%;
 }
-/* line 36, ../scss/_main.scss */
+/* line 62, ../scss/_main.scss */
 .vue-portfolio .flex-wrapper {
   max-width: 980px;
   margin-left: auto;
@@ -531,7 +550,7 @@ section.intro .fa.fa-chevron-down:hover {
   -webkit-box-align: start;
           align-items: flex-start;
 }
-/* line 40, ../scss/_main.scss */
+/* line 66, ../scss/_main.scss */
 .vue-portfolio a {
   display: block;
   -webkit-box-sizing: border-box;
@@ -539,25 +558,25 @@ section.intro .fa.fa-chevron-down:hover {
   text-decoration: none;
   color: black;
 }
-/* line 46, ../scss/_main.scss */
+/* line 72, ../scss/_main.scss */
 .vue-portfolio .port-head {
   margin-bottom: 25px;
   text-align: center;
   width: 100%;
 }
-/* line 48, ../scss/_main.scss */
+/* line 74, ../scss/_main.scss */
 .vue-portfolio .port-head hr {
   border: none;
   border-bottom: 1px solid #000;
   width: 130px;
   margin: 10px auto;
 }
-/* line 55, ../scss/_main.scss */
+/* line 82, ../scss/_main.scss */
 .vue-portfolio .port-head > * {
   margin: 0;
 }
 
-/* line 61, ../scss/_main.scss */
+/* line 88, ../scss/_main.scss */
 .portfolio-list {
   margin-bottom: 5px;
   display: -ms-flexbox;
@@ -576,7 +595,7 @@ section.intro .fa.fa-chevron-down:hover {
           align-items: center;
 }
 @media (min-width: 600px) {
-  /* line 61, ../scss/_main.scss */
+  /* line 88, ../scss/_main.scss */
   .portfolio-list {
     width: 175px;
     padding-right: 25px;
@@ -599,37 +618,42 @@ section.intro .fa.fa-chevron-down:hover {
             align-items: stretch;
   }
 }
-/* line 71, ../scss/_main.scss */
+/* line 98, ../scss/_main.scss */
 .portfolio-list > h4 {
   display: block;
   width: 100%;
 }
-/* line 76, ../scss/_main.scss */
+/* line 103, ../scss/_main.scss */
 .portfolio-list li {
   margin: 5px;
   padding: 0;
 }
-/* line 78, ../scss/_main.scss */
+/* line 105, ../scss/_main.scss */
 .portfolio-list li.inline {
   display: inline-block;
 }
-/* line 81, ../scss/_main.scss */
+/* line 108, ../scss/_main.scss */
 .portfolio-list li .dir-wrapper {
   cursor: pointer;
   padding: 5px;
 }
-/* line 89, ../scss/_main.scss */
+/* line 115, ../scss/_main.scss */
+.portfolio-list li .dir-wrapper:hover span {
+  color: white;
+}
+/* line 118, ../scss/_main.scss */
 .portfolio-list li .dir-wrapper.active {
-  background-color: rgba(153, 153, 153, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
   -webkit-transition: background 0.5s ease;
   transition: background 0.5s ease;
 }
-/* line 93, ../scss/_main.scss */
+/* line 123, ../scss/_main.scss */
 .portfolio-list li .dir-wrapper > .title {
   position: relative;
   z-index: 10;
 }
-/* line 98, ../scss/_main.scss */
+/* line 128, ../scss/_main.scss */
 .portfolio-list li img.logo {
   display: block;
   position: relative;
@@ -640,12 +664,12 @@ section.intro .fa.fa-chevron-down:hover {
   margin: auto;
   padding: 15px;
 }
-/* line 108, ../scss/_main.scss */
+/* line 138, ../scss/_main.scss */
 .portfolio-list li .hover {
-  background-color: rgba(153, 153, 153, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 113, ../scss/_main.scss */
+/* line 144, ../scss/_main.scss */
 .portfolio-card {
   width: 100%;
   -moz-flex: 1;
@@ -653,7 +677,7 @@ section.intro .fa.fa-chevron-down:hover {
   -webkit-box-flex: 1;
           flex: 1;
 }
-/* line 117, ../scss/_main.scss */
+/* line 148, ../scss/_main.scss */
 .portfolio-card .img {
   background-position: top center;
   background-size: cover;
@@ -661,7 +685,7 @@ section.intro .fa.fa-chevron-down:hover {
   -webkit-transition: all 0s linear;
   transition: all 0s linear;
 }
-/* line 122, ../scss/_main.scss */
+/* line 153, ../scss/_main.scss */
 .portfolio-card .img .ar {
   display: block;
   margin: 0;
@@ -670,18 +694,18 @@ section.intro .fa.fa-chevron-down:hover {
   height: 0;
 }
 @media (min-width: 480px) {
-  /* line 130, ../scss/_main.scss */
+  /* line 161, ../scss/_main.scss */
   .portfolio-card p {
     font-size: 18px;
   }
 }
 
-/* line 136, ../scss/_main.scss */
+/* line 168, ../scss/_main.scss */
 section.about {
   padding: 40px 0;
   min-height: 75vh;
 }
-/* line 139, ../scss/_main.scss */
+/* line 171, ../scss/_main.scss */
 section.about .section-wrapper {
   max-width: 980px;
   margin-left: auto;
@@ -701,11 +725,11 @@ section.about .section-wrapper {
   -webkit-box-align: center;
           align-items: center;
 }
-/* line 143, ../scss/_main.scss */
+/* line 175, ../scss/_main.scss */
 section.about .col {
   padding: 5%;
 }
-/* line 145, ../scss/_main.scss */
+/* line 177, ../scss/_main.scss */
 section.about .col.about {
   -moz-flex: 1;
   -ms-flex: 1;
@@ -713,13 +737,13 @@ section.about .col.about {
           flex: 1;
 }
 @media (min-width: 980px) {
-  /* line 145, ../scss/_main.scss */
+  /* line 177, ../scss/_main.scss */
   section.about .col.about {
     padding-left: 0;
   }
 }
 @media (min-width: 980px) {
-  /* line 149, ../scss/_main.scss */
+  /* line 183, ../scss/_main.scss */
   section.about .col.contact {
     padding-right: 0;
   }
