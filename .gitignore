@@ -49,7 +49,7 @@ Temporary Items
 
 # Webstorm project files
 .idea
-
-# Sass Transpiler
+node_modules
+# Sass Transpisrcler
 .sass-cache
 config.rb
