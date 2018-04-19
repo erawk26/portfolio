@@ -1,6 +1,3 @@
-const path = require('path');
-let msg = 'testing';
-console.log(msg);
 ///// Back to Top /////
 $(".back-to-top").hide();
 $(window).on('scroll', ()=>$(this).scrollTop() > 100?$(".back-to-top").fadeIn("slow"):$(".back-to-top").fadeOut("slow"));
@@ -20,8 +17,6 @@ $('a[href*="#"]:not([href="#"])').click(function() {
 });
 ///// Hover Direction ////////
 (function($, window, undefined) {
-	"use strict";
-
 	$.HoverDir = function(options, element) {
 		this.$el = $(element);
 		this._init(options);
@@ -45,10 +40,10 @@ $('a[href*="#"]:not([href="#"])').click(function() {
 			this._loadEvents();
 		},
 		_loadEvents: function() {
-			var self = this;
+			let self = this;
 
 			this.$el.on("mouseenter.hoverdir, mouseleave.hoverdir", function(event) {
-				var $el = $(this),
+				let $el = $(this),
 					$hoverElem = $el.find(".hover"),
 					direction = self._getDir($el, { x: event.pageX, y: event.pageY }),
 					styleCSS = self._getStyle(direction);
@@ -91,7 +86,7 @@ $('a[href*="#"]:not([href="#"])').click(function() {
 			return direction;
 		},
 		_getStyle: function(direction) {
-			var fromStyle,
+			let fromStyle,
 				toStyle,
 				slideFromTop = { left: "0px", top: "-100%" },
 				slideFromBottom = { left: "0px", top: "100%" },
@@ -138,9 +133,9 @@ $('a[href*="#"]:not([href="#"])').click(function() {
 		}
 	};
 	$.fn.hoverdir = function(options) {
-		var instance = $.data(this, "hoverdir");
+		let instance = $.data(this, "hoverdir");
 		if (typeof options === "string") {
-			var args = Array.prototype.slice.call(arguments, 1);
+			let args = Array.prototype.slice.call(arguments, 1);
 			this.each(function() {
 				if (!instance) {
 					logError(
