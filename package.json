@@ -1,0 +1,43 @@
+{
+ "name": "portfolio",
+ "version": "1.0.0",
+ "description": "[My Portfolio](http://www.erikthedeveloper.com/)\r =========================================",
+ "main": "index.js",
+ "dependencies": {
+  "path": "^0.12.7"
+ },
+ "devDependencies": {
+  "autoprefixer": "^8.3.0",
+  "babel-core": "^6.26.0",
+  "babel-loader": "^7.1.4",
+  "babel-preset-env": "^1.6.1",
+  "css-loader": "^0.28.11",
+  "extract-loader": "^2.0.1",
+  "file-loader": "^1.1.11",
+  "node-sass": "^4.8.3",
+  "postcss-cli": "^5.0.0",
+  "postcss-loader": "^2.1.4",
+  "sass-loader": "^6.0.7",
+  "style-loader": "^0.20.3",
+  "webpack": "^4.6.0",
+  "webpack-cli": "^2.0.14",
+  "webpack-dev-server": "^3.1.1"
+ },
+ "scripts": {
+  "dev": "webpack -d",
+  "build": "webpack -p",
+  "start": "webpack-dev-server --open --mode development",
+  "watch": "webpack -d --watch --info-verbosity verbose",
+  "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/erawk26/portfolio.git"
+ },
+ "author": "",
+ "license": "ISC",
+ "bugs": {
+  "url": "https://github.com/erawk26/portfolio/issues"
+ },
+ "homepage": "http://www.erikthedeveloper.com"
+}

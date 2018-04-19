@@ -157,22 +157,6 @@ ul {
 	clear: both;
 }
 
-.ds1 {
-	@include box-shadow(3px 3px 10px 0 rgba(black, 0.8));
-}
-
-.br1 {
-	@include border-radius($br1);
-}
-
-.br2 {
-	@include border-radius($br2);
-}
-
-.br3 {
-	@include border-radius($br3);
-}
-
 .bdr {
 	border: $bdr;
 }
@@ -184,14 +168,9 @@ ul {
 }
 
 .r45 {
-	@include rotate(-45deg);
+	transform: rotate(-45deg);
 }
 
-.grey {
-	background: $grey;
-	padding: 20px;
-	@extend .ds1;
-}
 
 .uc {
 	text-transform: uppercase;

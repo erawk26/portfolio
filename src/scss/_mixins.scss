@@ -217,15 +217,15 @@
 	}
 }
 
-@mixin grey-gradient($src,$size:cover,$position:center) {
-	//@include filter-gradient(#1a000000, #00000000, horizontal); // IE6-9 fallback on horizontal gradient
-	@include background-image(linear-gradient(left top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 23%, rgba(0, 0, 0, 0) 100%), url($src));
-	background-position: $position;
-	background-size: $size;
-	-webkit-background-size: $size;
-	-moz-background-size: $size;
-	-o-background-size: $size;
-}
+//@mixin grey-gradient($src,$size:cover,$position:center) {
+//	//@include filter-gradient(#1a000000, #00000000, horizontal); // IE6-9 fallback on horizontal gradient
+//	@include background-image(linear-gradient(left top, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.05) 23%, rgba(0, 0, 0, 0) 100%), url($src));
+//	background-position: $position;
+//	background-size: $size;
+//	-webkit-background-size: $size;
+//	-moz-background-size: $size;
+//	-o-background-size: $size;
+//}
 
 @mixin stripes($color:#333, $size:5px, $angle:-45deg) {
 	$colorAlt: lighten($color, 15);

@@ -46,7 +46,7 @@ $trans-down: linear-gradient(0deg, rgba($lt-grey, 1) 10%, rgba($lt-grey, .75) 30
 	// http://colorzilla.com/gradient-editor/#ffffff+0,f3f3f3+50,ededed+51,ffffff+100;White+Gloss+%232
 	background-color: white; // Old browsers
 	//@include filter-gradient(white, white, vertical); // IE6-9
-	@include background-image(linear-gradient(top, white 0%, $white1 50%, $white2 51%, white 100%));
+	background-image:linear-gradient(to bottom, white 0%, $white1 50%, $white2 51%, white 100%);
 }
 
 /* Obnoxious styling for icon fonts */
