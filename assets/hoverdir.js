@@ -148,9 +148,6 @@
 		return instance;
 	};
 })($, window);
-var hoverArr = $(".portfolio-list li");
-console.log(hoverArr);
-hoverArr.each(function() {
-	console.log(this);
+$(".portfolio-list .dir-wrapper").each(function() {
 	$(this).hoverdir({ hoverDelay: 10, inverse: false });
 });

@@ -117,9 +117,7 @@ Vue.component('portfolio-card', {
 					'<p v-else v-html="card.desc"></p>\n' +
 				'</a>',
 	name: 'portfolio-card',
-	data: function () {
-		return vm_data
-	},
+	data: ()=>vm_data,
 	computed: {
 		// a computed getter
 		card: function () {
