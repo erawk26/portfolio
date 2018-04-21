@@ -1,3 +1,4 @@
+import Vue from 'vue';
 let vm_data= {
 	message: 'You loaded this page on ' + new Date().toLocaleString(),
 	active: 'otis',

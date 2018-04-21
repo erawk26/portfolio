@@ -1,11 +1,21 @@
 const path = require('path'),
-	outputDir= path.join(__dirname, 'public');
+	HtmlWebpackPlugin = require('html-webpack-plugin'),
+	webpack = require('webpack'),
+	outputDir = path.join(__dirname, 'assets'),
+	inputDir = path.join(__dirname, 'src');
 module.exports = {
-	entry: ['./src/index.js','./src/scss/style.scss'],
+	entry: [inputDir + '/js/index.js', inputDir + '/scss/style.scss'],
 	output: {
-		path: path.join(__dirname, 'assets'),
+		path: outputDir + '/js',
 		filename: 'bundle.js'
 	},
+	plugins: [
+		new HtmlWebpackPlugin({
+			template : inputDir + '/index.html',
+			filename: '../../index.html',
+			inject   : true
+		})
+	].filter(p => !!p),
 	module: {
 		rules: [
 			{
@@ -22,7 +32,7 @@ module.exports = {
 						loader: 'file-loader',
 						options: {
 							name: '[name].css',
-							outputPath: './'
+							outputPath: '../css/'
 						}
 					},
 					{
@@ -38,8 +48,49 @@ module.exports = {
 						loader: 'sass-loader'
 					}
 				]
+			},
+			{
+				test: /\.pug$/,
+				include: path.join(__dirname, 'src'),
+				loaders: [ 'pug-loader' ]
+			},
+			{
+				test: /\.(gif|png|jpe?g|svg)$/i,
+				use: [
+					'file-loader',
+					{
+						loader: 'image-webpack-loader',
+						options: {
+							mozjpeg: {
+								progressive: true,
+								quality: 65
+							},
+							// optipng.enabled: false will disable optipng
+							optipng: {
+								enabled: false,
+							},
+							pngquant: {
+								quality: '65-90',
+								speed: 4
+							},
+							gifsicle: {
+								interlaced: false,
+							},
+							// webp: {
+							// 	quality: 75
+							// }
+							name: '[name].[extension]',
+							outputPath: '../img/'
+						}
+					},
+				],
 			}
 		]
 	},
-	// watch: true
+	// watch: true,
+	resolve: {
+		alias: {
+			'vue$': 'vue/dist/vue.esm.js'
+		}
+	}
 };
