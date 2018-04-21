@@ -116,7 +116,7 @@ Vue.component('portfolio-card', {
 						</span>
 					</template>
 					<p v-else v-html="card.desc"></p>
-				</a>'`,
+				</a>`,
 	name: 'portfolio-card',
 	data: () => vm_data,
 	computed: {
