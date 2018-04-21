@@ -1,0 +1,116 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    | 	
+    title Erik's Portfolio
+    |
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    | 	
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    | 	
+    link(rel="stylesheet prefetch", href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
+    | 	
+    link(rel="stylesheet prefetch", href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css")
+    | 	
+    link(rel="stylesheet", href="/assets/css/style.css")
+    | 	
+    link(rel="stylesheet prefetch", href="//fonts.googleapis.com/css?family=Work+Sans:400,700,600,500,300,200")
+    // Global site tag (gtag.js) - Google Analytics
+    script(async="", src="https://www.googletagmanager.com/gtag/js?id=UA-115116018-1")
+    | 	
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-115116018-1');
+  body
+    header
+      nav.main-nav
+        a.home(href="#intro") Erik
+        span.mid-links
+          a.projects(href="#portfolio") Projects
+          a.about(href="#about") About
+        a.resume(target="blank", href="./assets/ErikOlsen_Resume.pdf") Resume
+    a(name="intro")
+    section.intro.animated.fadeIn
+      img.headshot(src="/assets/img/headshot2.jpg", alt="Erik Olsen")
+      | 	
+      p
+        | I'm Erik Olsen, a Web Developer currently based out of Burlington, VT. I build fast responsive websites and applications.
+      a.fa.fa-chevron-down(href="#portfolio")
+    a(name="portfolio")
+    section#portApp.vue-portfolio
+      .flex-wrapper
+        .port-head
+          h4 Portfolio
+          | 			
+          hr
+          | 			
+          h2 Recent Projects
+        | 		
+        ul.portfolio-list
+          li.inline(v-for="job in jobs", :class="job.machine_name")
+            a.dir-wrapper(:class="{active: job.machine_name == active}", @click="active = job.machine_name")
+              // <img class="logo" :src="'/img/logos/' + job.logo" :alt="job.title">
+              span.title {{job.title}}
+              | 				
+              .hover
+        | 		
+        transition(name="bounce", mode="out-in")
+          portfolio-card(:key="active")
+    section.about
+      .section-wrapper
+        a(name="about")
+        | 		
+        .col.about
+          h3#about About
+          | 			
+          p.about-text
+            | I've worked in the Industry for a little over 2 years now; Before that, I had obtained a 
+            a.link(target="_blank", href="//www.freecodecamp.com/erawk26/front-end-certification", title="My Front End Developement Certification") Front End Development Certificate
+            |  from 
+            a.link(title="About FreeCodeCamp", target="_blank", href="//www.freecodecamp.com/about") FreeCodeCamp.com
+            | , and I'm continuing on towards a Full Stack Development Certificate. I am also willing and able to learn new technologies fast, and I thrive in a team setting.
+        | 		
+        .col.contact
+          h3 Contact
+          | 			
+          p
+            a(href="mailto:me@erikthedeveloper.com") me@erikthedeveloper.com
+          | 			
+          p
+            a(href="tel:+18028515512") 802.851.5512
+    .back-to-top Back to Top
+    footer
+      .mw-wrapper
+        .col.copy
+          small
+            | © 2015
+            script.
+              new Date().getFullYear() > 2015 && document.write("- " + new Date().getFullYear());
+            | . Made by Erik Olsen
+        | 	
+        .col
+          .contact
+            a(href="mailto:me@erikthedeveloper.com", target="_blank", title="me@erikthedeveloper.com")
+              i.fa.fa-envelope-o
+                span.screen-reader E-Mail
+            | 		
+            a(href="tel:+1-802-851-5512", target="_blank", title="+1-802-851-5512")
+              i.fa.fa-phone
+                span.screen-reader Phone
+            | 		
+            a(href="//www.linkedin.com/in/erikthedeveloper", target="_blank", title="LinkedIn")
+              i.fa.fa-linkedin
+                span.screen-reader LinkedIn
+            | 		
+            a(href="//github.com/erawk26", target="_blank", title="GitHub")
+              i.fa.fa-github
+                span.screen-reader Github
+            | 		
+            a(href="//codepen.io/erawk26", target="_blank", title="CodePen")
+              i.fa.fa-codepen
+                span.screen-reader Codepen
+        | 	
+        .col

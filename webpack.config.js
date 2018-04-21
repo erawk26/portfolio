@@ -4,14 +4,14 @@ const path = require('path'),
 	outputDir = path.join(__dirname, 'assets'),
 	inputDir = path.join(__dirname, 'src');
 module.exports = {
-	entry: [inputDir + '/js/index.js', inputDir + '/scss/style.scss'],
+	entry: [inputDir + '/js/index.js', inputDir + '/scss/style.scss',inputDir + '/index.pug'],
 	output: {
 		path: outputDir + '/js',
 		filename: 'bundle.js'
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template : inputDir + '/index.html',
+			template : 'src/index.pug',
 			filename: '../../index.html',
 			inject   : true
 		})
@@ -51,7 +51,7 @@ module.exports = {
 			},
 			{
 				test: /\.pug$/,
-				include: path.join(__dirname, 'src'),
+				include: inputDir,
 				loaders: [ 'pug-loader' ]
 			},
 			{
