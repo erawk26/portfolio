@@ -1,5 +1,5 @@
 import Vue from 'vue';
-let vm_data= {
+let vm_data = {
 	message: 'You loaded this page on ' + new Date().toLocaleString(),
 	active: 'otis',
 	jobs: [
@@ -100,25 +100,25 @@ let vm_data= {
 	],
 };
 Vue.component('portfolio-card', {
-	template:   '<a :href="card.href" :title="\'Visit \' + card.title" target="_blank" class="portfolio-card">\n' +
-					'<div class="img" v-if="card.img" :style="{ \'background-image\': \'url(/assets/img/\' + card.img + \')\' }">\n' +
-						'<div class="ar"></div>\n' +
-					'</div>\n' +
-					'<h3>{{ card.title }}</h3>\n' +
-					'<template v-if="card.skills">\n' +
-						'<span class="item" >\n'+
-							'<label class="scope" for="scope">Scope of Work:</label>\n' +
-							'<p id="scope"  class="scope" v-html="card.scope"></p>\n' +
-						'</span>\n'+
-						'<span class="item" >\n'+
-							'<label for="skills">Skill Improvement:</label>\n' +
-							'<p id="skills" v-html="card.skills"></p>\n' +
-						'</span>\n'+
-					'</template>\n' +
-					'<p v-else v-html="card.desc"></p>\n' +
-				'</a>',
+	template: `<a :href="card.href" :title="\'Visit \' + card.title" target="_blank" class="portfolio-card">
+					<div class="img" v-if="card.img" :style="{ \'background-image\': \'url(/assets/img/\' + card.img + \')\' }">
+						<div class="ar"></div>
+					</div>
+					<h3>{{ card.title }}</h3>
+					<template v-if="card.skills">
+						<span class="item" >
+							<label class="scope" for="scope">Scope of Work:</label>
+							<p id="scope"  class="scope" v-html="card.scope"></p>
+						</span>
+						<span class="item" >
+							<label for="skills">Skill Improvement:</label>
+							<p id="skills" v-html="card.skills"></p>
+						</span>
+					</template>
+					<p v-else v-html="card.desc"></p>
+				</a>'`,
 	name: 'portfolio-card',
-	data: ()=>vm_data,
+	data: () => vm_data,
 	computed: {
 		// a computed getter
 		card: function () {
@@ -132,21 +132,21 @@ Vue.component('portfolio-card', {
 let app = new Vue({
 
 	el: '#portApp',
-	data:vm_data,
+	data: vm_data,
 	methods: {
 		cardFade: function (job) {
 			// this.$set(this, 'active', job);
 		},
 	},
 	watch: {
-		active: function(newValue,oldValue) {
+		active: function (newValue, oldValue) {
 			// TweenLite.to(this.$data, 0.5, { tweenedNumber: newValue });
 			// console.log('fired!',newValue);
 		}
 	}
 });
-vm_data.jobs.forEach(function(job){//preload the images so they look normal during the transitions
+vm_data.jobs.map((job) => {//preload the images so they look normal during the transitions
 	let image = new Image();
-	image.src = '/assets/img/'+job.img;
+	image.src = '/assets/img/' + job.img;
 });
 console.log('Vue Rocks!');
