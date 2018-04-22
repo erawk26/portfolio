@@ -1,66 +1,41 @@
-const path = require('path'),
-	HtmlWebpackPlugin = require('html-webpack-plugin'),
-	webpack = require('webpack'),
-	outputDir = path.join(__dirname, 'assets'),
-	inputDir = path.join(__dirname, 'src');
+const path = require("path"),
+	HtmlWebpackPlugin = require("html-webpack-plugin"),
+	outputDir = path.join(__dirname, "assets"),
+	inputDir = path.join(__dirname, "src");
 module.exports = {
-	entry: [inputDir + '/js/index.js', inputDir + '/scss/style.scss',inputDir + '/index.pug'],
+	entry: [
+		inputDir + "/js/index.js",
+		inputDir + "/scss/style.scss"
+	],
 	output: {
-		path: outputDir + '/js',
-		filename: 'bundle.js'
+		path: outputDir + "/js",
+		filename: "bundle.js"
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template : 'src/index.pug',
-			filename: '../../index.html',
-			inject   : true
+			template: "src/index.pug",
+			filename: "../../index.html",
+			inject: true
 		})
 	].filter(p => !!p),
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
-				exclude: /node_modules/,
-				use: {
-					loader: "babel-loader"
-				}
-			},
-			{
-				test: /\.scss$/,
+				test: /\.(gif|png|jpe?g|svg)$/i,
 				use: [
 					{
 						loader: 'file-loader',
 						options: {
-							name: '[name].css',
-							outputPath: '../css/'
+							name: '[sha512:hash:base64:7].[ext]',
+							outputPath: '../img',
+							publicPath: 'assets/img',
+							useRelativePath: process.env.NODE_ENV === "production"
 						}
 					},
 					{
-						loader: 'extract-loader'
-					},
-					{
-						loader: 'css-loader'
-					},
-					{
-						loader: 'postcss-loader'
-					},
-					{
-						loader: 'sass-loader'
-					}
-				]
-			},
-			{
-				test: /\.pug$/,
-				include: inputDir,
-				loaders: [ 'pug-loader' ]
-			},
-			{
-				test: /\.(gif|png|jpe?g|svg)$/i,
-				use: [
-					'file-loader',
-					{
 						loader: 'image-webpack-loader',
 						options: {
+							bypassOnDebug: true,
 							mozjpeg: {
 								progressive: true,
 								quality: 65
@@ -76,21 +51,64 @@ module.exports = {
 							gifsicle: {
 								interlaced: false,
 							},
-							// webp: {
-							// 	quality: 75
-							// }
-							name: '[name].[extension]',
-							outputPath: '../img/'
+							// the webp option will enable WEBP
+							webp: {
+								quality: 75
+							}
 						}
 					},
 				],
+			},
+			{
+				test: /\.js$/,
+				exclude: /node_modules/,
+				use: {
+					loader: "babel-loader"
+				}
+			},
+			{
+				test: /\.scss$/,
+				exclude: /node_modules/,
+				use: [
+					{
+						loader: "file-loader",
+						options: {
+							name: "[name].css",
+							outputPath: "../css/"
+						}
+					},
+					{
+						loader: "extract-loader"
+					},
+					{
+						loader: "css-loader"
+					},
+					{
+						loader: "postcss-loader"
+					},
+					{
+						loader: "sass-loader"
+					}
+				]
+			},
+			{
+				test: /\.pug$/,
+				include: inputDir,
+				use:
+					{
+						loader: "pug-loader",
+						options: {
+							doctype: 'pug',
+							pretty: true
+						}
+					}
 			}
 		]
 	},
 	// watch: true,
 	resolve: {
 		alias: {
-			'vue$': 'vue/dist/vue.esm.js'
+			vue$: "vue/dist/vue.esm.js"
 		}
 	}
 };

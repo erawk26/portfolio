@@ -100,7 +100,8 @@ let vm_data = {
 	],
 };
 Vue.component('portfolio-card', {
-	template: `<a :href="card.href" :title="\'Visit \' + card.title" target="_blank" class="portfolio-card">
+	template: `
+				<a :href="card.href" :title="\'Visit \' + card.title" target="_blank" class="portfolio-card">
 					<div class="img" v-if="card.img" :style="{ \'background-image\': \'url(/assets/img/\' + card.img + \')\' }">
 						<div class="ar"></div>
 					</div>

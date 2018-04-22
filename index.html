@@ -1,4 +1,70 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8">	<title>Erik's Portfolio</title><meta http-equiv="X-UA-Compatible" content="IE=edge">	<meta name="viewport" content="width=device-width, initial-scale=1">	<link rel="stylesheet prefetch" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">	<link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">	<link rel="stylesheet" href="/assets/css/style.css">	<link rel="stylesheet prefetch" href="//fonts.googleapis.com/css?family=Work+Sans:400,700,600,500,300,200"><!-- Global site tag (gtag.js) - Google Analytics--><script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-115116018-1"></script>	<script>window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'UA-115116018-1');</script></head><body><header><nav class="main-nav"><a class="home" href="#intro">Erik</a><span class="mid-links"><a class="projects" href="#portfolio">Projects</a><a class="about" href="#about">About</a></span><a class="resume" target="blank" href="./assets/ErikOlsen_Resume.pdf">Resume</a></nav></header><a name="intro"></a><section class="intro animated fadeIn"><img class="headshot" src="/assets/img/headshot2.jpg" alt="Erik Olsen">	<p>I'm Erik Olsen, a Web Developer currently based out of Burlington, VT. I build fast responsive websites and applications.</p><a class="fa fa-chevron-down" href="#portfolio"></a></section><a name="portfolio"></a><section class="vue-portfolio" id="portApp"><div class="flex-wrapper"><div class="port-head"><h4>Portfolio</h4>			<hr>			<h2>Recent Projects</h2></div>		<ul class="portfolio-list"><li class="inline" v-for="job in jobs" :class="job.machine_name"><a class="dir-wrapper" :class="{active: job.machine_name == active}" @click="active = job.machine_name"><!-- <img class="logo" :src="'/img/logos/' + job.logo" :alt="job.title">--><span class="title">{{job.title}}</span>				<div class="hover"></div></a></li></ul>		<transition name="bounce" mode="out-in"><portfolio-card :key="active"></portfolio-card></transition></div></section><section class="about"><div class="section-wrapper"><a name="about"></a>		<div class="col about"><h3 id="about">About</h3>			<p class="about-text">I've worked in the Industry for a little over 2 years now; Before that, I had obtained a <a class="link" target="_blank" href="//www.freecodecamp.com/erawk26/front-end-certification" title="My Front End Developement Certification">Front End Development Certificate</a> from <a class="link" title="About FreeCodeCamp" target="_blank" href="//www.freecodecamp.com/about">FreeCodeCamp.com</a>, and I'm continuing on towards a Full Stack Development Certificate. I am also willing and able to learn new technologies fast, and I thrive in a team setting.</p></div>		<div class="col contact"><h3>Contact</h3>			<p><a href="mailto:me@erikthedeveloper.com">me@erikthedeveloper.com</a></p>			<p><a href="tel:+18028515512">802.851.5512</a></p></div></div></section><div class="back-to-top">Back to Top</div><footer><div class="mw-wrapper"><div class="col copy"><small>© 2015<script>new Date().getFullYear() > 2015 && document.write("- " + new Date().getFullYear());</script>. Made by Erik Olsen</small></div>	<div class="col"><div class="contact"><a href="mailto:me@erikthedeveloper.com" target="_blank" title="me@erikthedeveloper.com"><i class="fa fa-envelope-o"><span class="screen-reader">E-Mail</span></i></a>		<a href="tel:+1-802-851-5512" target="_blank" title="+1-802-851-5512"><i class="fa fa-phone"><span class="screen-reader">Phone</span></i></a>		<a href="//www.linkedin.com/in/erikthedeveloper" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"><span class="screen-reader">LinkedIn</span></i></a>		<a href="//github.com/erawk26" target="_blank" title="GitHub"><i class="fa fa-github"><span class="screen-reader">Github</span></i></a>		<a href="//codepen.io/erawk26" target="_blank" title="CodePen"><i class="fa fa-codepen"><span class="screen-reader">Codepen</span></i></a></div></div>	<div class="col"></div></div></footer><script type="text/javascript" src="assets/js/bundle.js"></script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Erik's Portfolio</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet prefetch" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet prefetch" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet prefetch" href="//fonts.googleapis.com/css?family=Work+Sans:400,700,600,500,300,200">
+    <!-- Global site tag (gtag.js) - Google Analytics-->
+    <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-115116018-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-115116018-1');
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="main-nav"><a class="home" href="#intro">Erik</a><span class="mid-links"><a class="projects" href="#portfolio">Projects</a><a class="about" href="#about">About</a></span><a class="resume" target="blank" href="./assets/ErikOlsen_Resume.pdf">Resume</a></nav>
+    </header><a name="intro"></a>
+    <section class="intro animated fadeIn"><img class="headshot" src="assets/img/3iuboGC.jpg" alt="Erik Olsen">
+      <p>I'm Erik Olsen, a Web Developer currently based out of Sarasota, FL. I build fast responsive websites and applications.</p><a class="fa fa-chevron-down" href="#portfolio"></a>
+    </section><a name="portfolio"></a>
+    <section class="vue-portfolio" id="portApp">
+      <div class="flex-wrapper">
+        <div class="port-head">
+          <h4>Portfolio</h4>
+          <hr>
+          <h2>Recent Projects</h2>
+        </div>
+        <ul class="portfolio-list">
+          <li class="inline" v-for="job in jobs" :class="job.machine_name"><a class="dir-wrapper" :class="{active: job.machine_name == active}" @click="active = job.machine_name">
+              <!--img.logo(:src="'/img/logos/' + job.logo" :alt="job.title")--><span class="title">{{job.title}}</span>
+              <div class="hover"></div></a></li>
+        </ul>
+        <transition name="bounce" mode="out-in">
+          <portfolio-card :key="active"></portfolio-card>
+        </transition>
+      </div>
+    </section>
+    <section class="about">
+      <div class="section-wrapper"><a name="about"></a>
+        <div class="col about">
+          <h3 id="about">About</h3>
+          <p class="about-text">I've worked in the Industry for a little over 2 years now; Before that, I had obtained a <a class="link" target="_blank" href="//www.freecodecamp.com/erawk26/front-end-certification" title="My Front End Developement Certification">Front End Development Certificate</a> from <a class="link" title="About FreeCodeCamp" target="_blank" href="//www.freecodecamp.com/about">FreeCodeCamp.com</a>, and I'm continuing on towards a Full Stack Development Certificate. I am also willing and able to learn new technologies fast, and I thrive in a team setting.</p>
+        </div>
+        <div class="col contact">
+          <h3>Contact</h3>
+          <p><a href="mailto:me@erikthedeveloper.com">me@erikthedeveloper.com</a></p>
+          <p><a href="tel:+18028515512">802.851.5512</a></p>
+        </div>
+      </div>
+    </section>
+    <div class="back-to-top">Back to Top</div>
+    <footer>
+      <div class="mw-wrapper">
+        <div class="col copy"><small>© 2015
+            <script>new Date().getFullYear() > 2015 && document.write(" - " + new Date().getFullYear());</script>. Made by Erik Olsen</small></div>
+        <div class="col">
+          <div class="contact"><a href="mailto:me@erikthedeveloper.com" target="_blank" title="me@erikthedeveloper.com"><i class="fa fa-envelope-o"><span class="screen-reader">E-Mail</span></i></a><a href="tel:+1-802-851-5512" target="_blank" title="+1-802-851-5512"><i class="fa fa-phone"><span class="screen-reader">Phone</span></i></a><a href="//www.linkedin.com/in/erikthedeveloper" target="_blank" title="LinkedIn"><i class="fa fa-linkedin"><span class="screen-reader">LinkedIn</span></i></a><a href="//github.com/erawk26" target="_blank" title="GitHub"><i class="fa fa-github"><span class="screen-reader">Github</span></i></a><a href="//codepen.io/erawk26" target="_blank" title="CodePen"><i class="fa fa-codepen"><span class="screen-reader">Codepen</span></i></a></div>
+        </div>
+        <div class="col"></div>
+      </div>
+    </footer>
+  <script type="text/javascript" src="assets/js/bundle.js"></script></body>
+</html>
