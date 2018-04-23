@@ -166,4 +166,98 @@ section.about {
 		}
 	}
 }
+/* Obnoxious styling for icon fonts */
+.contact .fa {
+	transition: all .5s ease;
+	color:$dk-grey;
+	//border:1px solid transparent;
+	border:none;
+	&.fa-envelope-o {
+		//color: rgb(201, 44, 25);
+		&:hover {
+			//color: white;
+			color: rgb(201, 44, 25);
+			border-color: rgb(201, 44, 25);
+		}
+	}
 
+	&.fa-phone {
+		//color: green;
+		&:hover {
+			color: green;
+			border-color: green;
+		}
+	}
+
+	&.fa-twitter {
+		//color: #4099FF;
+		&:hover {
+			//color: white;
+			color: #4099FF;
+			border-color: #4099FF;
+		}
+	}
+
+	&.fa-linkedin {
+		//color: #0077b5;
+		&:hover {
+			//color: white;
+			color: #0077b5;
+			border-color: #0077b5;
+		}
+	}
+
+	&.fa-drupal {
+		//color: #0678bf;
+		&:hover {
+			//color: white;
+			color: #0678bf;
+			border-color: #0678bf;
+		}
+	}
+
+	&.fa-github {
+		//color: #333;
+		&:hover {
+			//color: white;
+			color: #333;
+			border-color: #333;
+		}
+	}
+
+	&.fa-codepen {
+		//color: black;
+		&:hover {
+			//color: white;
+			color: black;
+			border-color: black;
+		}
+	}
+
+	&.fa-stack-overflow {
+		//color: #07c;
+		&:hover {
+			//color: white;
+			color: #07c;
+			border-color: #07c;
+		}
+	}
+
+	&.fa-dribbble {
+		//color: #ea4c89;
+		&:hover {
+			//color: white;
+			color: #ea4c89;
+			border-color: #ea4c89;
+		}
+	}
+
+	&.fa-fire {
+		//color: #4b2a10;
+		&:hover {
+			//color: white;
+			color: #4b2a10;
+			border-color: #4b2a10;
+		}
+	}
+}

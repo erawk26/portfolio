@@ -1,4 +1,5 @@
 ///// Hover Direction ////////
+const $ = require("jquery");
 "use strict";
 (function($, window, undefined) {
 	$.HoverDir = function(options, element) {
