@@ -141,28 +141,7 @@ section.intro {
 	}
 }
 
-.portfolio-card {
-	//@include set-max-width;
-	width: 100%;
-	@include flexchild(1, null, null);
-	.img {
-		background-position: top center;
-		background-size: cover;
-		overflow: hidden;
-		transition: all 0s linear;
-		.ar {
-			display: block;
-			@include marding(0, 0 0 42%);
-			width: 100%;
-			height: 0;
-		}
-	}
-	@include not-mobile {
-		p {
-			font-size: 18px;
-		}
-	}
-}
+
 
 //////////////// ABOUT ////////////////
 section.about {
