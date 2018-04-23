@@ -1,15 +1,10 @@
 import Vue from 'vue';
 import Projects from './projects.js';
 import CardComponent from './card.vue';
-let vm_data = {
-	message: 'You loaded this page on ' + new Date().toLocaleString(),
-	active: 'otis',
-	jobs: Projects.projectArr
-};
 new Vue({
 	el: '#portApp',
-	data: vm_data,
-	components: { CardComponent },
+	data: Projects.vm_data,
+	components: { 'portfolio-card' : CardComponent } ,
 	methods: {
 		cardFade: function (job) {
 			// this.$set(this, 'active', job);
@@ -22,7 +17,7 @@ new Vue({
 		}
 	}
 });
-Projects.projectArr.map((job) => {//preload the images so they look normal during the transitions
+Projects.vm_data.jobs.map((job) => {//preload the images so they look normal during the transitions
 	let image = new Image();
 	image.src = '/assets/img/' + job.img;
 });
