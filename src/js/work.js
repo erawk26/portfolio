@@ -17,8 +17,8 @@ new Vue({
 		}
 	}
 });
-Projects.vm_data.jobs.map((job) => {//preload the images so they look normal during the transitions
-	let image = new Image();
-	image.src = '/assets/img/' + job.img;
-});
+//Projects.vm_data.jobs.map((job) => {//preload the images so they look normal during the transitions
+//	let image = new Image();
+//	image.src = '/assets/img/' + job.img;
+//});
 console.log('Vue Rocks!');

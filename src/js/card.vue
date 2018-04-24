@@ -1,6 +1,6 @@
 <template lang="html">
     <a :href="card.href" :title="'Visit ' + card.title" target="_blank" class="portfolio-card">
-        <div v-if="card.img" :style="{ 'background-image': 'url(/assets/img/' + card.img + ')' }" class="img">
+        <div v-if="card.img" :style="{ backgroundImage: 'url(' + card.img + ')' }" class="img">
             <div class="ar"></div>
         </div>
         <h3>{{ card.title }}</h3>
@@ -22,11 +22,10 @@
 		data: ()=>Projects.vm_data,
 		computed: {
 			// a computed getter
-			card: function () {
-				const data = this;
-				return this.jobs.filter(function (job) {
-					return job.machine_name === data.active;
-				})[0];
+			card: function (data) {
+				return data.jobs
+					.filter(job => job.machine_name === data.active)
+					.map(job => {job.img = './src/img/' + job.img;return job;})[0];
 			}
 		}
 	}
