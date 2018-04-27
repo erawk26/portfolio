@@ -1,43 +1,33 @@
-<template lang="html">
-    <a :href="card.href" :title="'Visit ' + card.title" target="_blank" class="portfolio-card">
-        {{preload()}}
-        <div v-if="card.img" :style="{ backgroundImage: 'url(' + imgRequire(card.img) + ')' }" class="img">
-            <div class="ar"></div>
-        </div>
-        <h3>{{ card.title }}</h3>
-        <span v-if="card.scope" class="item">
-      <label for="scope" class="scope">Scope of Work:</label>
-      <p id="scope" v-html="card.scope" class="scope"></p>
-    </span>
-         <span v-if="card.scope" class="item">
-      <label for="skills">Skill Improvement:</label>
-      <p id="skills" v-html="card.skills"></p>
-            </span>
-        <p v-else v-html="card.desc"></p>
-    </a>
+<template lang="pug">
+a.portfolio-card(:href='card.href', :title="'Visit ' + card.title", target='_blank')
+    .img(v-if='card.img', :style="{ backgroundImage: 'url(' + imgRequire(card.img) + ')' }")
+        .ar
+    h3 {{ card.title }}
+    span.item(v-if='card.scope')
+        label.scope(for='scope') Scope of Work:
+        p#scope.scope(v-html='card.scope')
+    span.item(v-if='card.scope')
+        label(for='skills') Skill Improvement:
+        p#skills(v-html='card.skills')
+    p(v-else='', v-html='card.desc')
 </template>
 <script>
 	export default {
 		name: 'portfolio-card',
-		data: _this => _this.$parent.$data,
+		data: _this => {return _this.$parent.$data},
 		computed: {
-			// a computed getter
 			card: function () {
-				return this.jobs.filter(job => job.machine_name === this.active)[0];
+				return this.jobs
+					.map(job=>{//preload the images
+						let image = new Image();
+						image.src = require(`../../img/${job.img}`);
+						return job;
+					})
+                    .filter(job => job.machine_name === this.active)[0];
 			}
 		},
 		methods: {
-			imgRequire: function (img) {
-				let image = new Image();
-				image.src = require(`../../img/${img}`);
-				return image.src;
-			},
-			preload:function () {
-				return this.jobs.map(job=>{
-					let image = new Image();
-					image.src = require(`../../img/${job.img}`);
-				});
-			}
+			imgRequire: img=>require(`../../img/${img}`),
 		}
 	}
 </script>

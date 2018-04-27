@@ -96,25 +96,9 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: 'vue-loader',
 				options: {
-					// `loaders` will overwrite the default loaders.
-					// The following config will cause all `<script>` tags without `lang`
-					// attribute to be loaded with `coffee-loader`
 					loaders: {
 						scss: 'vue-style-loader!css-loader!sass-loader', // <style lang="scss">
 						sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax', // <style lang="sass">
-						js: {
-							loader: 'babel-loader',
-							options: {
-								presets: ['env']
-							}
-						},
-						pug: {
-							loader: "pug-loader",
-							options: {
-								doctype: 'pug',
-								pretty: true
-							}
-						},
 					},
 
 					// `preLoaders` are attached before the default loaders.
