@@ -1,0 +1,127 @@
+<template>
+    <section id="portApp" class="vue-portfolio">
+        <div class="flex-wrapper">
+            <div class="port-head">
+                <h4>Portfolio</h4>
+                <hr/>
+                <h2>Recent Projects</h2>
+            </div>
+            <ul class="portfolio-list">
+                <li v-for="job in jobs" :class="job.machine_name" class="inline"><a
+                        :class="{active: job.machine_name === active}" @click="active = job.machine_name"
+                        class="dir-wrapper">
+                    <!--img.logo(:src="'/img/logos/' + job.logo" :alt="job.title")--><span
+                        class="title">{{job.title}}</span>
+                    <div class="hover"></div>
+                </a></li>
+            </ul>
+            <transition name="bounce" mode="out-in">
+                <portfolio-card id="vue-card" :key="active"></portfolio-card>
+            </transition>
+        </div>
+    </section>
+</template>
+
+<script>
+	import Projects from './projects.js';
+	import Card from './components/Card.vue';
+	export default {
+		name: 'App',
+		components: {
+			'portfolio-card': Card,
+		},
+		data: () => ({
+			message: 'You loaded this page on ' + new Date().toLocaleString(),
+			active: 'otis',
+			jobs: Projects.jobs
+		})
+	};
+</script>
+
+<style lang="scss" scoped>
+    @import '../scss/init';
+    .vue-portfolio {
+        min-height: 100vh;
+        padding: 5%;
+        .flex-wrapper {
+            @include set-max-width;
+            @include flex(center, flex-start, $wrap: wrap);
+        }
+        a {
+            display: block;
+            box-sizing: border-box;
+            text-decoration: none;
+            color: black;
+        }
+        .port-head {
+            margin-bottom: 25px;
+            hr {
+                border: none;
+                border-bottom: 1px solid #000;
+                width: 130px;
+                margin: 10px auto;
+            }
+            text-align: center;
+            width: 100%;
+            > * {
+                margin: 0;
+            }
+        }
+    }
+
+    .portfolio-list {
+        @extend %ul-nostyle;
+        margin-bottom: 5px;
+        @include flex($wrap: wrap);
+        @media (min-width: 600px) {
+            //margin-bottom: 15px;
+            width: 175px;
+            padding-right: 25px;
+            @include flex(flex-start, stretch, $direction: column);
+        }
+        > h4 {
+            display: block;
+            width: 100%;
+            //margin-bottom: 5px;
+        }
+        li {
+            @include marding(5px, 0);
+            &.inline {
+                display: inline-block;
+            }
+            .dir-wrapper {
+                //text-align: left;
+                //@include flex();
+                //border: 1px solid black;
+                //border-radius: 5px;
+                cursor: pointer;
+                padding: 5px;
+                &:hover span {
+                    color: white;
+                }
+                &.active {
+                    background-color: rgba($active, 0.5);
+                    color: white;
+                    transition: background 0.5s ease;
+                }
+                > .title {
+                    position: relative;
+                    z-index: 10;
+                }
+            }
+            img.logo {
+                display: block;
+                position: relative;
+                z-index: 1;
+                height: 75px;
+                width: auto;
+                max-width: 100%;
+                margin: auto;
+                padding: 15px;
+            }
+            .hover {
+                background-color: rgba($hover, 0.5);
+            }
+        }
+    }
+</style>

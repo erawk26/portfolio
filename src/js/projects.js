@@ -1,7 +1,4 @@
 export default{
-	vm_data :{
-		message: 'You loaded this page on ' + new Date().toLocaleString(),
-		active: 'otis',
 		jobs:  [
 			{
 				// -----------JOB-otis-----------
@@ -97,5 +94,4 @@ export default{
 					"My eCommerce mobile-first site built off of Drupal 7. It featured recurring coffee subscriptions. It was very secure and easy to maintain. Everything got backed up and updated through SSH/Drush."
 			}
 		]
-	}
 }

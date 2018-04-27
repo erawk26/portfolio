@@ -1,6 +1,6 @@
 const path = require("path"),
 	HtmlWebpackPlugin = require("html-webpack-plugin"),
-	outputDir = path.join(__dirname, "assets"),
+	outputDir = path.join(__dirname, "public"),
 	inputDir = path.join(__dirname, "src");
 module.exports = {
 	entry: [
@@ -28,7 +28,7 @@ module.exports = {
 						options: {
 							name: '[sha512:hash:base64:7].[ext]',
 							outputPath: '../img',
-							publicPath: 'assets/img',
+							publicPath: 'public/img',
 							useRelativePath: process.env.NODE_ENV === "production"
 						}
 					},

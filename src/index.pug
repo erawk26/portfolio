@@ -8,7 +8,7 @@ html
     link(rel="stylesheet", href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css")
     link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Work+Sans:500")
     link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css")
-    link(rel="stylesheet", href="/assets/css/style.css")
+    link(rel="stylesheet", href="/public/css/style.css")
     // Global site tag (gtag.js) - Google Analytics
     script(async="", src="https://www.googletagmanager.com/gtag/js?id=UA-115116018-1")
     script.
@@ -23,7 +23,7 @@ html
         span.mid-links
           a.projects(href="#portfolio") Projects
           a.about(href="#about") About
-        a.resume(target="blank", href="./assets/ErikOlsen_Resume.pdf") Resume
+        a.resume(target="blank", href="./public/ErikOlsen_Resume.pdf") Resume
     a(name="intro")
     section.intro.animated.fadeIn
       img.headshot(src=require('./img/headshot2.jpg'), alt="Erik Olsen")
@@ -31,19 +31,6 @@ html
       a.fa.fa-chevron-down(href="#portfolio")
     a(name="portfolio")
     section#portApp.vue-portfolio
-      .flex-wrapper
-        .port-head
-          h4 Portfolio
-          hr
-          h2 Recent Projects
-        ul.portfolio-list
-          li.inline(v-for="job in jobs", :class="job.machine_name")
-            a.dir-wrapper(:class="{active: job.machine_name == active}", @click="active = job.machine_name")
-              //img.logo(:src="'/img/logos/' + job.logo" :alt="job.title")
-              span.title {{job.title}}
-              .hover
-        transition(name="bounce", mode="out-in")
-          portfolio-card(functional id="vue-card" :key="active")
     section.about
       .section-wrapper
         a(name="about")

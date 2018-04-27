@@ -1,6 +1,6 @@
 <template lang="html">
     <a :href="card.href" :title="'Visit ' + card.title" target="_blank" class="portfolio-card">
-        <div v-if="card.img" :style="{ backgroundImage: 'url(' + card.img + ')' }" class="img">
+        <div v-if="card.img" :style="{ backgroundImage: 'url(' + imgRequire(card.img) + ')' }" class="img">
             <div class="ar"></div>
         </div>
         <h3>{{ card.title }}</h3>
@@ -16,16 +16,18 @@
     </a>
 </template>
 <script>
-	import Projects from './projects.js';
-	export default{
+	export default {
 		name: 'portfolio-card',
-		data: ()=>Projects.vm_data,
+		data: _this => _this.$parent.$data,
 		computed: {
 			// a computed getter
-			card: function (data) {
-				return data.jobs
-					.filter(job => job.machine_name === data.active)
-					.map(job => {job.img = './src/img/' + job.img;return job;})[0];
+			card: function () {
+				return this.jobs.filter(job => job.machine_name === this.active)[0];
+			}
+		},
+		methods: {
+			imgRequire: function (img) {
+				return require(`../../img/${img}`)
 			}
 		}
 	}
@@ -34,7 +36,7 @@
     .portfolio-card {
         //@include set-max-width;
         width: 100%;
-        flex:1;
+        flex: 1;
         .img {
             background-position: top center;
             background-size: cover;
@@ -42,13 +44,13 @@
             transition: all 0s linear;
             .ar {
                 display: block;
-                margin:0;
-                padding:0 0 42%;
+                margin: 0;
+                padding: 0 0 42%;
                 width: 100%;
                 height: 0;
             }
         }
-        @media(min-width:480px) {
+        @media(min-width: 480px) {
             p {
                 font-size: 18px;
             }

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Work+Sans:500">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/public/css/style.css">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-115116018-1"></script>
     <script>
@@ -20,28 +20,12 @@
   </head>
   <body>
     <header>
-      <nav class="main-nav"><a class="home" href="#intro">Erik</a><span class="mid-links"><a class="projects" href="#portfolio">Projects</a><a class="about" href="#about">About</a></span><a class="resume" target="blank" href="./assets/ErikOlsen_Resume.pdf">Resume</a></nav>
+      <nav class="main-nav"><a class="home" href="#intro">Erik</a><span class="mid-links"><a class="projects" href="#portfolio">Projects</a><a class="about" href="#about">About</a></span><a class="resume" target="blank" href="./public/ErikOlsen_Resume.pdf">Resume</a></nav>
     </header><a name="intro"></a>
-    <section class="intro animated fadeIn"><img class="headshot" src="assets/img/3iuboGC.jpg" alt="Erik Olsen">
+    <section class="intro animated fadeIn"><img class="headshot" src="public/img/3iuboGC.jpg" alt="Erik Olsen">
       <p>I'm Erik Olsen, a Web Developer currently based out of Sarasota, FL. I build fast responsive websites and applications.</p><a class="fa fa-chevron-down" href="#portfolio"></a>
     </section><a name="portfolio"></a>
-    <section class="vue-portfolio" id="portApp">
-      <div class="flex-wrapper">
-        <div class="port-head">
-          <h4>Portfolio</h4>
-          <hr>
-          <h2>Recent Projects</h2>
-        </div>
-        <ul class="portfolio-list">
-          <li class="inline" v-for="job in jobs" :class="job.machine_name"><a class="dir-wrapper" :class="{active: job.machine_name == active}" @click="active = job.machine_name">
-              <!--img.logo(:src="'/img/logos/' + job.logo" :alt="job.title")--><span class="title">{{job.title}}</span>
-              <div class="hover"></div></a></li>
-        </ul>
-        <transition name="bounce" mode="out-in">
-          <portfolio-card functional id="vue-card" :key="active"></portfolio-card>
-        </transition>
-      </div>
-    </section>
+    <section class="vue-portfolio" id="portApp"></section>
     <section class="about">
       <div class="section-wrapper"><a name="about"></a>
         <div class="col about">
@@ -66,5 +50,5 @@
         <div class="col"></div>
       </div>
     </footer>
-  <script type="text/javascript" src="assets/js/bundle.js"></script></body>
+  <script type="text/javascript" src="public/js/bundle.js"></script></body>
 </html>
