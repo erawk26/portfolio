@@ -1,5 +1,6 @@
 <template lang="html">
     <a :href="card.href" :title="'Visit ' + card.title" target="_blank" class="portfolio-card">
+        {{preload()}}
         <div v-if="card.img" :style="{ backgroundImage: 'url(' + imgRequire(card.img) + ')' }" class="img">
             <div class="ar"></div>
         </div>
@@ -8,7 +9,7 @@
       <label for="scope" class="scope">Scope of Work:</label>
       <p id="scope" v-html="card.scope" class="scope"></p>
     </span>
-        <span v-if="card.scope" class="item">
+         <span v-if="card.scope" class="item">
       <label for="skills">Skill Improvement:</label>
       <p id="skills" v-html="card.skills"></p>
             </span>
@@ -27,7 +28,15 @@
 		},
 		methods: {
 			imgRequire: function (img) {
-				return require(`../../img/${img}`)
+				let image = new Image();
+				image.src = require(`../../img/${img}`);
+				return image.src;
+			},
+			preload:function () {
+				return this.jobs.map(job=>{
+					let image = new Image();
+					image.src = require(`../../img/${job.img}`);
+				});
 			}
 		}
 	}
