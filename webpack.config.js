@@ -1,5 +1,6 @@
 const path = require("path"),
 	HtmlWebpackPlugin = require("html-webpack-plugin"),
+	CopyWebpackPlugin = require("copy-webpack-plugin"),
 	outputDir = path.join(__dirname, "public"),
 	inputDir = path.join(__dirname, "src");
 module.exports = {
@@ -8,10 +9,19 @@ module.exports = {
 		inputDir + "/scss/style.scss"
 	],
 	output: {
-		path: outputDir + "/js",
+		path: outputDir + "/js/",
+		publicPath: "/public/js/",
 		filename: "bundle.js"
 	},
 	plugins: [
+		new CopyWebpackPlugin([
+			{
+				from: 'src/static/**/*',
+				to: '../files/',
+				flatten: true,
+				// ignore: [ '*.doc' ]
+			}
+		]),
 		new HtmlWebpackPlugin({
 			template: "src/index.pug",
 			filename: "../../index.html",

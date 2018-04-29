@@ -1,3 +1,2 @@
 require('./main.js');
-require('./work.js');
-require('./hoverdir.js');
+require('./scroll.js');

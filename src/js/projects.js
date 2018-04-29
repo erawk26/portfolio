@@ -92,6 +92,16 @@ export default{
 				title: "Barista's Beans",
 				desc:
 					"My eCommerce mobile-first site built off of Drupal 7. It featured recurring coffee subscriptions. It was very secure and easy to maintain. Everything got backed up and updated through SSH/Drush."
+			},
+			{
+				// -----------JOB-baristas-----------
+				machine_name: "portfolio",
+				href: "//github.com/erawk26/portfolio",
+				img: "portfolio.png",
+				logo: "",
+				title: "This Portfolio",
+				desc:
+					"I built this portfolio with ES6 vanilla JS and Vue.js. It leverages Webpack to compile/transpile all my code, images, and single file components into a nice optimized bundle that is cross browser compatible and easy to deploy.<br><a target='_blank' href='//github.com/erawk26/portfolio'>GitHub Repo</a>"
 			}
 		]
 }

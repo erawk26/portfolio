@@ -1,25 +1,9 @@
-const $ = require("jquery");
-///// Back to Top /////
-$(window).on('scroll', function() {
-	if ($(this).scrollTop() > 100) {
-		$(".back-to-top").fadeIn("slow");
-	} else {
-		$(".back-to-top").fadeOut("slow");
-	}
+import Vue from 'vue';
+import App from './App.vue';
+Vue.component('portfolio-card', function (resolve) {//this is loading asynchronously so the images don't slow the site down
+	require(['./components/Card.vue'], resolve)
 });
-$(".back-to-top").hide().on('click', function() {
-	$("html, body").animate({scrollTop: 0}, 750);
-});
-///// smooth scroll /////
-$('a[href*="#"]:not([href="#"])').click(function() {
-	if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
-		let target = $(this.hash);
-		target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-		if (target.length) {
-			$('html, body').animate({
-				scrollTop: target.offset().top
-			}, 1000);
-			return false;
-		}
-	}
-});
+new Vue({
+	render: h => h(App),
+}).$mount('#portApp');
+console.log('Vue Rocks!');
