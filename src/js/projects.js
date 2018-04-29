@@ -62,7 +62,7 @@ export default{
 				logo: "cbv-logo.png",
 				title: "Community Barn Ventures",
 				desc:
-					"I coded the Client Landing Page, Individual Pages, sliders, client blocks, and Testimonials. The LP has a client grid that leverages CSS Grid and jQuery. I wrote some JS to arrange the bigger clients into predefined spaces then fills the smaller clients in around them, without any unwanted spaces. Its also completely responsive and will rearrange the grid based on screen size.<br><a target='_blank' href='//codepen.io/erawk26/pen/LQoXEw'>CodePen Example</a>"
+					"I coded the Client Landing Page, Individual Pages, sliders, client blocks, and Testimonials. The LP has a client grid that leverages CSS Grid and jQuery. I wrote some JS to arrange the bigger clients into predefined spaces then fills the smaller clients in around them, without any unwanted spaces. Its also completely responsive and will rearrange the grid based on screen size.<br><br><a target='_blank' href='//codepen.io/erawk26/pen/LQoXEw'>CodePen Example</a>"
 			},
 			{
 				// -----------JOB-mbf-----------
@@ -101,7 +101,7 @@ export default{
 				logo: "",
 				title: "This Portfolio",
 				desc:
-					"I built this portfolio with ES6 VanillaJS and Vue. It leverages Webpack to compile all my code, images, and single file components into a nice optimized bundle that is cross browser compatible and easy to deploy. I really enjoy working in Vue and I think single file components could be a the future of web development.<br><a target='_blank' href='//github.com/erawk26/portfolio'>GitHub Repo</a>"
+					"I built my portfolio with ES6 VanillaJS and Vue. It leverages Webpack to compile all my code, images, and single file components into a nice optimized bundle that is cross browser compatible and easy to deploy. I really enjoy working in Vue and I think single file components could be the future of web development.<br><br><a target='_blank' href='//github.com/erawk26/portfolio'>GitHub Repo</a>"
 			}
 		]
 }
