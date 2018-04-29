@@ -1,6 +1,6 @@
 
 
-[My Portfolio](https://erawk26.github.io/**portfolio**/)
+[My Portfolio](http://www.erikthedeveloper.com)
 =========================================
 Pug / Vanilla ES6 JS / SCSS / Vue.js / Webpack
 
