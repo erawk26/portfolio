@@ -101,7 +101,7 @@ export default{
 				logo: "",
 				title: "This Portfolio",
 				desc:
-					"I built this portfolio with ES6 VanillaJS and Vue. I really enjoy working in Vue and I think single file components could be a the future in web development.<br><a target='_blank' href='//github.com/erawk26/portfolio'>GitHub Repo</a>"
+					"I built this portfolio with ES6 VanillaJS and Vue. It leverages Webpack to compile all my code, images, and single file components into a nice optimized bundle that is cross browser compatible and easy to deploy. I really enjoy working in Vue and I think single file components could be a the future of web development.<br><a target='_blank' href='//github.com/erawk26/portfolio'>GitHub Repo</a>"
 			}
 		]
 }
