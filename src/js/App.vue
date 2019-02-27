@@ -67,7 +67,7 @@
 		@media (min-width: 600px) {
 			//margin-bottom: 15px;
 			width: 175px;
-			padding-right: 25px;
+			margin-right: 25px;
 			@include flex(flex-start, stretch, $direction: column);
 		}
 		> h4 {
