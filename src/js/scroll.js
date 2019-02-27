@@ -21,19 +21,20 @@ window.onscroll = function() {
 
 // Sticky Scrolling for footer
 var scrollPos = 0,
-  ele = document.getElementById("sticky-footer"),
-  nothingToScroll =
-    window.innerHeight + window.pageYOffset >= document.body.offsetHeight;
-if (nothingToScroll) ele.classList.add("reveal");
+  footer = document.getElementById("sticky-footer"),
+  // info = document.getElementById("info-box"),
+  ableToScroll =
+    window.innerHeight + window.pageYOffset < document.body.offsetHeight;
+if (ableToScroll) footer.classList.add("hide");
 // adding scroll event
-window.addEventListener("scroll", function() {
+window.addEventListener("scroll", function () {
   // detects new state and compares it with the new one
   if (document.body.getBoundingClientRect().top > scrollPos) {
-    ele.setAttribute("data-scroll-direction", "UP");
-    ele.classList.remove("reveal");
+    // info.setAttribute("data-scroll-direction", "UP");
+    footer.classList.add("hide");
   } else {
-    ele.setAttribute("data-scroll-direction", "DOWN");
-    ele.classList.add("reveal");
+    // info.setAttribute("data-scroll-direction", "DOWN");
+    footer.classList.remove("hide");
   }
   // saves the new position for iteration.
   scrollPos = document.body.getBoundingClientRect().top;

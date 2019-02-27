@@ -85,10 +85,10 @@ footer {
   position: sticky;
   left: 0;
   bottom: 0;
-  transform: translateY(105%);
+  transform: translateY(0);
   transition: transform 200ms ease-out;
-  &.reveal {
-    transform: translateY(0);
+  &.hide {
+    transform: translateY(105%);
   }
   .contact a {
     margin: 0 10px;
