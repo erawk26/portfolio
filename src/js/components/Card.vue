@@ -12,47 +12,48 @@
 		p(v-else='', v-html='card.desc')
 </template>
 <script>
-	export default {
-		name: 'portfolio-card',
-		data: _this => _this.$parent.$data,
-		computed: {
-			card: function () {
-				return this.jobs
-					.map(job => {//preload the images
-						let image = new Image();
-						image.src = require(`../../img/${job.img}`);
-						return job;
-					})
-					.filter(job => job.machine_name === this.active)[0];
-			}
-		},
-		methods: {
-			imgRequire: img => require(`../../img/${img}`),
-		}
-	}
+export default {
+  name: "portfolio-card",
+  data: _this => _this.$parent.$data,
+  computed: {
+    card: function() {
+      return this.jobs
+        .map(job => {
+          //preload the images
+          let image = new Image();
+          image.src = require(`../../img/${job.img}`);
+          return job;
+        })
+        .filter(job => job.machine_name === this.active)[0];
+    }
+  },
+  methods: {
+    imgRequire: img => require(`../../img/${img}`)
+  }
+};
 </script>
 <style lang="scss">
-	.portfolio-card {
-		//@include set-max-width;
-		width: 100%;
-		flex: 1;
-		.img {
-			background-position: top center;
-			background-size: cover;
-			overflow: hidden;
-			transition: all 0s linear;
-			.ar {
-				display: block;
-				margin: 0;
-				padding: 0 0 42%;
-				width: 100%;
-				height: 0;
-			}
-		}
-		@media(min-width: 480px) {
-			p {
-				font-size: 18px;
-			}
-		}
-	}
+.portfolio-card {
+  //@include set-max-width;
+  width: 100%;
+  flex: 1;
+  .img {
+    background-position: top center;
+    background-size: cover;
+    overflow: hidden;
+    transition: all 0s linear;
+    .ar {
+      display: block;
+      margin: 0;
+      padding: 0 0 57%;
+      width: 100%;
+      height: 0;
+    }
+  }
+  @media (min-width: 480px) {
+    p {
+      font-size: 18px;
+    }
+  }
+}
 </style>
