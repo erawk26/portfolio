@@ -43,14 +43,16 @@ form {
     &.slide-up label {
       color: #444;
       font-size: 0.6em;
-      transform: translateY(-51%);
+      top: 0;
+      transform: translateY(-50%);
     }
   }
   label {
-    transition: transform 200ms ease-in, font-size 500ms ease-out 300ms;
+    transition: transform 200ms ease-in, top 200ms ease-in,
+      font-size 500ms ease-out 300ms;
     @extend .uc;
     transform: translateY(0);
-    top: 0;
+    top: 3px;
     left: 5px;
     background: #fff;
     padding: 7px 5px;
