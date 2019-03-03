@@ -10,7 +10,7 @@ module.exports = {
 	],
 	output: {
 		path: outputDir + "/js/",
-		publicPath: "/public/js/",
+		publicPath: "./public/js/",
 		filename: "bundle.js"
 	},
 	plugins: [
@@ -38,7 +38,7 @@ module.exports = {
 						options: {
 							name: '[sha512:hash:base64:7].[ext]',
 							outputPath: '../img',
-							publicPath: 'public/img',
+							publicPath: './public/img',
 							useRelativePath: process.env.NODE_ENV === "production"
 						}
 					},

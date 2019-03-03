@@ -185,10 +185,83 @@ ul {
   transform: rotate(-45deg);
 }
 
-.uc {
+.uc,
+.all-caps {
   text-transform: uppercase;
 }
-
+.bold {
+  font-weight: 700;
+}
+.center-text {
+  text-align: center;
+}
+.full-width {
+  display: block;
+  width: 100%;
+}
+img.maxw {
+  display: block;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.space-bottom {
+  padding-bottom: 50%;
+}
+.aspect-spacer {
+  width: 100%;
+  height: 0;
+  padding: 0 0 57% 0;
+  transition: padding-bottom 1s ease;
+}
+// .bgcolor {
+//   &.lt-gray {
+//     background: $lt-gray;
+//   }
+//   &.white {
+//     background: #fff;
+//   }
+//   &.gray {
+//     background: $gray;
+//   }
+//   &.aqua {
+//     background: $aqua;
+//   }
+// }
+// .color {
+//   &.white {
+//     color: #fff;
+//   }
+//   &.lt-gray {
+//     color: $lt-gray;
+//   }
+//   &.gray {
+//     color: $gray;
+//   }
+//   &.aqua {
+//     color: $aqua;
+//   }
+// }
+.flex-col {
+  @include flex($direction: column);
+  &.start {
+    @include flex(flex-start, $direction: column);
+  }
+  &.end {
+    @include flex(flex-end, $direction: column);
+  }
+}
+.flex-row {
+  @include flex($wrap: wrap);
+  &.start,
+  &.left {
+    @include flex(flex-start, $wrap: wrap);
+  }
+  &.end,
+  &.right {
+    @include flex(flex-end, $wrap: wrap);
+  }
+}
 //hr {
 //	&.star-dark, &.star-light {
 //		max-width: 15rem;

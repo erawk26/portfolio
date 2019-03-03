@@ -4,10 +4,8 @@
 	"description": "[My Portfolio](http://www.erikthedeveloper.com/)\r =========================================",
 	"main": "index.js",
 	"dependencies": {
-		"jquery": "^3.3.1",
 		"path": "^0.12.7",
 		"smoothscroll": "^0.4.0",
-		"v-hover": "^0.2.0",
 		"vue": "^2.5.16"
 	},
 	"devDependencies": {

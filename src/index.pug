@@ -5,9 +5,9 @@ html
 		title Erik's Portfolio
 		meta(http-equiv="X-UA-Compatible", content="IE=edge")
 		meta(name="viewport", content="width=device-width, initial-scale=1")
-		link(href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet")
-		link(href="//fonts.googleapis.com/css?family=Work+Sans:500", rel="stylesheet")
-		link(href="/public/css/style.css", rel="stylesheet")
+		link(href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css", rel="stylesheet")
+		link(href="https://fonts.googleapis.com/css?family=Work+Sans:500", rel="stylesheet")
+		link(href="./public/css/style.css", rel="stylesheet")
 		// Global site tag (gtag.js) - Google Analytics
 		script(src="https://www.googletagmanager.com/gtag/js?id=UA-115116018-1", async="")
 		script.
@@ -32,6 +32,24 @@ html
 			a.fa.fa-chevron-down(href="#portfolio")
 		a#portfolio
 		section#portApp.vue-portfolio
+		section#contact
+			form#contactForm
+				h2 Drop me a Note!
+				p
+					i.fa.fa-phone
+						span.screen-reader Phone
+					|&nbsp;802.851.5512
+				.form-field
+					label Name
+					input(name='name', type='text', placeholder='Name', required='')
+				.form-field
+					label Email Address
+					input(name='email', type='email', placeholder='Email Address', required='')
+				.form-field
+					label Message
+					textarea(name='content', rows='5', placeholder='Message', required='')
+				button#submit(type='submit') Send
+				#toast
 		a#back-to-top.back-to-top(href="#intro") Back to Top
 		footer#sticky-footer
 			.mw-wrapper
@@ -43,19 +61,19 @@ html
 						| . Made by Erik Olsen
 				.col
 					.contact
-						a(href="mailto:me@erikthedeveloper.com", title="me@erikthedeveloper.com", target="_blank")
+						a(href="#contact", title="me@erikthedeveloper.com", target="_blank")
 							i.fa.fa-envelope-o
 								span.screen-reader E-Mail
-						a(href="tel:+1-802-851-5512", title="+1-802-851-5512", target="_blank")
+						a(href="#contact", title="+1-802-851-5512", target="_blank")
 							i.fa.fa-phone
 								span.screen-reader Phone
-						a(href="//www.linkedin.com/in/erikthedeveloper", title="LinkedIn", target="_blank")
+						a(href="https://www.linkedin.com/in/erikthedeveloper", title="LinkedIn", target="_blank")
 							i.fa.fa-linkedin
 								span.screen-reader LinkedIn
-						a(href="//github.com/erawk26", title="GitHub", target="_blank")
+						a(href="https://github.com/erawk26", title="GitHub", target="_blank")
 							i.fa.fa-github
 								span.screen-reader Github
-						a(href="//codepen.io/erawk26", title="CodePen", target="_blank")
+						a(href="https://codepen.io/erawk26", title="CodePen", target="_blank")
 							i.fa.fa-codepen
 								span.screen-reader Codepen
 				.col

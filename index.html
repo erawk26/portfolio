@@ -5,9 +5,9 @@
     <title>Erik's Portfolio</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css?family=Work+Sans:500" rel="stylesheet">
-    <link href="/public/css/style.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:500" rel="stylesheet">
+    <link href="./public/css/style.css" rel="stylesheet">
     <!-- Global site tag (gtag.js) - Google Analytics-->
     <script src="https://www.googletagmanager.com/gtag/js?id=UA-115116018-1" async=""></script>
     <script>
@@ -23,19 +23,39 @@
     <header>
       <nav class="main-nav"><a class="home" href="#intro">Erik</a><span class="mid-links"><a class="projects" href="#portfolio">Projects</a><a class="about" href="#contact">Contact</a></span><a class="resume" href="./public/files/ErikOlsen_Resume.pdf" target="blank">Resume</a></nav>
     </header>
-    <section class="intro"><img class="headshot" src="public/img/1475CTm.jpg" alt="Erik Olsen">
+    <section class="intro"><img class="headshot" src="./public/img/3iuboGC.jpg" alt="Erik Olsen">
       <p>I'm Erik Olsen, a Web Developer currently based out of Sarasota, FL. I build fast responsive websites and applications.</p><a class="fa fa-chevron-down" href="#portfolio"></a>
     </section><a id="portfolio"></a>
-    <section class="vue-portfolio" id="portApp"></section><a class="back-to-top" id="back-to-top" href="#intro">Back to Top</a>
+    <section class="vue-portfolio" id="portApp"></section>
+    <section id="contact">
+      <form id="contactForm">
+        <h2>Drop me a Note!</h2>
+        <p><i class="fa fa-phone"><span class="screen-reader">Phone</span></i>&nbsp;802.851.5512</p>
+        <div class="form-field">
+          <label>Name</label>
+          <input name="name" type="text" placeholder="Name" required="">
+        </div>
+        <div class="form-field">
+          <label>Email Address</label>
+          <input name="email" type="email" placeholder="Email Address" required="">
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea name="content" rows="5" placeholder="Message" required=""></textarea>
+        </div>
+        <button id="submit" type="submit">Send</button>
+        <div id="toast"></div>
+      </form>
+    </section><a class="back-to-top" id="back-to-top" href="#intro">Back to Top</a>
     <footer id="sticky-footer">
       <div class="mw-wrapper">
         <div class="col copy"><small>© 2015
             <script>new Date().getFullYear() > 2015 && document.write(" - " + new Date().getFullYear());</script>. Made by Erik Olsen</small></div>
         <div class="col">
-          <div class="contact"><a href="mailto:me@erikthedeveloper.com" title="me@erikthedeveloper.com" target="_blank"><i class="fa fa-envelope-o"><span class="screen-reader">E-Mail</span></i></a><a href="tel:+1-802-851-5512" title="+1-802-851-5512" target="_blank"><i class="fa fa-phone"><span class="screen-reader">Phone</span></i></a><a href="//www.linkedin.com/in/erikthedeveloper" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"><span class="screen-reader">LinkedIn</span></i></a><a href="//github.com/erawk26" title="GitHub" target="_blank"><i class="fa fa-github"><span class="screen-reader">Github</span></i></a><a href="//codepen.io/erawk26" title="CodePen" target="_blank"><i class="fa fa-codepen"><span class="screen-reader">Codepen</span></i></a></div>
+          <div class="contact"><a href="#contact" title="me@erikthedeveloper.com" target="_blank"><i class="fa fa-envelope-o"><span class="screen-reader">E-Mail</span></i></a><a href="#contact" title="+1-802-851-5512" target="_blank"><i class="fa fa-phone"><span class="screen-reader">Phone</span></i></a><a href="https://www.linkedin.com/in/erikthedeveloper" title="LinkedIn" target="_blank"><i class="fa fa-linkedin"><span class="screen-reader">LinkedIn</span></i></a><a href="https://github.com/erawk26" title="GitHub" target="_blank"><i class="fa fa-github"><span class="screen-reader">Github</span></i></a><a href="https://codepen.io/erawk26" title="CodePen" target="_blank"><i class="fa fa-codepen"><span class="screen-reader">Codepen</span></i></a></div>
         </div>
         <div class="col"></div>
       </div>
     </footer>
-  <script type="text/javascript" src="/public/js/bundle.js"></script></body>
+  <script type="text/javascript" src="./public/js/bundle.js"></script></body>
 </html>
