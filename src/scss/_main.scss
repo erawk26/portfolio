@@ -168,7 +168,8 @@ section.about {
 
 //////////////// Contact ////////////////
 section#contact {
-  min-height: 75vh;
+  min-height: 100vh;
+  padding: 130px 5% 5%;
   @include flex(flex-start, flex-start, $direction: column);
   padding: 10% 5%;
 }
