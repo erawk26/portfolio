@@ -35,13 +35,16 @@ html
 		section#contact
 			form#contactForm
 				h2 Drop me a Note!
-				p
-					i.fa.fa-phone
-						span.screen-reader Phone
-					|&nbsp;802.851.5512
+				.flex-row.left.contact
+					.col.flex-row.nowrap.fa.fa-phone
+						span.screen-reader Phone Number
+						img.txt(src=require('./img/phone.png'), alt="Phone Number")
+					.col.flex-row.nowrap.fa.fa-envelope-o
+						span.screen-reader E-Mail Address
+						img.txt(src=require('./img/email.png'), alt="Email")
 				.form-field
 					label Name
-					input(name='name', type='text', placeholder='Name', required='')
+					input.caps(name='name', type='text', placeholder='Name', required='')
 				.form-field
 					label Email Address
 					input(name='email', type='email', placeholder='Email Address', required='')

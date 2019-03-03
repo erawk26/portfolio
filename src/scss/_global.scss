@@ -189,6 +189,9 @@ ul {
 .all-caps {
   text-transform: uppercase;
 }
+.caps {
+  text-transform: capitalize;
+}
 .bold {
   font-weight: 700;
 }
@@ -199,11 +202,19 @@ ul {
   display: block;
   width: 100%;
 }
-img.maxw {
-  display: block;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+img {
+  &.maxw {
+    display: block;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  &.txt {
+    max-height: 28px;
+    height: auto;
+    max-width: 100%;
+    display: inline-block;
+  }
 }
 .space-bottom {
   padding-bottom: 50%;
@@ -252,7 +263,10 @@ img.maxw {
   }
 }
 .flex-row {
-  @include flex($wrap: wrap);
+  &:not(.nowrap) {
+    @include flex($wrap: wrap);
+  }
+  @include flex;
   &.start,
   &.left {
     @include flex(flex-start, $wrap: wrap);
