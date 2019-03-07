@@ -17,7 +17,7 @@ $bp-lg-max: ($bp-lg - 1);
 $bp1: $tablet-breakpoint;
 $bp2: $desktop-breakpoint;
 $bp3: $bp-lg;
-$oSans: 'Open Sans', sans-serif;
+$oSans: "Open Sans", sans-serif;
 
 $bdr: 2px dotted yellow; //layout debugging (dev only)
 $br1: 10px;
@@ -40,13 +40,13 @@ $fixed-line-height: $base-line-height;
 $header-font-weight: $bold;
 //
 
-$workSans:"Work Sans", sans-serif;
+$workSans: "Work Sans", sans-serif;
 $fontSrcSans: "Source Sans Pro", sans-serif;
 $fontCagli: "Cagliostro", cursive;
 $fontBody: $workSans;
 $fontHead: $workSans;
 $fontIcon: "FontAwesome";
 //transitions
-$base-timing: .25s;
+$base-timing: 0.25s;
 $base-transition: ease-in-out;
-$base-duration: .25s;
+$base-duration: 0.25s;

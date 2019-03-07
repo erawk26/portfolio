@@ -19,7 +19,7 @@ import Projects from "./projects.js";
 //import Card from './components/Card.vue';
 
 export default {
-  name: "App",
+  name: "portfolio",
   data: () => ({
     message: "You loaded this page on " + new Date().toLocaleString(),
     active: "tybee",
