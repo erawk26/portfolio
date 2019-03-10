@@ -137,7 +137,7 @@ export default {
     },
     sendEmail(subject, body) {
       console.log("sendmail fired", subject, body);
-      (async () => {
+      return async () => {
         const rawResponse = await fetch(this.url, {
           method: "POST",
           headers: {
@@ -148,7 +148,7 @@ export default {
         });
         const content = await rawResponse.json();
         console.log("await fired", content);
-      })();
+      };
       // return fetch(this.url, {
       //   method: "POST",
       //   headers: {
