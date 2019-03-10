@@ -136,24 +136,36 @@ export default {
       });
     },
     sendEmail(subject, body) {
-      console.log(subject, body);
-      return fetch(this.url, {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(body)
-      })
-        .then(function(response) {
-          return response.json();
-        })
-        .then(function(res) {
-          console.log(res);
-        })
-        .catch(function(err) {
-          console.log(err);
+      console.log("sendmail fired", subject, body);
+      (async () => {
+        const rawResponse = await fetch(this.url, {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(body)
         });
+        const content = await rawResponse.json();
+        console.log("await fired", content);
+      })();
+      // return fetch(this.url, {
+      //   method: "POST",
+      //   headers: {
+      //     Accept: "application/json",
+      //     "Content-Type": "application/json"
+      //   },
+      //   body: JSON.stringify(body)
+      // })
+      //   .then(function(response) {
+      //     return response.json();
+      //   })
+      //   .then(function(res) {
+      //     console.log(res);
+      //   })
+      //   .catch(function(err) {
+      //     console.log(err);
+      //   });
     }
   }
 };
