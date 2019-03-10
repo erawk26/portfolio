@@ -146,10 +146,13 @@ export default {
         body: JSON.stringify({ subject, body })
       })
         .then(function(response) {
-          return response.blob();
+          return response.json();
         })
-        .then(function(blob) {
-          console.log(blob);
+        .then(function(res) {
+          console.log(res);
+        })
+        .catch(function(err) {
+          console.log(err);
         });
     }
   }
