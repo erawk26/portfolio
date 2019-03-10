@@ -40,8 +40,16 @@
             v-else)
         .form-field.input-group
           label Message
-          textarea(name='content', rows='5', placeholder='Message' v-model="visitor.message")
+          textarea(name='content', rows='5', placeholder='Message' v-model="visitor.message" :class="{'invalid': fields.message && showErrors && fields.message.invalid}"
+          v-validate="{ required: true }")
+          .helper
+            img.invalid(src="../../img/circle-form.png",
+            v-if="fields.message && fields.message.invalid")
+            img.valid(src="../../img/checkmark-circle.png",
+            v-else)
         button#submit(type='submit' @click="validateForm") Send
+        #status-message
+          p {{ status }}
 </template>
 
 <script>
@@ -111,10 +119,11 @@
 export default {
   name: "contactForm",
   data: d => ({
-    visitor: { name: "", email: "", message: "", poolorspa: "", phone: "" },
+    visitor: { name: "", email: "", message: "", phone: "" },
     url:
       "https://8wg7saz294.execute-api.us-east-1.amazonaws.com/dev/email/send",
-    showErrors: false
+    showErrors: false,
+    status: "test status"
   }),
   methods: {
     validateForm(e) {
@@ -126,7 +135,7 @@ export default {
             {
               name: this.visitor.name,
               email: this.visitor.email,
-              content: this.visitor.phone + "\n" + this.visitor.message
+              content: this.visitor.message + "\n" + this.visitor.phone
             }
           );
           console.log("Form Submitted!");
@@ -137,35 +146,31 @@ export default {
     },
     sendEmail(subject, body) {
       console.log("sendmail fired", subject, body);
-      return async () => {
-        const rawResponse = await fetch(this.url, {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(body)
+      const that = this;
+      return fetch(this.url, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(body)
+      })
+        .then(response => response.json())
+        .then(res => {
+          that.status =
+            "Thanks for sending me a message! I'll get in touch with you ASAP. :)";
+          setTimeout(that.resetForm(), 5000);
+        })
+        .catch(err => {
+          that.status =
+            "I'm sorry There was an error with sending your message. :(";
+          console.log(err);
+          setTimeout(that.resetForm(), 5000);
         });
-        const content = await rawResponse.json();
-        console.log("await fired", content);
-      };
-      // return fetch(this.url, {
-      //   method: "POST",
-      //   headers: {
-      //     Accept: "application/json",
-      //     "Content-Type": "application/json"
-      //   },
-      //   body: JSON.stringify(body)
-      // })
-      //   .then(function(response) {
-      //     return response.json();
-      //   })
-      //   .then(function(res) {
-      //     console.log(res);
-      //   })
-      //   .catch(function(err) {
-      //     console.log(err);
-      //   });
+    },
+    resetForm() {
+      this.visitor = { name: "", email: "", message: "", phone: "" };
+      this.status = "";
     }
   }
 };
