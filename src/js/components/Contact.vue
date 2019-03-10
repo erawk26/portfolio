@@ -20,7 +20,7 @@
           v-model="visitor.name")
         .form-field.input-group
           label Phone Number
-          input.caps(type="phone", name="phone", id="visitor-phone", :class="{'invalid': fields.phone && showErrors && fields.phone.invalid}", v-model="visitor.phone1", v-validate="{ required: false, regex: /^(?:1|1 )*(\\([2-9]{1}\\d{2}\\)|[2-9]{1}\\d{2})[- ]*(\\d{3})[- ]*(\\d{4})$/ }")
+          input.caps(type="phone", name="phone", id="visitor-phone", :class="{'invalid': fields.phone && showErrors && fields.phone.invalid}", v-model="visitor.phone", v-validate="{ required: false, regex: /^(?:1|1 )*(\\([2-9]{1}\\d{2}\\)|[2-9]{1}\\d{2})[- ]*(\\d{3})[- ]*(\\d{4})$/ }")
           .helper
             small optional
             img.invalid(src="../../img/circle-form.png",
@@ -40,7 +40,7 @@
             v-else)
         .form-field.input-group
           label Message
-          textarea(name='content', rows='5', placeholder='Message' )
+          textarea(name='content', rows='5', placeholder='Message' v-model="visitor.message")
         button#submit(type='submit' @click="validateForm") Send
 </template>
 
@@ -123,7 +123,11 @@ export default {
         if (result) {
           this.sendEmail(
             this.visitor.email + "sent you an email from your website!",
-            this.visitor
+            {
+              name: this.visitor.name,
+              email: this.visitor.email,
+              content: this.visitor.phone + "\n" + this.visitor.message
+            }
           );
           console.log("Form Submitted!");
         } else {
@@ -132,7 +136,7 @@ export default {
       });
     },
     sendEmail(subject, body) {
-      console.log(body);
+      console.log(subject, body);
       return fetch(this.url, {
         method: "POST",
         headers: {
