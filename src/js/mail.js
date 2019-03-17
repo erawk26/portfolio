@@ -15,7 +15,7 @@ fieldsArr.map(item => {
 	item.addEventListener("blur", checkField)
 	item.addEventListener("focus", checkField)
 });
-console.log(fieldsArr);
+// console.log(fieldsArr);
 function post(url, body, callback) {
 	var req = new XMLHttpRequest();
 	req.open("POST", url, true);
