@@ -1,7 +1,7 @@
 
 const form = document.getElementById('contactForm')
 const url =
-  "https://8wg7saz294.execute-api.us-east-1.amazonaws.com/prod/email/send";
+  "https://zepn0cfhee.execute-api.us-east-1.amazonaws.com/prod/email/send";
 const toast = document.getElementById('toast')
 const submit = document.getElementById('submit')
 const fields = form.querySelectorAll('input,select,textarea');
