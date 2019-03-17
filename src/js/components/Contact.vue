@@ -17,12 +17,17 @@
           label Name
           input.caps(name='name', type='text', placeholder='Name' :class="{'invalid': fields.name && showErrors && fields.name.invalid}"
           v-validate="{ required: true, regex: /^[a-z,.'-]+\\s?[a-z,.'-]+$/i }",
-          v-model="visitor.name")
+          @blur="checkField" , @focus="checkField")
+          .helper
+            img.invalid(src="../../img/circle-form.png",
+            v-if="fields.name && fields.name.invalid")
+            img.valid(src="../../img/checkmark-circle.png",
+            v-else)
         .form-field.input-group
           label Phone Number
-          input.caps(type="phone", name="phone", id="visitor-phone", :class="{'invalid': fields.phone && showErrors && fields.phone.invalid}", v-model="visitor.phone", v-validate="{ required: false, regex: /^(?:1|1 )*(\\([2-9]{1}\\d{2}\\)|[2-9]{1}\\d{2})[- ]*(\\d{3})[- ]*(\\d{4})$/ }")
+          input.caps(type="phone", name="phone", id="visitor-phone", :class="{'invalid': fields.phone && showErrors && fields.phone.invalid}", v-model="visitor.phone", v-validate="{ required: false, regex: /^(?:1|1 )*(\\([2-9]{1}\\d{2}\\)|[2-9]{1}\\d{2})[- ]*(\\d{3})[- ]*(\\d{4})$/ }",@blur="checkField" , @focus="checkField")
           .helper
-            small optional
+            small optional&nbsp;
             img.invalid(src="../../img/circle-form.png",
             v-if="fields.phone && fields.phone.invalid")
             img.valid(src="../../img/checkmark-circle.png",
@@ -32,7 +37,7 @@
           input(name='email', type='email', placeholder='Email Address' :class="{'invalid': fields.email && showErrors && fields.email.invalid}"
           formnovalidate="true",
           v-validate="'required|email'",
-          v-model="visitor.email")
+          v-model="visitor.email",@blur="checkField" , @focus="checkField")
           .helper
             img.invalid(src="../../img/circle-form.png",
             v-if="fields.email && fields.email.invalid")
@@ -41,7 +46,7 @@
         .form-field.input-group
           label Message
           textarea(name='content', rows='5', placeholder='Message' v-model="visitor.message" :class="{'invalid': fields.message && showErrors && fields.message.invalid}"
-          v-validate="{ required: true }")
+         v-validate="'length:5','required:true'",@blur="checkField" , @focus="checkField")
           .helper
             img.invalid(src="../../img/circle-form.png",
             v-if="fields.message && fields.message.invalid")
@@ -149,6 +154,7 @@ export default {
       const that = this;
       return fetch(this.url, {
         method: "POST",
+        mode: "no-cors",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json"
@@ -159,18 +165,23 @@ export default {
         .then(res => {
           that.status =
             "Thanks for sending me a message! I'll get in touch with you ASAP. :)";
-          setTimeout(that.resetForm(), 5000);
+          setTimeout(that.resetForm(), 14000);
         })
         .catch(err => {
           that.status =
             "I'm sorry There was an error with sending your message. :(";
           console.log(err);
-          setTimeout(that.resetForm(), 5000);
+          setTimeout(that.resetForm(), 14000);
         });
     },
     resetForm() {
       this.visitor = { name: "", email: "", message: "", phone: "" };
       this.status = "";
+    },
+    checkField(e) {
+      if (e.type == "focus") e.target.parentNode.classList.add("slide-up");
+      if (e.type == "blur" && e.target.value == "")
+        e.target.parentNode.classList.remove("slide-up");
     }
   }
 };
