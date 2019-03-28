@@ -100,7 +100,7 @@ export default {
   data: d => ({
     visitor: { name: "", email: "", message: "", phone: "" },
     url:
-      "https://8wg7saz294.execute-api.us-east-1.amazonaws.com/dev/email/send",
+      "https://zepn0cfhee.execute-api.us-east-1.amazonaws.com/prod/email/send",
     showErrors: false,
     status: ""
   }),
