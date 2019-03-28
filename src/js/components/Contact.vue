@@ -3,9 +3,6 @@
     .form-container
       form#contactForm
         h2 Drop me a Note!
-        ul.is-danger(v-if="errors.items.length >0")
-          li.error-item(v-for="error in errors.items")
-            p.is-danger.help {{ error.msg }}
         .flex-row.left.contact
           .col.flex-row.nowrap.fa.fa-phone
             span.screen-reader Phone Number
@@ -14,47 +11,24 @@
             span.screen-reader E-Mail Address
             img.txt(src='../../img/email.png', alt="Email")
         .form-field.input-group
+          input.caps(name='name', type='text', placeholder='Name' v-validate="{ required: true, regex: /^[a-z,.'-]+\\s?[a-z,.'-]+$/i }" v-model="visitor.name" @focus='checkField' @blur='checkField')
           label Name
-          input.caps(name='name', type='text', placeholder='Name' :class="{'invalid': fields.name && showErrors && fields.name.invalid}"
-          v-validate="{ required: true, regex: /^[a-z,.'-]+\\s?[a-z,.'-]+$/i }",
-          @blur="checkField" , @focus="checkField")
-          .helper
-            img.invalid(src="../../img/circle-form.png",
-            v-if="fields.name && fields.name.invalid")
-            img.valid(src="../../img/checkmark-circle.png",
-            v-else)
         .form-field.input-group
+          input.caps(type="phone", name="phone", id="visitor-phone", v-model="visitor.phone", v-validate="{ required: false, regex: /^(?:1|1 )*(\\([2-9]{1}\\d{2}\\)|[2-9]{1}\\d{2})[- ]*(\\d{3})[- ]*(\\d{4})$/ }" @focus='checkField' @blur='checkField')
           label Phone Number
-          input.caps(type="phone", name="phone", id="visitor-phone", :class="{'invalid': fields.phone && showErrors && fields.phone.invalid}", v-model="visitor.phone", v-validate="{ required: false, regex: /^(?:1|1 )*(\\([2-9]{1}\\d{2}\\)|[2-9]{1}\\d{2})[- ]*(\\d{3})[- ]*(\\d{4})$/ }",@blur="checkField" , @focus="checkField")
-          .helper
-            small optional&nbsp;
-            img.invalid(src="../../img/circle-form.png",
-            v-if="fields.phone && fields.phone.invalid")
-            img.valid(src="../../img/checkmark-circle.png",
-            v-else)
         .form-field.input-group
+          input(name='email', type='email', placeholder='Email Address' formnovalidate="true" v-validate="'required|email'" v-model="visitor.email" @focus='checkField' @blur='checkField')
           label Email Address
-          input(name='email', type='email', placeholder='Email Address' :class="{'invalid': fields.email && showErrors && fields.email.invalid}"
-          formnovalidate="true",
-          v-validate="'required|email'",
-          v-model="visitor.email",@blur="checkField" , @focus="checkField")
-          .helper
-            img.invalid(src="../../img/circle-form.png",
-            v-if="fields.email && fields.email.invalid")
-            img.valid(src="../../img/checkmark-circle.png",
-            v-else)
         .form-field.input-group
+          textarea(name='message', rows='5', placeholder='Message' v-model="visitor.message" v-validate="{ required: true, min:10 }" @focus='checkField' @blur='checkField')
           label Message
-          textarea(name='content', rows='5', placeholder='Message' v-model="visitor.message" :class="{'invalid': fields.message && showErrors && fields.message.invalid}"
-         v-validate="'length:5','required:true'",@blur="checkField" , @focus="checkField")
-          .helper
-            img.invalid(src="../../img/circle-form.png",
-            v-if="fields.message && fields.message.invalid")
-            img.valid(src="../../img/checkmark-circle.png",
-            v-else)
-        button#submit(type='submit' @click="validateForm") Send
+
+        ul.is-danger(v-if="errors.items.length >0")
+          li.error-item(v-for="error in errors.items")
+            p.is-danger.help {{ error.msg }}
         #status-message
           p {{ status }}
+        button#submit(type='submit' @click="validateForm") Send
 </template>
 
 <script>
@@ -128,7 +102,7 @@ export default {
     url:
       "https://8wg7saz294.execute-api.us-east-1.amazonaws.com/dev/email/send",
     showErrors: false,
-    status: "test status"
+    status: ""
   }),
   methods: {
     validateForm(e) {
@@ -154,7 +128,6 @@ export default {
       const that = this;
       return fetch(this.url, {
         method: "POST",
-        mode: "no-cors",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json"
@@ -165,23 +138,29 @@ export default {
         .then(res => {
           that.status =
             "Thanks for sending me a message! I'll get in touch with you ASAP. :)";
-          setTimeout(that.resetForm(), 14000);
+          that.resetForm();
         })
         .catch(err => {
           that.status =
             "I'm sorry There was an error with sending your message. :(";
           console.log(err);
-          setTimeout(that.resetForm(), 14000);
+          that.resetForm();
         });
     },
     resetForm() {
       this.visitor = { name: "", email: "", message: "", phone: "" };
-      this.status = "";
+      this.showErrors = false;
+      const that = this;
+      setTimeout(() => {
+        that.status = "";
+      }, 10000);
     },
     checkField(e) {
-      if (e.type == "focus") e.target.parentNode.classList.add("slide-up");
+      // console.log(_invalid, _val);
+      // fields.phone && fields.phone.invalid
+      if (e.type == "focus") e.target.nextSibling.classList.add("slide-up");
       if (e.type == "blur" && e.target.value == "")
-        e.target.parentNode.classList.remove("slide-up");
+        e.target.nextSibling.classList.remove("slide-up");
     }
   }
 };
@@ -190,7 +169,7 @@ export default {
 <style lang="scss" scoped>
 @import "../../scss/init";
 $rvt-dealer-bp-max: $bp-sm;
-$formRed: $red;
+$formRed: $dk-red;
 
 .is-danger {
   border: 1px solid $formRed;
@@ -213,13 +192,14 @@ $formRed: $red;
   }
 }
 
-input,
+/* input,
 textarea,
 select {
-  &.invalid {
-    background: rgba($formRed, 0.15);
+  &.invalid,
+  &[aria-invalid="true"] {
+    border-color: $formRed;
   }
-}
+} */
 
 input[type="phone"] {
   display: block;
