@@ -40,11 +40,9 @@ form {
     position: relative;
     border-radius: $br2;
     margin-bottom: 17px;
-    &.slide-up label {
-      color: #444;
-      background: #fff;
-      font-size: 0.6em;
-      transform: translateY(-51%);
+    transition: border-color 250ms ease-out;
+    &.invalid {
+      border-color: rgba($dk-red, 0.75);
     }
   }
   label {
@@ -58,6 +56,13 @@ form {
     font-size: 0.75em;
     position: absolute;
     z-index: 0;
+    line-height: 1;
+    &.slide-up {
+      color: #444;
+      background: #fff;
+      font-size: 0.6em;
+      transform: translateY(-51%);
+    }
   }
 
   input,

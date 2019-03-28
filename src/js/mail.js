@@ -15,19 +15,21 @@ fieldsArr.map(item => {
 	item.addEventListener("blur", checkField)
 	item.addEventListener("focus", checkField)
 });
-// console.log(fieldsArr);
 function post(url, body, callback) {
 	var req = new XMLHttpRequest();
+	req.addEventListener("load", checkStatus);
+	req.addEventListener("error", checkStatus);
 	req.open("POST", url, true);
-	req.setRequestHeader("Content-Type", "application/json");
-	req.addEventListener("load", function () {
+  req.setRequestHeader("Content-Type", "application/json");
+	function checkStatus() {
+		console.log('fired',this,req);
 		if (req.status < 400) {
-			callback(null, JSON.parse(req.responseText));
-		} else {
-			callback(new Error("Request failed: " + req.statusText));
-		}
-	});
-	req.send(JSON.stringify(body));
+      callback(null, JSON.parse(req.responseText));
+			req.send(JSON.stringify(body));
+    } else {
+      callback(new Error("Request failed: " + req.statusText));
+    }
+  }
 }
 function success() {
 	toast.innerHTML = 'Thanks for sending me a message! I\'ll get in touch with you ASAP. :)'

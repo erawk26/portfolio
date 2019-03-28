@@ -167,10 +167,13 @@ section.about {
 }
 
 //////////////// Contact ////////////////
-section#contact {
+section.contact {
   min-height: 100vh;
   padding: 130px 5% 5%;
-  @include flex(flex-start, flex-start, $direction: column);
+  .form-container {
+    height: 100%;
+    @include flex(flex-start, flex-start, $direction: column);
+  }
   padding: 10% 5%;
 }
 /* Obnoxious styling for icon fonts */

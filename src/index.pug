@@ -32,27 +32,7 @@ html
 			a.fa.fa-chevron-down(href="#portfolio")
 		a#portfolio
 		section#portApp.vue-portfolio
-		section#contact
-			form#contactForm
-				h2 Drop me a Note!
-				.flex-row.left.contact
-					.col.flex-row.nowrap.fa.fa-phone
-						span.screen-reader Phone Number
-						img.txt(src=require('./img/phone.png'), alt="Phone Number")
-					.col.flex-row.nowrap.fa.fa-envelope-o
-						span.screen-reader E-Mail Address
-						img.txt(src=require('./img/email.png'), alt="Email")
-				.form-field
-					label Name
-					input.caps(name='name', type='text', placeholder='Name', required='')
-				.form-field
-					label Email Address
-					input(name='email', type='email', placeholder='Email Address', required='')
-				.form-field
-					label Message
-					textarea(name='content', rows='5', placeholder='Message', required='')
-				button#submit(type='submit') Send
-				#toast
+		section.contact
 		a#back-to-top.back-to-top(href="#intro") Back to Top
 		footer#sticky-footer
 			.mw-wrapper
