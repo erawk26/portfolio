@@ -16,6 +16,7 @@
 
 <script>
 import Projects from "./projects.js";
+import TweenMax from "gsap/TweenMax";
 //import Card from './components/Card.vue';
 
 export default {
@@ -24,7 +25,16 @@ export default {
     message: "You loaded this page on " + new Date().toLocaleString(),
     active: "tybee",
     jobs: Projects.jobs
-  })
+  }),
+  watch: {
+    active: function(newVal, oldVal) {
+      const arr = this.jobs.map(i => i.machine_name);
+      newVal = arr.indexOf(newVal);
+      oldVal = arr.indexOf(oldVal);
+      const dir = newVal < oldVal ? "down" : "up";
+      this.loadTransition(oldVal, newVal, dir);
+    }
+  }
 };
 </script>
 

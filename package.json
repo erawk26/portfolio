@@ -4,10 +4,11 @@
   "description": "[My Portfolio](http://www.erikthedeveloper.com/)\r =========================================",
   "main": "index.js",
   "dependencies": {
+    "gsap": "^2.1.3",
     "path": "^0.12.7",
     "smoothscroll": "^0.4.0",
-    "vue": "^2.5.16",
     "vee-validate": "^2.0.9",
+    "vue": "^2.5.16",
     "vue-js-modal": "^1.3.13"
   },
   "devDependencies": {
