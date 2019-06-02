@@ -42,6 +42,27 @@ a#intro {
   position: absolute;
   top: -100px;
 }
+.mobile-toggle {
+  background: $primary;
+  display: none;
+  max-height: 55px;
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  &.hamburger {
+    &:hover,
+    &:active,
+    &:visited,
+    &.is-active {
+      opacity: 1;
+    }
+  }
+  @media (max-width: 767px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 header {
   position: fixed;
   background: white;
@@ -157,14 +178,28 @@ ul {
   border: none !important;
 }
 
-.center {
-  @include flex();
+.flex {
+  @include flex;
+  &.col {
+    @include flex($direction: column);
+  }
+  &.start {
+    @include flex(center, flex-start, $direction: column);
+  }
+  &.wrap {
+    @include flex(flex-start, flex-start, $wrap: wrap);
+  }
+  &.sb {
+    @include flex(space-between, $wrap: wrap);
+  }
 }
-
-.flexsb {
-  @include flex(space-between, $wrap: wrap);
+.center,
+.flex-middle {
+  @include flex($direction: column);
 }
-
+.max-pg-width {
+  @include set-max-width;
+}
 .clearfix:after {
   content: "";
   display: table;
@@ -225,6 +260,23 @@ img {
   padding: 0 0 57% 0;
   transition: padding-bottom 1s ease;
 }
+.color {
+  &.primary {
+    color: $primary;
+  }
+  &.secondary {
+    color: $secondary;
+  }
+}
+.fill {
+  &.primary {
+    background-color: $primary;
+  }
+  &.secondary {
+    background-color: $secondary;
+  }
+}
+
 // .bgcolor {
 //   &.lt-gray {
 //     background: $lt-gray;
