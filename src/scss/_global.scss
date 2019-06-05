@@ -7,7 +7,7 @@
 }
 
 * {
-  transition: all 1s ease, color 0.25s ease-in-out;
+  transition: background 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 
 body,
@@ -182,9 +182,12 @@ ul {
   @include flex;
   &.col {
     @include flex($direction: column);
+    &.start {
+      @include flex(flex-start, center, $direction: column);
+    }
   }
   &.start {
-    @include flex(center, flex-start, $direction: column);
+    @include flex(flex-start, center, $wrap: wrap);
   }
   &.wrap {
     @include flex(flex-start, flex-start, $wrap: wrap);
@@ -196,6 +199,55 @@ ul {
 .center,
 .flex-middle {
   @include flex($direction: column);
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  .row-1 {
+    grid-row: 1;
+  }
+  .row-2 {
+    grid-row: 2;
+  }
+  .row-3 {
+    grid-row: 3;
+  }
+  .span-1 {
+    grid-column-end: span 1;
+  }
+  .span-2 {
+    grid-column-end: span 2;
+  }
+  .span-3 {
+    grid-column-end: span 3;
+  }
+  .col-full {
+    grid-column-start: 1;
+    grid-column-end: span 3;
+  }
+  .col-center {
+    grid-column-start: 2;
+  }
+  .col-left {
+    grid-column-start: 1;
+  }
+  .col-right {
+    grid-column-start: 3;
+  }
+}
+.add-top {
+  margin-top: 20px;
+}
+.remove-top {
+  margin-top: 0;
+  padding-top: 0;
+}
+.add-bottom {
+  margin-bottom: 20px;
+}
+.remove-bottom {
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 .max-pg-width {
   @include set-max-width;

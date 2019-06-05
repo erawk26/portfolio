@@ -23,19 +23,25 @@
 	//- 						label(for='skills') Skill Improvement:
 	//- 						p#skills(v-html='item.skills')
 	//- 					p(v-else='', v-html='item.desc')
-	section#portApp.vue-portfolio
-		button(@click="menuOpened = !menuOpened" :class="{'is-active':menuOpened==true}" class="mobile-toggle hamburger hamburger--elastic" type="button" aria-label="Menu" aria-controls="navigation")
-			span.hamburger-box
-				span.hamburger-inner
-		ul.story-nav#navigation(:class="{'is-active':menuOpened==true}")
-			li.menu-item(:class="{active:active==key}" v-for="(item, key, index) in jobs" @click="setActive(key)") {{item.title}}
-		ul.story-panels
-			li.panel-item.flex.col(:class="{active:active==key}" v-if="active==key" v-for="(item, key, index) in jobs" :id="'panel-'+key")
-				.bg-img(v-if='item.img', :style="{ backgroundImage: 'url(' + imgRequire(item.img) + ')',backgroundSize:'cover',backgroundPosition:'center' }")
-				h1.color.secondary {{item.title}}
-				//- pre {{item.img}}
-				h3.color.secondary(v-if='scroll.Y') {{scroll.type}}: {{scroll.Y}}
-				.body.color.secondary {{item.desc}}
+	section#portApp.vue-portfolio.max-pg-width
+		.grid
+			span.fill.white.col-full.row-1.mobile-toggle.flex.start(@click="menuOpened = !menuOpened" :class="{'is-active':menuOpened==true}" type="button" aria-label="Menu" aria-controls="navigation")
+				h2 Recent Projects
+				i.fa.fa-caret-right
+			ul.story-nav#navigation.col-full.row-2(:class="{'is-active':menuOpened==true}")
+				li.menu-item(:class="{active:active==key}" v-for="(item, key, index) in jobs" @click="setActive(key)") {{item.title}}
+			ul.story-panels.col-full.row-3
+				li.panel-item.flex.col.start(:class="{active:active==key}" v-for="(item, key, index) in jobs" :id="'panel-'+key")
+					a.portfolio-card(:href='item.href', :title="'Visit ' + item.title", target='_blank')
+						.bg-img(v-if='item.img', :style="{ backgroundImage: 'url(' + imgRequire(item.img) + ')',backgroundSize:'cover',backgroundPosition:'center' }")
+						.panel-content.grid.add-top
+							h3.color.secondary.col-left.row-1.remove-top {{ item.title }}
+							.skills.flex-start.col-right.row-1(v-if='item.skills')
+								h5 Skill Improvement:
+								.tag(v-for='(skill,index) in item.skills') {{skill}}
+								//- 	p#skills(v-html='item.skills')
+							.body.color.secondary.col-left.row-2.span-2
+								span(v-html="item.desc")
 </template>
 
 <script>
@@ -50,6 +56,7 @@ export default {
     message: "You loaded this page on " + new Date().toLocaleString(),
     active: null,
     menuOpened: null,
+    loopSlides: { set: true, flag: false },
     scroll: {
       type: null,
       Y: null
@@ -61,7 +68,7 @@ export default {
       const newInd = this.keys.indexOf(newVal),
         oldInd = this.keys.indexOf(oldVal);
       const dir = newInd < oldInd ? "down" : "up";
-      // this.loadTransition(oldVal, newVal, dir);
+      this.loadTransition(oldVal, newVal, dir);
     },
     menuOpened: function(opened) {
       if (opened) {
@@ -88,17 +95,26 @@ export default {
     loadTransition: function(oldVal, newVal, dir) {
       var oldDiv = "#panel-" + oldVal;
       var newDiv = "#panel-" + newVal;
+      if (this.loopSlides.flag) {
+        this.loopSlides.flag = false;
+        dir = dir != "down" ? "down" : "up";
+      }
       TweenMax.fromTo(
         oldDiv,
         1,
         { opacity: 1, yPercent: 0 },
-        { opacity: 0, yPercent: dir == "down" ? 100 : -100, scale: 0.8 }
+        {
+          opacity: 0,
+          yPercent: dir == "down" ? 100 : -100,
+          scale: 0.8,
+          zIndex: -10
+        }
       );
       TweenMax.fromTo(
         newDiv,
         1,
         { opacity: 0, yPercent: dir == "down" ? -100 : 100, scale: 0.8 },
-        { opacity: 1, yPercent: 0, scale: 1 }
+        { opacity: 1, yPercent: 0, scale: 1, zIndex: 10 }
       );
     },
     scrollChange: function(dir) {
@@ -115,7 +131,13 @@ export default {
         //if theres another panel set it to active
         newInd = this.keys.indexOf(this.active) + 1;
       }
-      if (newInd != null) {
+      if (this.loopSlides.set) {
+        if (newInd == null) {
+          this.loopSlides.flag = true;
+          newInd = dir == "down" ? 0 : this.keys.length - 1;
+        }
+        this.setActive(this.keys[newInd]);
+      } else if (newInd != null) {
         this.setActive(this.keys[newInd]);
       }
     },
@@ -173,6 +195,10 @@ export default {
 <style lang="scss" scoped>
 @import "../scss/init";
 .vue-portfolio {
+  @media (max-width: $page-max-width + 50px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
   position: relative;
   width: 100%;
   padding-top: 81px;
@@ -198,19 +224,42 @@ export default {
     }
   }
 }
+.mobile-toggle {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  .fa-caret-right {
+    font-size: 1.75em;
+    padding-left: 0.4em;
+    transition: transform 250ms linear;
+  }
+  &.is-active .fa-caret-right {
+    transform: translateX(5px) rotate(90deg);
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
 .story-panels {
-  /* position: relative; */
-  overflow-y: auto;
+  position: relative;
+  /* overflow-y: auto; */
   list-style: none;
   padding-left: 0;
   display: block;
   width: 100%; //calc(100% + 17px);
-  height: 100%;
+  /* height: 100%; */
   li {
     color: $primary;
+    position: absolute;
+    /* transform: translateY(100%); */
     width: 100%;
-    height: 100%;
+    height: auto;
     top: 0;
+    opacity: 0;
+    &.active {
+      opacity: 1;
+      z-index: 1;
+    }
     .bg-img {
       z-index: -1;
       /* opacity: 0.5; */
@@ -225,11 +274,42 @@ export default {
     }
   }
 }
+.panel-content.grid {
+  grid-column-gap: 40px;
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .portfolio-card {
   width: 100%;
+  padding: 10px 0;
+  .body {
+    /* order: 1;
+		flex: 1; */
+  }
+  .skills {
+    grid-row-end: span 2;
+    @media (max-width: 767px) {
+      order: 3;
+      margin-top: 22px;
+    }
+    .tag {
+      border-radius: 5px;
+      background: #444;
+      color: white;
+      @include marding(0 5px 5px 0, 3px 6px);
+      white-space: nowrap;
+      display: inline-block;
+    }
+    h5 {
+      display: block;
+      width: 100%;
+      margin: 0 0 5px;
+    }
+  }
   .img {
-    background-position: top center;
-    background-size: cover;
     overflow: hidden;
     transition: all 0s linear;
     .ar {
@@ -248,22 +328,20 @@ export default {
 }
 .story-nav {
   @extend %ul-nostyle;
-  /* position: absolute; */
-
+  position: relative;
+  z-index: 99;
+  margin: 1px 0 0 1px;
   @media (max-width: 767px) {
-    /* top: 55px; */
+    margin: 0;
+    top: 145px;
+    left: 0;
     z-index: 99;
     text-align: center;
-    /* position: fixed; */
+    position: fixed;
     li.menu-item {
       display: block;
     }
   }
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  bottom: auto;
   li {
     outline: inset 1px $secondary;
     color: $secondary;
