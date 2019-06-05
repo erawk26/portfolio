@@ -1,5 +1,4 @@
-require("smoothscroll");
-
+import SmoothScroll from "smoothscroll";
 const ele = document.getElementsByClassName("headshot").item(0),
   btn = document.getElementById("back-to-top");
 

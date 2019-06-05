@@ -46,8 +46,9 @@
 
 <script>
 import Projects from "./projects.js";
-import TweenMax from "gsap/TweenMax";
-var WheelIndicator = require("wheel-indicator");
+import { TweenMax, ScrollToPlugin } from "gsap/all";
+import SmoothScroll from "smoothscroll";
+const WheelIndicator = require("wheel-indicator");
 //import Card from './components/Card.vue';
 
 export default {
@@ -56,6 +57,7 @@ export default {
     message: "You loaded this page on " + new Date().toLocaleString(),
     active: null,
     menuOpened: null,
+    focusPortfolio: false,
     loopSlides: { set: true, flag: false },
     scroll: {
       type: null,
@@ -95,6 +97,7 @@ export default {
     loadTransition: function(oldVal, newVal, dir) {
       var oldDiv = "#panel-" + oldVal;
       var newDiv = "#panel-" + newVal;
+      this.goToPortfolio();
       if (this.loopSlides.flag) {
         this.loopSlides.flag = false;
         dir = dir != "down" ? "down" : "up";
@@ -116,6 +119,14 @@ export default {
         { opacity: 0, yPercent: dir == "down" ? -100 : 100, scale: 0.8 },
         { opacity: 1, yPercent: 0, scale: 1, zIndex: 10 }
       );
+    },
+    goToPortfolio: function() {
+      if (this.focusPortfolio) {
+        TweenMax.to(window, 1, {
+          scrollTo: { y: "#portfolio", autoKill: false }
+        });
+      }
+      this.focusPortfolio = true;
     },
     scrollChange: function(dir) {
       this.menuOpened = window.innerWidth > 767 ? true : false;
@@ -344,11 +355,15 @@ export default {
   }
   li {
     outline: inset 1px $secondary;
+    /* a { */
     color: $secondary;
+    /* } */
     background: $primary;
     transition: background 600ms ease, color 600ms ease;
     &.active {
+      /* a { */
       color: $primary;
+      /* } */
       background: $secondary;
     }
     display: inline-block;
