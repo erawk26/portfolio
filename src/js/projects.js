@@ -35,7 +35,7 @@ export default {
         "Drupal 8","CMS Structuring","Custom PHP","TWIG Templating","CSS Positioning","Flex Layout"
       ],
       desc:
-        "I coded images galleries to the Bread sections. Re-Templated the Recipes pages. I also developed 5 different landing pages for various product promotions."
+        "I coded image galleries to the Bread sections. Re-Templated the Recipes pages. I also developed 5 different landing pages for various product promotions."
     },
     zevia: {
       // -----------JOB-zevia-----------
@@ -119,7 +119,7 @@ export default {
       logo: "",
       title: "This Portfolio",
       skills:[
-        "ES6+ VanillaJS","VueJS","Serverless Lambda Form","Greensock Animations","PUG Templating","Webpack Bundler","Flex Layout","no jQuery"
+        "ES6+ VanillaJS", "VueJS", "Serverless Lambda Form", "Greensock Animations", "PUG Templating", "Webpack Bundler", "CSS Grid","Flex Layout","no jQuery"
       ],
       desc:
         "I built my portfolio with ES6 VanillaJS and Vue. It leverages Webpack to compile all my code, images, and single file components into a nice optimized bundle that is cross browser compatible and easy to deploy. I really enjoy working in Vue and I think single file components could be the future of web development.<br><br><a target='_blank' href='https://github.com/erawk26/portfolio' title='Browse this GitHub repo'>GitHub Repo</a>"
