@@ -201,7 +201,7 @@ export default {
   }
   position: relative;
   width: 100%;
-  padding-top: 81px;
+  padding-top: 65px;
   height: 100vh;
   overflow: hidden;
   a {
@@ -333,7 +333,7 @@ export default {
   margin: 1px 0 0 1px;
   @media (max-width: 767px) {
     margin: 0;
-    top: 145px;
+    top: 130px;
     left: 0;
     z-index: 99;
     text-align: center;
