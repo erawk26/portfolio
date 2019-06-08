@@ -1,7 +1,6 @@
 import SmoothScroll from "smoothscroll";
 const ele = document.getElementsByClassName("headshot").item(0),
   btn = document.getElementById("back-to-top");
-
 function isScrolledIntoView(el) {
   const rect = el.getBoundingClientRect(),
     elemTop = rect.top,

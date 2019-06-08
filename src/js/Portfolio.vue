@@ -30,9 +30,9 @@
 				i.fa.fa-caret-right
 			ul.story-nav#navigation.col-full.row-2(:class="{'is-active':menuOpened==true}")
 				li.menu-item(:class="{active:active==key}" v-for="(item, key, index) in jobs" @click="setActive(key)") {{item.title}}
-			ul.story-panels.col-full.row-3
-				li.panel-item.flex.col.start(:class="{active:active==key}" v-for="(item, key, index) in jobs" :id="'panel-'+key")
-					a.portfolio-card(:href='item.href', :title="'Visit ' + item.title", target='_blank')
+			ul.story-panels.col-full.row-3.scroll-wrapper
+				li.panel-item.flex.col.start.scroll-container(:class="{active:active==key}" v-for="(item, key, index) in jobs" :id="'panel-'+key")
+					a.portfolio-card.scroll-content(:href='item.href', :title="'Visit ' + item.title", target='_blank')
 						.bg-img(v-if='item.img', :style="{ backgroundImage: 'url(' + imgRequire(item.img) + ')',backgroundSize:'cover',backgroundPosition:'center' }")
 						.panel-content.grid.add-top
 							h3.color.secondary.col-left.row-1.remove-top {{ item.title }}
@@ -48,7 +48,7 @@
 import Projects from "./projects.js";
 import { TweenMax, ScrollToPlugin } from "gsap/all";
 import SmoothScroll from "smoothscroll";
-const WheelIndicator = require("wheel-indicator");
+// const WheelIndicator = require("wheel-indicator");
 //import Card from './components/Card.vue';
 
 export default {
@@ -57,6 +57,8 @@ export default {
     message: "You loaded this page on " + new Date().toLocaleString(),
     active: null,
     menuOpened: null,
+    isFirst: true,
+    isLast: false,
     focusPortfolio: false,
     loopSlides: { set: true, flag: false },
     scroll: {
@@ -69,12 +71,16 @@ export default {
     active: function(newVal, oldVal) {
       const newInd = this.keys.indexOf(newVal),
         oldInd = this.keys.indexOf(oldVal);
-      const dir = newInd < oldInd ? "down" : "up";
+      const dir = newInd < oldInd ? "next" : "prev";
+      this.checkPanel(newVal);
       this.loadTransition(oldVal, newVal, dir);
     },
     menuOpened: function(opened) {
       if (opened) {
         TweenMax.to(".story-nav", 0.4, { opacity: 1, yPercent: 0, scaleY: 1 });
+        if (window.innerWidth < 768) {
+          this.goToPortfolio();
+        }
       } else {
         TweenMax.to(".story-nav", 0.4, {
           opacity: 0,
@@ -90,7 +96,6 @@ export default {
   },
   methods: {
     setActive: function(id) {
-      console.log(id);
       this.active = id;
       this.menuOpened = window.innerWidth > 767 ? true : false;
     },
@@ -100,7 +105,7 @@ export default {
       this.goToPortfolio();
       if (this.loopSlides.flag) {
         this.loopSlides.flag = false;
-        dir = dir != "down" ? "down" : "up";
+        dir = dir != "next" ? "next" : "prev";
       }
       TweenMax.fromTo(
         oldDiv,
@@ -108,7 +113,7 @@ export default {
         { opacity: 1, yPercent: 0 },
         {
           opacity: 0,
-          yPercent: dir == "down" ? 100 : -100,
+          yPercent: dir == "next" ? 100 : -100,
           scale: 0.8,
           zIndex: -10
         }
@@ -116,7 +121,7 @@ export default {
       TweenMax.fromTo(
         newDiv,
         1,
-        { opacity: 0, yPercent: dir == "down" ? -100 : 100, scale: 0.8 },
+        { opacity: 0, yPercent: dir == "next" ? -100 : 100, scale: 0.8 },
         { opacity: 1, yPercent: 0, scale: 1, zIndex: 10 }
       );
     },
@@ -130,75 +135,129 @@ export default {
     },
     scrollChange: function(dir) {
       this.menuOpened = window.innerWidth > 767 ? true : false;
-      var newInd = null;
-      if (dir == "up" && this.keys.indexOf(this.active) > 0) {
+      var oldVal = this.active,
+        newInd = null,
+        scrollposition = this.scrollPosition(".active.scroll-container"),
+        doneScrolling =
+          (dir == "next" && scrollposition == "bottom") ||
+          (dir == "prev" && scrollposition == "top");
+
+      // if (doneScrolling) {
+      //animate to prev/next slide if done scrolling or unable to scroll
+      if (dir == "prev" && this.keys.indexOf(this.active) > 0) {
         //if theres a previous panel set it to active
         newInd = this.keys.indexOf(this.active) - 1;
       }
       if (
-        dir == "down" &&
+        dir == "next" &&
         this.keys.indexOf(this.active) < this.keys.length - 1
       ) {
         //if theres another panel set it to active
         newInd = this.keys.indexOf(this.active) + 1;
       }
-      if (this.loopSlides.set) {
-        if (newInd == null) {
-          this.loopSlides.flag = true;
-          newInd = dir == "down" ? 0 : this.keys.length - 1;
-        }
-        this.setActive(this.keys[newInd]);
-      } else if (newInd != null) {
-        this.setActive(this.keys[newInd]);
+      if (this.loopSlides.set && newInd == null) {
+        this.loopSlides.flag = true;
+        newInd = dir == "next" ? 0 : this.keys.length - 1;
+      }
+      this.setActive(this.keys[newInd]);
+      // }
+      console.log(dir, doneScrolling, newInd);
+    },
+    wheelDirection: function(selector) {
+      var wheelEvt =
+        "onwheel" in document.createElement("div")
+          ? "wheel" //     Modern browsers support "wheel"
+          : document.onmousewheel !== undefined
+          ? "mousewheel" // Webkit and IE support at least "mousewheel"
+          : "DOMMouseScroll"; // let's assume that remaining browsers are older Firefox
+      document.querySelector(selector).addEventListener(
+        wheelEvt,
+        e => {
+          var direction = e.deltaY < 0 ? "prev" : "next";
+          this.scrollChange(direction);
+        },
+        false
+      );
+    },
+    touchDirection: function(ele, th) {
+      th = th || 30; //set a default threshhold if not defined
+      var touchstartY = 0;
+      var touchendY = 0;
+      var gestureZone = document.querySelector(ele);
+      if (gestureZone) {
+        gestureZone.addEventListener(
+          "touchstart",
+          e => {
+            // event.preventDefault();
+            touchstartY = e.changedTouches[0].screenY;
+          },
+          false
+        );
+        gestureZone.addEventListener(
+          "touchend",
+          e => {
+            touchendY = e.changedTouches[0].screenY;
+            var distance = touchendY - touchstartY,
+              direction =
+                distance > th ? "prev" : distance < th * -1 ? "next" : null;
+            this.scrollChange(direction);
+          },
+          false
+        );
       }
     },
-    touchDirection: function(gestureZone, cb, th) {
-      // ARGS (selector, callback, distance threshold)
-      th = th || 30; //set a default threshhold if not defined
-      let touchstartY = 0;
-      let touchendY = 0;
-      gestureZone.addEventListener(
-        "touchstart",
-        function(e) {
-          e.preventDefault();
-          touchstartY = e.changedTouches[0].screenY;
-        },
-        false
-      );
-      gestureZone.addEventListener(
-        "touchend",
-        function(e) {
-          touchendY = e.changedTouches[0].screenY;
-          const distance = touchendY - touchstartY;
-          const direction =
-            distance > th ? "up" : distance < th * -1 ? "down" : null;
-          cb(direction, distance);
-        },
-        false
-      );
+    scrollPosition: function(selector) {
+      //outer div		.scroll-wrapper
+      //container 		.scroll-container
+      //inner content 	.scroll-content
+      var el = document.querySelector(selector + " .scroll-content"),
+        pos =
+          el.scrollTop >= el.scrollHeight - el.offsetHeight
+            ? "bottom" //scrolled to bottom
+            : el.scrollTop == 0
+            ? "top" //scrolled to top
+            : el.scrollHeight <
+              this.elementHeight(document.querySelector(selector)) + 1
+            ? null //doesnt need to scroll
+            : "middle"; //somewhere in the middle
+      return pos;
+    },
+    elementHeight: function(ele) {
+      var computedStyle = getComputedStyle(ele);
+      var eleHeight = ele.clientHeight; // height with padding
+      eleHeight =
+        eleHeight -
+        (parseFloat(computedStyle.paddingTop) +
+          parseFloat(computedStyle.paddingBottom));
+      return eleHeight;
+    },
+    checkPanel: function(id) {
+      const i = this.keys.indexOf(id);
+      this.isfirst = i == this.keys.length - 1;
+      this.islast = i == 0;
+    },
+    onResize: function(params) {
+      // console.log('resized');
+      this.menuOpened = window.innerWidth > 767 ? true : false;
+    },
+    machine_readable: function(str) {
+      return str
+        .toLowerCase()
+        .replace(/[^\w ]+/g, "")
+        .replace(/ +/g, "-");
     },
     imgRequire: img => require(`../img/${img}`)
+  },
+  beforeDestroy: function() {
+    window.removeEventListener("resize", this.onResize);
   },
   mounted: function() {
     const that = this,
       ele = document.querySelector(".story-panels");
     this.menuOpened = window.innerWidth > 767 ? true : false;
-    this.setActive("tybee");
-    this.touchDirection(ele, function(direction, distance) {
-      //bind touch
-      that.scrollChange(direction);
-      that.scroll.type = "touchmove";
-      that.scroll.Y = direction + ", " + distance;
-    });
-    var indicator = new WheelIndicator({
-      elem: ele,
-      callback: function(e) {
-        that.scrollChange(e.direction);
-        that.scroll.type = "wheel";
-        that.scroll.Y = e.direction;
-        console.log(e.direction); // "up" or "down"
-      }
-    });
+    this.setActive(this.keys[0]);
+    this.wheelDirection(".scroll-wrapper");
+    this.touchDirection(".scroll-wrapper", 100);
   }
 };
 </script>
