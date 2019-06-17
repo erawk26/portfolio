@@ -218,7 +218,6 @@ export default {
       document.querySelector(selector).addEventListener(
         wheelEvt,
         e => {
-          event.preventDefault();
           var dir = e.deltaY < 0 ? "prev" : "next";
           this.checkEvent(dir, e.timeStamp, 1);
         },
@@ -236,7 +235,7 @@ export default {
         gestureZone.addEventListener(
           "touchstart",
           e => {
-            event.preventDefault();
+            // event.preventDefault();
             touchstartY = e.changedTouches[0].screenY;
             touchstartX = e.changedTouches[0].screenX;
           },
