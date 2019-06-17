@@ -1,6 +1,6 @@
 <template lang="pug">
   section#contact
-    form#contactForm
+    form
       h2 Drop me a Note!
       .flex-row.left.contact
         .col.flex-row.nowrap.fa.fa-phone

@@ -19,20 +19,22 @@ html
 			gtag('js', new Date());
 			gtag('config', 'UA-115116018-1');
 	body
-		a#intro
+		a#intro(name='intro')
 		header
 			nav.main-nav
-				a.home(href="#intro") Erik
+				a.home(href="#intro") EO
 				span.mid-links
 					a.projects(href="#portfolio") Projects
 					a.about(href="#contactForm") Contact
 				a.resume(href="./public/files/ErikOlsen_Resume.pdf", target="blank") Resume
 		section.intro
-			img.headshot(src=require('./img/headshot2.jpg'), alt="Erik Olsen")
-			p I'm Erik Olsen, a Web Developer currently based out of Sarasota, FL. I build fast responsive websites and applications.
-			a.fa.fa-chevron-down(href="#portfolio")
-		a#portfolio
+			.wrapper.flex.col
+				img.headshot(src=require('./img/headshot2.jpg'), alt="Erik Olsen")
+				p I'm Erik Olsen, a Web Developer currently based out of Sarasota, FL. I build fast responsive websites and applications.
+				a.fa.fa-chevron-down.add-top(href="#portfolio")
+		a#portfolio(name='portfolio')
 		section#portApp.vue-portfolio
+		a#contactForm(name='contact')
 		section.contact
 		a#back-to-top.back-to-top(href="#intro") Back to Top
 		footer#sticky-footer
